@@ -1,9 +1,28 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, ReactNode } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
-const menuData = [
+interface MenuLink {
+  label: string;
+  href: string;
+}
+
+interface Product {
+  title: string;
+  href: string;
+  src: string;
+  description: string;
+}
+
+interface MenuData {
+  id: string;
+  name: string;
+  content: MenuLink[] | Product[];
+}
+
+const menuData: MenuData[] = [
   {
     id: "services",
     name: "Services",
@@ -35,13 +54,15 @@ const menuData = [
         title: "Moonbeam",
         href: "https://gomoonbeam.com",
         src: "/Images/saressdemo.jpg",
-        description: "Never write from scratch again. Go from idea to blog in minutes.",
+        description:
+          "Never write from scratch again. Go from idea to blog in minutes.",
       },
       {
         title: "Rogue",
         href: "https://userogue.com",
         src: "/Images/saressdemo.jpg",
-        description: "Respond to government RFPs, RFIs and RFQs 10x faster using AI.",
+        description:
+          "Respond to government RFPs, RFIs and RFQs 10x faster using AI.",
       },
     ],
   },
@@ -57,7 +78,7 @@ const menuData = [
   },
 ];
 
-export function NavbarMenu() {
+export function NavbarMenu(): JSX.Element {
   return (
     <div className="relative w-full flex items-center justify-center">
       <Navbar className="top-0" />
@@ -65,7 +86,11 @@ export function NavbarMenu() {
   );
 }
 
-function Navbar({ className }: { className?: string }) {
+interface NavbarProps {
+  className?: string;
+}
+
+function Navbar({ className }: NavbarProps): JSX.Element {
   const [active, setActive] = useState<string | null>(null);
 
   return (
@@ -73,37 +98,49 @@ function Navbar({ className }: { className?: string }) {
       className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
     >
       <Menu setActive={setActive}>
-        {menuData.map((menu) => (
-          <MenuItem
-            key={menu.id}
-            setActive={setActive}
-            active={active}
-            item={menu.name}
-          >
-            {/* Render content dynamically */}
-            {menu.id === "products" ? (
-              <div className="text-sm grid grid-cols-2 gap-10 p-4">
-                {menu.content.map((product) => (
-                  <ProductItem
-                    key={product.title}
-                    title={product.title}
-                    href={product.href}
-                    src={product.src}
-                    description={product.description}
-                  />
-                ))}
-              </div>
-            ) : (
-              <div className="flex flex-col space-y-4 text-sm">
-                {menu.content.map((link) => (
-                  <HoveredLink key={link.label} href={link.href}>
-                    {link.label}
-                  </HoveredLink>
-                ))}
-              </div>
-            )}
-          </MenuItem>
-        ))}
+        <div className="flex w-[100%] flex-row justify-between items-center">
+          <div>
+            <Link href="/" className="font-abel text-[25px] font-bold">Logo</Link>
+          </div>
+          <div className="flex flex-row space-x-9">
+            {menuData.map((menu) => (
+              <MenuItem
+                key={menu.id}
+                setActive={setActive}
+                active={active}
+                item={menu.name}
+              >
+                {menu.id === "products" ? (
+                  <div className="text-sm grid grid-cols-2 gap-10 p-4">
+                    {(menu.content as Product[]).map((product) => (
+                      <ProductItem
+                        key={product.title}
+                        title={product.title}
+                        href={product.href}
+                        src={product.src}
+                        description={product.description}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="flex flex-col space-y-4 text-sm">
+                    {(menu.content as MenuLink[]).map((link) => (
+                      <HoveredLink
+                        key={link.label}
+                        href={link.href}
+                        className="text-white"
+                      >
+                        <p className="text-white/85 font-rubik text-[18px]">
+                          {link.label}
+                        </p>
+                      </HoveredLink>
+                    ))}
+                  </div>
+                )}
+              </MenuItem>
+            ))}
+          </div>
+        </div>
       </Menu>
     </div>
   );
