@@ -95,53 +95,58 @@ function Navbar({ className }: NavbarProps): JSX.Element {
 
   return (
     <div
-      className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
+      className={cn("fixed top-10 inset-x-0 w-[100%] mx-auto z-50", className)}
     >
-      <Menu setActive={setActive}>
-        <div className="flex w-[100%] flex-row justify-between items-center">
-          <div>
-            <Link href="/" className="font-abel text-[25px] font-bold">Logo</Link>
+        <Menu setActive={setActive}>
+          <div className="flex w-[100%] flex-row justify-between items-center md:max-w-[1440px] m-auto px-[20px]">
+            <div>
+              <Link href="/" className="font-abel text-[25px] font-bold">
+                Logo
+              </Link>
+            </div>
+            <div className="flex flex-row space-x-9">
+              {menuData.map((menu) => (
+                <MenuItem
+                  key={menu.id}
+                  setActive={setActive}
+                  active={active}
+                  item={menu.name}
+                >
+                  {menu.id === "products" ? (
+                    <div className="text-sm grid grid-cols-2 gap-10 p-4">
+                      {(menu.content as Product[]).map((product) => (
+                        <ProductItem
+                          key={product.title}
+                          title={product.title}
+                          href={product.href}
+                          src={product.src}
+                          description={product.description}
+                        />
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="flex flex-col space-y-4 text-sm">
+                      {(menu.content as MenuLink[]).map((link) => (
+                        <HoveredLink
+                          key={link.label}
+                          href={link.href}
+                          className="text-white"
+                        >
+                          <p className="text-white/85 font-rubik text-[18px]">
+                            {link.label}
+                          </p>
+                        </HoveredLink>
+                      ))}
+                    </div>
+                  )}
+                </MenuItem>
+              ))}
+            </div>
+            <div>
+              <Link href="/" className="inline-block text-[18px] bg-white text-black  py-2 px-5 rounded-[5px] font-rubik">Contact Us</Link>
+            </div>
           </div>
-          <div className="flex flex-row space-x-9">
-            {menuData.map((menu) => (
-              <MenuItem
-                key={menu.id}
-                setActive={setActive}
-                active={active}
-                item={menu.name}
-              >
-                {menu.id === "products" ? (
-                  <div className="text-sm grid grid-cols-2 gap-10 p-4">
-                    {(menu.content as Product[]).map((product) => (
-                      <ProductItem
-                        key={product.title}
-                        title={product.title}
-                        href={product.href}
-                        src={product.src}
-                        description={product.description}
-                      />
-                    ))}
-                  </div>
-                ) : (
-                  <div className="flex flex-col space-y-4 text-sm">
-                    {(menu.content as MenuLink[]).map((link) => (
-                      <HoveredLink
-                        key={link.label}
-                        href={link.href}
-                        className="text-white"
-                      >
-                        <p className="text-white/85 font-rubik text-[18px]">
-                          {link.label}
-                        </p>
-                      </HoveredLink>
-                    ))}
-                  </div>
-                )}
-              </MenuItem>
-            ))}
-          </div>
-        </div>
-      </Menu>
+        </Menu>
     </div>
   );
 }

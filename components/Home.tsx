@@ -9,6 +9,8 @@ export function InfiniteMovingCardsDemo() {
       style={{
         backgroundImage: 'url("Images/bg.jpg")',
         width: "100%",
+        backgroundAttachment:"fixed",
+        backgroundSize:"cover"
       }}
     >
       <div
