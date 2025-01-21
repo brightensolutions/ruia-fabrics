@@ -5,34 +5,21 @@ import Link from "next/link";
 export function InfiniteMovingCardsDemo() {
   return (
     <div
-      className="h-screen flex flex-col items-center justify-center bg-cover bg-center relative"
-      style={{
-        backgroundImage: 'url("Images/bg.jpg")',
-        width: "100%",
-        backgroundAttachment:"fixed",
-        backgroundSize:"cover"
-      }}
+      className="h-screen flex flex-col items-center justify-center bg-cover bg-center relative bg-gradient-to-t to-white from-creamwhite"
+      
     >
-      <div
-        className="absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-r from-black/85 via-black/70 to-black/85"
-        style={{
-          zIndex: 1,
-        }}
-      ></div>
-
-
       <div className="w-[80%] text-center px-[50px] relative z-10">
-        <h1 className="text-[75px] font-abel font-bold mb-[25px]">
-          Welcome to Ruia Fabrics
+        <h1 className="text-[75px] font-abel text-bluecolor font-bold mb-[25px]">
+          Welcome to <span className="text-greencolor font-bold font-roboto">Ruia Fabrics</span> 
         </h1>
-        <p className="text-[25px] mb-6 text-white font-abel">
+        <p className="text-[25px] mb-6 text-textblak font-abel">
           Established in 1990, Ruia Fabrics has been a leading name in the
           textile industry, offering premium fabrics like voile, chiffon, crepe,
           georgette, and velvet. With a strong commitment to quality and
           sustainability, we produce world-class fabrics, catering to both
           domestic and international markets.
         </p>
-        <p className="text-[25px] mb-6 text-white font-abel">
+        <p className="text-[25px] mb-6 text-textblak  font-abel">
           Our vision is to combine traditional craftsmanship with modern
           innovation, ensuring that every fabric we create is of the highest
           quality. Join us in our journey towards a sustainable future.
@@ -41,13 +28,13 @@ export function InfiniteMovingCardsDemo() {
         <div className="flex justify-center  space-x-6 mb-[40px]">
           <Link
             href="/"
-            className="text-[20px] font-rubik bg-black/45 py-[10px] px-[25px] rounded-[5px] hover:bg-black"
+            className="text-[20px] font-rubik bg-greencolor text-white py-[10px] px-[25px] rounded-[5px] hover:bg-greencolor/55 hover:text-black"
           >
             About Us
           </Link>
           <Link
             href="/"
-            className="text-[20px] font-rubik bg-black/45 py-[10px] px-[25px] rounded-[5px] hover:bg-black"
+            className="text-[20px] font-rubik bg-greencolor text-white py-[10px] px-[25px] rounded-[5px] hover:bg-greencolor/55 hover:text-black"
           >
             Contact Us
           </Link>

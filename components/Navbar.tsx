@@ -27,10 +27,9 @@ const menuData: MenuData[] = [
     id: "services",
     name: "Services",
     content: [
-      { label: "Web Development", href: "/web-dev" },
-      { label: "Interface Design", href: "/interface-design" },
-      { label: "Search Engine Optimization", href: "/seo" },
-      { label: "Branding", href: "/branding" },
+      { label: "Spinning Division", href: "/SpinningDivision" },
+      { label: "Sizing Division", href: "/product" },
+      { label: "Weaving Division", href: "/team" },
     ],
   },
   {
@@ -67,13 +66,13 @@ const menuData: MenuData[] = [
     ],
   },
   {
-    id: "pricing",
-    name: "Pricing",
+    id: "Company",
+    name: "Company",
     content: [
-      { label: "Hobby", href: "/hobby" },
-      { label: "Individual", href: "/individual" },
-      { label: "Team", href: "/team" },
-      { label: "Enterprise", href: "/enterprise" },
+      { label: "About Us", href: "/compnay/about-us" },
+      { label: "Product", href: "/compnay/product" },
+      { label: "Infrastructure", href: "/compnay/Infrastructure" },
+      { label: "Market", href: "/compnay/Market" },
     ],
   },
 ];
@@ -100,7 +99,7 @@ function Navbar({ className }: NavbarProps): JSX.Element {
         <Menu setActive={setActive}>
           <div className="flex w-[100%] flex-row justify-between items-center md:max-w-[1440px] m-auto px-[20px]">
             <div>
-              <Link href="/" className="font-abel text-[25px] font-bold">
+              <Link href="/" className="font-abel text-textblak text-[25px] font-bold">
                 Logo
               </Link>
             </div>
@@ -130,9 +129,9 @@ function Navbar({ className }: NavbarProps): JSX.Element {
                         <HoveredLink
                           key={link.label}
                           href={link.href}
-                          className="text-white"
+                          className="text-textblak"
                         >
-                          <p className="text-white/85 font-rubik text-[18px]">
+                          <p className="text-textblak font-rubik text-[18px]">
                             {link.label}
                           </p>
                         </HoveredLink>
@@ -143,7 +142,7 @@ function Navbar({ className }: NavbarProps): JSX.Element {
               ))}
             </div>
             <div>
-              <Link href="/" className="inline-block text-[18px] bg-white text-black  py-2 px-5 rounded-[5px] font-rubik">Contact Us</Link>
+              <Link href="/compnay/contact-us" className="inline-block text-[18px] bg-greycolor text-white  py-2 px-5 rounded-[5px] font-rubik">Contact Us</Link>
             </div>
           </div>
         </Menu>

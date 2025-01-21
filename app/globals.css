@@ -43,3 +43,24 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px; /* Thin scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Scrollbar track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #007443; /* Scrollbar color */
+  border-radius: 10px; /* Smooth rounded edges */
+  border: 2px solid #f1f1f1; /* Optional padding-like effect */
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+

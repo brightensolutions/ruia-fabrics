@@ -28,7 +28,7 @@ export const MenuItem = ({
     <div onMouseEnter={() => setActive(item)} className="relative ">
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-white font-rubik text-[18px] hover:opacity-[0.9] dark:text-white"
+        className="cursor-pointer text-textblak font-rubik text-[18px] hover:opacity-[0.9] dark:text-white"
       >
         {item}
       </motion.p>
@@ -43,7 +43,7 @@ export const MenuItem = ({
               <motion.div
                 transition={transition}
                 layoutId="active" 
-                className="bg-greycolor dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-white/15 dark:border-white/[0.2] shadow-xl"
+                className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-white/15 dark:border-white/[0.2] shadow-xl"
               >
                 <motion.div
                   layout 
@@ -70,7 +70,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} 
-      className="relative rounded-b-xl justify-between   dark:bg-black/30  bg-greycolor/60 backdrop-blur-xl border-bordercolor border-[1px] shadow-input flex  space-x-4 px-8 py-5"
+      className="relative  justify-between   dark:bg-black/30  bg-white backdrop-blur-xl border-bordercolor  shadow-input flex  space-x-4 px-8 py-5"
     >
       {children}
     </nav>
@@ -98,10 +98,10 @@ export const ProductItem = ({
         className="flex-shrink-0 rounded-md shadow-2xl"
       />
       <div>
-        <h4 className="text-[15px] font-rubik font-bold mb-1 text-white dark:text-white">
+        <h4 className="text-[15px] font-rubik font-bold mb-1 text-textblak dark:text-white">
           {title}
         </h4>
-        <p className="text-white/65 font-abel text-[18px] max-w-[10rem] dark:text-neutral-300">
+        <p className="text-textblak font-abel text-[18px] max-w-[10rem] dark:text-neutral-300">
           {description}
         </p>
       </div>
