@@ -3,6 +3,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { FaChevronRight } from "react-icons/fa";
+import { TextAnimate } from "./ui/text-animate";
 
 interface DetailsAndImageProps {
   title: string
@@ -11,11 +12,12 @@ interface DetailsAndImageProps {
   paragraphColor?: string
   images: {
     main: string
-    overlay?: string // Make overlay optional
+    overlay?: string 
   }
   imagePosition?: "left" | "right"
   connectUsLink?: string
   bgcolor?: string
+  sectioncolor?: string
 }
 
 const AnimatedDetailsAndImage: React.FC<DetailsAndImageProps> = ({
@@ -26,10 +28,11 @@ const AnimatedDetailsAndImage: React.FC<DetailsAndImageProps> = ({
   images,
   imagePosition = "right",
   connectUsLink = "/compnay/contact-us",
-  bgcolor = "bg-white"
+  bgcolor = "bg-white",
+  sectioncolor
 }) => {
   return (
-    <div className={`${bgcolor}`}>
+    <div className={`${bgcolor} ${sectioncolor}`}>
 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div
@@ -82,7 +85,8 @@ const AnimatedDetailsAndImage: React.FC<DetailsAndImageProps> = ({
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            {title}
+            <TextAnimate animation="blurInDown" by="character" as="p">{title}</TextAnimate>
+            
           </motion.h1>
           {details.map((detail, index) => (
             <motion.p
@@ -101,13 +105,13 @@ const AnimatedDetailsAndImage: React.FC<DetailsAndImageProps> = ({
             transition={{ delay: 0.4 + details.length * 0.1, duration: 0.6 }}
           >
             <Link href={connectUsLink} passHref>
-              <motion.a
+              <motion.p
                 className="flex flex-row items-center w-fit gap-[5px] mt-6 px-6 py-3 bg-greycolor text-white font-semibold rounded-lg shadow-md hover:bg-greencolor/50 hover:text-textblak transition duration-300 ease-in-out"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Connect Us <span className="text-[12px]"><FaChevronRight /></span>
-              </motion.a>
+              </motion.p>
             </Link>
           </motion.div>
         </motion.div>

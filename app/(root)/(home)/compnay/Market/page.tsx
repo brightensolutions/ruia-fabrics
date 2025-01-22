@@ -1,10 +1,71 @@
+"use client";
 import ServicesSection from "@/components/ServicesSectionFn";
 import React from "react";
 import { Building2, Factory, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import AnimatedDetailsAndImage from "@/components/deatilsAndImagesectionFn";
+import { TextAnimate } from "@/components/ui/text-animate";
 
 const Market = () => {
+  const greyFabric2 = {
+    title: "Domestic Excellence",
+    titleColor: "text-textblak",
+    details: [
+      {
+        paragraph:
+          "With a 90% presence in the Indian market, we manufacture high-quality technical textiles that are supplied to hubs in Delhi, Jaipur, Ahmedabad, and Mumbai.",
+      },
+      {
+        paragraph:
+          "Creating bespoke solutions, we understand our clients' unique requirements and deliver customized textiles perfect for complex applications and industries.",
+      },
+      {
+        paragraph:
+          "Not only have we earned the trust of our Indian clients, but we have also reached an international clientele with our premium products.",
+      },
+    ],
+    paragraphColor: "text-gray-700",
+    images: {
+      main: "/Images/infra-weaving.webp",
+    },
+    connectUsLink: "/company/contact-us",
+  };
+  
+
+  const greyFabric = {
+    title: "Export Excellence",
+    titleColor: "text-textblak",
+    details: [
+      {
+        paragraph:
+          "Ruia Fabrics has built a strong global presence, with a clientele spanning countries such as Egypt, Morocco, Italy, Nepal, Hong Kong, Brazil, Argentina, Sri Lanka, Germany, and across Europe. Our legacy in textiles is rooted in quality, innovation, and sustainable practices.",
+      },
+      {
+        paragraph:
+          "10% of our products are directly exported to markets like Sri Lanka, Bangladesh, Korea, and select European nations. We take pride in crafting premium-quality fabrics like velvet, viscose, georgette, crepe, and chiffon, catering to diverse industries and applications.",
+      },
+      {
+        paragraph:
+          "Ruia Fabrics traces its roots back to 1952 during the Indian textile revolution. Founded by Shri Shubhkaranji Ruia, it began as a yarn trading enterprise. Today, it has evolved into a global textile powerhouse, renowned for its quality, sustainability, and innovation.",
+      },
+      {
+        paragraph:
+          "Our portfolio includes viscose rayon velvet, synthetic velvet, and cotton velvet, ideal for a variety of applications from resort wear to evening gowns. With state-of-the-art infrastructure and expertise, we ensure unmatched quality and precision.",
+      },
+      {
+        paragraph:
+          "We are committed to sustainable practices, producing eco-friendly fabrics in collaboration with Aditya Birla Group. Our LIVA eco-vera certified fabrics highlight our dedication to a greener future.",
+      },
+    ],
+    paragraphColor: "text-gray-700",
+    images: {
+      main: "/Images/infra-weaving.webp",
+    },
+    connectUsLink: "/company/contact-us", 
+    
+  };
+  
   return (
     <div>
       <div>
@@ -16,20 +77,19 @@ const Market = () => {
         />
       </div>
 
-      <div>
+      <div className="bg-gradient-to-t to-creamwhite pt-[45px] from-white">
         <section className="container mx-auto px-4 py-12">
-          {/* Header */}
           <div className="mb-12">
-            <h2 className="text-white text-3xl font-bold mb-4">
-              Who We Are
-            </h2>
-            <p className="text-white/80 max-w-3xl">
+            <h2 className="text-darkgreen text-3xl font-bold mb-4">
+              
+               <TextAnimate animation="blurInUp" by="character" as="p">Who We Are</TextAnimate>
+              </h2>
+            <p className="text-darkgreen max-w-3xl">
               VP Tex is a diverse business group based in Erode, South India,
               that specializes in spinning & weaving for arduous applications.
             </p>
           </div>
 
-          {/* Metrics */}
           <div className="grid md:grid-cols-2 gap-8 mb-12 ">
             <div className="text-center p-6 border rounded-lg bg-white">
               <div className="flex justify-center mb-4">
@@ -53,21 +113,11 @@ const Market = () => {
             </div>
           </div>
 
-          <div className="flex justify-end mb-8">
-            <Button
-              variant="default"
-              className="bg-emerald-600 hover:bg-emerald-700"
-            >
-              READ MORE
-            </Button>
-          </div>
-
-          {/* Stats and Info Cards */}
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Mission Card */}
-            <Card className="bg-emerald-600 text-white p-8">
+            <Card className="bg-darkgreen text-white p-8">
               <CardContent className="p-0">
-                <h3 className="text-2xl font-bold mb-6">Our Mission</h3>
+                <h3 className="text-2xl font-bold mb-6"> <TextAnimate animation="blurInDown" by="character" as="p">Our Mission </TextAnimate></h3>
                 <div className="space-y-6">
                   <p>
                     V.P. Tex has been best known for quality for more than three
@@ -159,6 +209,14 @@ const Market = () => {
             </div>
           </div>
         </section>
+      </div>
+
+      <div>
+        <AnimatedDetailsAndImage {...greyFabric2} imagePosition="left" />
+      </div>
+
+      <div>
+        <AnimatedDetailsAndImage {...greyFabric} imagePosition="right" />
       </div>
     </div>
   );

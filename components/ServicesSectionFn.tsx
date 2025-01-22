@@ -1,13 +1,14 @@
 import Link from "next/link";
 import React from "react";
 import { FaChevronRight } from "react-icons/fa";
+import { TextAnimate } from "./ui/text-animate";
 
 interface ServicesSectionProps {
   image: string;
   title: string;
-  description: string; 
+  description: string;
   link: {
-    href: string; 
+    href: string;
     label: string;
   };
 }
@@ -27,16 +28,20 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
         backgroundAttachment: "fixed",
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-t to-zinc-900/40 from-white"></div>
+      <div className="absolute inset-0 bg-gradient-to-t to-zinc-900/40 from-creamwhite"></div>
 
       <div className="relative md:max-w-[1440px] m-auto px-[20px] z-30 ">
-        <div className="text-center m-auto">
-          <h1 className="md:text-[105px] font-rubik font-bold text-greencolor">{title}</h1>
-          <p className="mt-4 text-[25px] font-abel text-textblak">{description}</p>
-          <div>
+        <div className="flex flex-col md:items-center items-end md:justify-center justify-end">
+          <h1 className="md:text-[105px] text-[60px] font-rubik font-bold text-darkgreen">
+            <TextAnimate animation="blurInUp" by="character" as="p">
+              {title}
+            </TextAnimate>
+          </h1>
+          <p className="mt-4 text-[25px] md:text-center text-right font-abel text-black font-bold">{description}</p>
+          <div className="w-[100%] ">
             <Link
               href={link.href}
-              className="flex flex-row items-center gap-1 m-auto justify-center w-fit px-4 py-2 bg-zinc-950 mt-4 border rounded-[5px]"
+              className="flex flex-row w-fit items-center gap-1 m-auto md:justify-center justify-end  px-4 py-2 bg-zinc-950 mt-4 border rounded-[5px]"
             >
               {link.label}
               <span>

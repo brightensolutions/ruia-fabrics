@@ -23,7 +23,7 @@ const ContactUs = () => {
   }
 
   return (
-    <div className="bg-white pb-[50px]">
+    <div className="bg-gradient-to-t to-creamwhite pt-[45px] from-white pb-[45px]">
       <div className="lg:max-w-[1440px] p-[20px] m-auto">
         <div className="text-center text-textblak mb-8 text-[40px] font-rubik">
           <h1>Get in Touch</h1>

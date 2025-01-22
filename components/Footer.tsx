@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-creamwhite dark:bg-gray-900">
+    <footer className="bg-creamwhite dark:bg-gray-900 border-t-[2px] border-darkgreen pt-[30px]">
       <div className="mx-auto w-full md:max-w-[1440px] px-[20px] py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">

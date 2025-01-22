@@ -4,7 +4,6 @@ import React from "react";
 import ServicesSection from "@/components/ServicesSectionFn";
 import AnimatedDetailsAndImage from "@/components/deatilsAndImagesectionFn";
 
-
 const Product = () => {
   const greyFabric = {
     title: "Grey Fabric",
@@ -29,6 +28,7 @@ const Product = () => {
       overlay: "/Images/greyfabric2.jpg",
     },
     connectUsLink: "/compnay/contact-us",
+    sectioncolor: "bg-gradient-to-t to-creamwhite from-white",
   };
 
   const velvetFabric = {
@@ -102,7 +102,9 @@ const Product = () => {
         link={{ href: "/contact", label: "Get in Touch" }}
       />
 
-      <AnimatedDetailsAndImage {...greyFabric} imagePosition="left" />
+      <div className="bg-gradient-to-t to-creamwhite pt-[45px] from-white">
+        <AnimatedDetailsAndImage {...greyFabric} imagePosition="left" />
+      </div>
 
       <AnimatedDetailsAndImage {...velvetFabric} imagePosition="right" />
 

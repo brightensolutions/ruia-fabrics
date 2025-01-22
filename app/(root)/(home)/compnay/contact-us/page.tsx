@@ -14,7 +14,7 @@ const page = () => {
         />
       </div>
 
-      <div>
+      <div className="">
         <ContactUs />
       </div>
     </div>

@@ -56,7 +56,7 @@ const Infrastructure = () => {
         />
       </div>
 
-      <div className="bg-white">
+      <div className="bg-gradient-to-t to-creamwhite pt-[45px] from-white">
         <Image
           src="/Images/services-detail-img.jpg"
           alt="fabric"

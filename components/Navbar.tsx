@@ -3,6 +3,8 @@ import React, { useState, ReactNode } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Drawer from "react-modern-drawer";
+import "react-modern-drawer/dist/index.css";
 
 interface MenuLink {
   label: string;
@@ -19,67 +21,40 @@ interface Product {
 interface MenuData {
   id: string;
   name: string;
-  content: MenuLink[] | Product[];
+  href?: string;
+  content?: MenuLink[] | Product[];
 }
-
 const menuData: MenuData[] = [
   {
-    id: "services",
-    name: "Services",
-    content: [
-      { label: "Spinning Division", href: "/SpinningDivision" },
-      { label: "Sizing Division", href: "/product" },
-      { label: "Weaving Division", href: "/team" },
-    ],
+    id: "Home",
+    name: "Home",
+    href: "/",
   },
   {
-    id: "products",
-    name: "Products",
-    content: [
-      {
-        title: "Algochurn",
-        href: "https://algochurn.com",
-        src: "/Images/saressdemo.jpg",
-        description: "Prepare for tech interviews like never before.",
-      },
-      {
-        title: "Tailwind Master Kit",
-        href: "https://tailwindmasterkit.com",
-        src: "/Images/saressdemo.jpg",
-        description:
-          "Production ready Tailwind CSS components for your next project.",
-      },
-      {
-        title: "Moonbeam",
-        href: "https://gomoonbeam.com",
-        src: "/Images/saressdemo.jpg",
-        description:
-          "Never write from scratch again. Go from idea to blog in minutes.",
-      },
-      {
-        title: "Rogue",
-        href: "https://userogue.com",
-        src: "/Images/saressdemo.jpg",
-        description:
-          "Respond to government RFPs, RFIs and RFQs 10x faster using AI.",
-      },
-    ],
+    id: "About us",
+    name: "About Us",
+    href: "/compnay/about-us",
   },
   {
-    id: "Company",
-    name: "Company",
-    content: [
-      { label: "About Us", href: "/compnay/about-us" },
-      { label: "Product", href: "/compnay/product" },
-      { label: "Infrastructure", href: "/compnay/Infrastructure" },
-      { label: "Market", href: "/compnay/Market" },
-    ],
+    id: "Product",
+    name: "Product",
+    href: "/compnay/product",
+  },
+  {
+    id: "Infrastructure",
+    name: "Infrastructure",
+    href: "/compnay/Infrastructure",
+  },
+  {
+    id: "Market",
+    name: "Market",
+    href: "/compnay/Market",
   },
 ];
 
-export function NavbarMenu(): JSX.Element {
+export function NavbarMenu() {
   return (
-    <div className="relative w-full flex items-center justify-center">
+    <div className="relative w-full flex items-center justify-center ">
       <Navbar className="top-0" />
     </div>
   );
@@ -89,63 +64,88 @@ interface NavbarProps {
   className?: string;
 }
 
-function Navbar({ className }: NavbarProps): JSX.Element {
+function Navbar({ className }: NavbarProps) {
+  const [isOpen, setIsOpen] = React.useState(false);
   const [active, setActive] = useState<string | null>(null);
-
+  const toggleDrawer = () => {
+    setIsOpen((prevState) => !prevState);
+  };
   return (
     <div
-      className={cn("fixed top-10 inset-x-0 w-[100%] mx-auto z-50", className)}
+      className={cn("fixed top-10 inset-x-0 w-[100%] mx-auto z-50 ", className)}
     >
+      <div className="md:block hidden">
         <Menu setActive={setActive}>
-          <div className="flex w-[100%] flex-row justify-between items-center md:max-w-[1440px] m-auto px-[20px]">
+          <div className="flex w-[100%] flex-row justify-between items-center  md:max-w-[1440px] m-auto px-[20px] ">
             <div>
-              <Link href="/" className="font-abel text-textblak text-[25px] font-bold">
+              <Link href="/" className="font-abel text-white text-[25px] ">
                 Logo
               </Link>
             </div>
             <div className="flex flex-row space-x-9">
               {menuData.map((menu) => (
-                <MenuItem
-                  key={menu.id}
-                  setActive={setActive}
-                  active={active}
-                  item={menu.name}
-                >
-                  {menu.id === "products" ? (
-                    <div className="text-sm grid grid-cols-2 gap-10 p-4">
-                      {(menu.content as Product[]).map((product) => (
-                        <ProductItem
-                          key={product.title}
-                          title={product.title}
-                          href={product.href}
-                          src={product.src}
-                          description={product.description}
-                        />
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="flex flex-col space-y-4 text-sm">
-                      {(menu.content as MenuLink[]).map((link) => (
-                        <HoveredLink
-                          key={link.label}
-                          href={link.href}
-                          className="text-textblak"
-                        >
-                          <p className="text-textblak font-rubik text-[18px]">
-                            {link.label}
-                          </p>
-                        </HoveredLink>
-                      ))}
-                    </div>
-                  )}
-                </MenuItem>
+                <Link href={menu.href || "#"} key={menu.id}>
+                  <MenuItem
+                    setActive={setActive}
+                    active={active}
+                    item={menu.name}
+                  >
+                    {/* Add any custom content for the menu item */}
+                    <div className="w-[45px] h-2 bg-greencolor"></div>
+                  </MenuItem>
+                </Link>
               ))}
             </div>
+
             <div>
-              <Link href="/compnay/contact-us" className="inline-block text-[18px] bg-greycolor text-white  py-2 px-5 rounded-[5px] font-rubik">Contact Us</Link>
+              <Link
+                href="/compnay/contact-us"
+                className="inline-block text-[18px] bg-greycolor text-white   py-2 px-5 rounded-[5px] font-rubik"
+              >
+                Contact Us
+              </Link>
             </div>
           </div>
         </Menu>
+      </div>
+
+      <div className="bg-darkgreen px-[20px] md:hidden block py-[10px]">
+        <div className="flex w-[100%] items-center justify-between">
+          <Link href="/" className="text-[45px]">
+            Logo
+          </Link>
+          <button onClick={toggleDrawer}>Show</button>
+        </div>
+        <Drawer
+        open={isOpen}
+        onClose={toggleDrawer}
+        direction="right"
+        className="bg-white w-[80%] h-full"
+      >
+        <div className="p-4">
+          <button onClick={toggleDrawer} className="text-black mb-4">
+            Close
+          </button>
+          <ul className="space-y-4">
+            {menuData.map((item: MenuData) => (
+              <li key={item.id} className="text-lg text-darkgreen font-rubik font-semibold">
+                <Link  href={item.href || "#"} onClick={toggleDrawer}>
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-6">
+              <Link
+                href="/compnay/contact-us"
+                className="inline-block text-[18px] bg-greycolor text-white   py-2 px-5 rounded-[5px] font-rubik"
+              >
+                Contact Us
+              </Link>
+            </div>
+        </div>
+      </Drawer>
+      </div>
     </div>
   );
 }

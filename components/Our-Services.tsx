@@ -2,6 +2,7 @@
 
 import React from "react";
 import { DirectionAwareHover } from "./ui/direction-aware-hover";
+import { TextAnimate } from "./ui/text-animate";
 
 interface Service {
   title: string;
@@ -32,9 +33,16 @@ const OurServices: React.FC = () => {
     <div className="bg-greencolor">
       <div className="lg:max-w-[1440px] m-auto px-[20px] py-14">
         <div className="text-center">
-          <h3 className="text-[30px] font-rubik font-medium">OUR SERVICES</h3>
-          <h2 className="text-[40px] font-abel">Textile is What We Do</h2>
+          <h3 className="text-[30px] font-rubik font-medium">
+            <TextAnimate animation="slideRight" as="h3">
+              OUR SERVICES
+            </TextAnimate>
+          </h3>
+          <h2 className="text-[40px] font-abel"> 
+          Textile is What We Do
+           </h2>
           <p className="w-[70%] m-auto font-roboto">
+          <TextAnimate animation="fadeIn"  by="word">
             Ruia Fabrics is a legacy in textiles, rooted in India's rich history
             since 1952. From being a yarn merchant to a global fabric
             manufacturer, we've embraced change and innovation. We produce
@@ -42,6 +50,7 @@ const OurServices: React.FC = () => {
             domestic and international markets. Sustainability is at our core,
             collaborating with Aditya Birla Group to produce eco-friendly
             fabrics like LIVA and LIVA EcoVera.
+            </TextAnimate>
           </p>
         </div>
 
