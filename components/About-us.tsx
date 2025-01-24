@@ -53,7 +53,7 @@ const Aboutus = () => {
             className="w-full xl:w-[50%] flex flex-row justify-between items-end space-x-5 mb-8 lg:mb-0"
           >
             <Image
-              src="/Images/about-us1.jpg"
+              src="/images/about-us1.jpg"
               alt="About Us"
               className="w-full lg:w-[80%] m-auto border-[2px] rounded-[5px] rounded-b-none border-white"
               width={400}
@@ -61,7 +61,7 @@ const Aboutus = () => {
             />
             <div className="hidden lg:block absolute left-1/4 top-1/2 transform -translate-y-1/2">
               <Image
-                src="/Images/about-us1.jpg"
+                src="/images/about-us1.jpg"
                 alt="About Us"
                 className="w-full m-auto border-[2px] rounded-[5px] rounded-b-none border-white"
                 width={200}

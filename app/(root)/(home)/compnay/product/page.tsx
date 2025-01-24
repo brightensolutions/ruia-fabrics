@@ -24,8 +24,8 @@ const Product = () => {
     ],
     paragraphColor: "text-gray-700",
     images: {
-      main: "/Images/grey.webp",
-      overlay: "/Images/greyfabric2.jpg",
+      main: "/images/grey.webp",
+      overlay: "/images/greyfabric2.jpg",
     },
     connectUsLink: "/compnay/contact-us",
     sectioncolor: "bg-gradient-to-t to-creamwhite from-white",
@@ -58,7 +58,7 @@ const Product = () => {
     ],
     paragraphColor: "text-white/85",
     images: {
-      main: "/Images/valvet-fabric.jpg",
+      main: "/images/valvet-fabric.jpg",
     },
     connectUsLink: "/compnay/contact-us",
     bgcolor: "bg-greencolor",
@@ -87,8 +87,8 @@ const Product = () => {
     ],
     paragraphColor: "text-textblak",
     images: {
-      main: "/Images/Yarn-fabric.jpg",
-      overlay: "/Images/yarn-fabric-machine.jpg",
+      main: "/images/Yarn-fabric.jpg",
+      overlay: "/images/yarn-fabric-machine.jpg",
     },
     connectUsLink: "/compnay/contact-us",
   };
@@ -96,7 +96,7 @@ const Product = () => {
   return (
     <div>
       <ServicesSection
-        image="/Images/banner1.webp"
+        image="/images/banner1.webp"
         title="Our Products"
         description="Established in 1952, Ruia Fabrics has evolved into a global leader in high-quality velvet and viscose fabrics. With a strong history of innovation and excellence, we produce a wide range of fabrics, including viscose/rayon velvet, synthetic velvet and cotton velvet, that cater to a variety of applications."
         link={{ href: "/contact", label: "Get in Touch" }}
@@ -113,7 +113,7 @@ const Product = () => {
       <div
         className="relative bg-cover bg-center flex flex-col items-end justify-end h-[50vh] sm:h-[60vh] md:h-[70vh]"
         style={{
-          backgroundImage: `url('/Images/banner1.webp')`,
+          backgroundImage: `url('/images/banner1.webp')`,
           backgroundAttachment: "fixed",
         }}
       >

@@ -14,7 +14,7 @@ export default function CompanyInfo() {
       <div 
         className="relative h-[300px] md:h-[400px] bg-cover bg-center"
         style={{
-          backgroundImage: `url('/Images/about-company.jpg')`,
+          backgroundImage: `url('/images/about-company.jpg')`,
           backgroundPosition: 'center 25%'
         }}
       >

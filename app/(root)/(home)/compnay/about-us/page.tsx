@@ -10,7 +10,7 @@ const AboutusSection = () => {
     <>
       <div>
         <ServicesSection
-          image="/Images/banner1.webp"
+          image="/images/banner1.webp"
           title="About Us"
           description="Founded in 1952, Ruia Fabrics is a leader in textiles, specializing in high-quality velvet and viscose fabrics. With a legacy of innovation and sustainability, we proudly serve domestic and international markets, offering competitive, world-class products."
           link={{ href: "/contact", label: "Contact Us" }}

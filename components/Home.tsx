@@ -59,31 +59,31 @@ export function InfiniteMovingCardsDemo() {
 
 const testimonials = [
   {
-    imageUrl: "/Images/velvet fabrics.jpg",
+    imageUrl: "/images/velvet fabrics.jpg",
     altText: "Image 1",
     title: "Image 1 Title",
     description: "Description of Image 1",
   },
   {
-    imageUrl: "/Images/velvet fabrics (1).jpg",
+    imageUrl: "/images/velvet fabrics (1).jpg",
     altText: "Image 2",
     title: "Image 2 Title",
     description: "Description of Image 2",
   },
   {
-    imageUrl: "/Images/velvet fabrics.jpg",
+    imageUrl: "/images/velvet fabrics.jpg",
     altText: "Image 3",
     title: "Image 3 Title",
     description: "Description of Image 3",
   },
   {
-    imageUrl: "/Images/velvet fabrics (1).jpg",
+    imageUrl: "/images/velvet fabrics (1).jpg",
     altText: "Image 4",
     title: "Image 4 Title",
     description: "Description of Image 4",
   },
   {
-    imageUrl: "/Images/velvet fabrics.jpg",
+    imageUrl: "/images/velvet fabrics.jpg",
     altText: "Image 5",
     title: "Image 5 Title",
     description: "Description of Image 5",

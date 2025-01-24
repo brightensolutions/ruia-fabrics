@@ -9,7 +9,7 @@ const Quality = () => {
     <div
       className="bg-zinc-800 pt-11 inline-block w-[100%] py-24 bg-gradient-to-t to-white from-creamwhite relative"
       style={{
-        backgroundImage: `url('/Images/Colorful Playful Fabric.jpg')`,
+        backgroundImage: `url('/images/Colorful Playful Fabric.jpg')`,
         backgroundPosition: "center 25%",
         backgroundSize: "100% 100%",
         backgroundAttachment: "fixed",
@@ -79,7 +79,7 @@ const Quality = () => {
 
           <div className="md:w-[50%] w-[100%]">
             <Image
-              src="/Images/qual.webp"
+              src="/images/qual.webp"
               alt="About us"
               width={500}
               height={200}

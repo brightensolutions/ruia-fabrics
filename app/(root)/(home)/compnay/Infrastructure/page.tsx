@@ -16,7 +16,7 @@ const Infrastructure = () => {
     ],
     paragraphColor: "text-gray-700",
     images: {
-      main: "/Images/weaving-preparatory (1).webp",
+      main: "/images/weaving-preparatory (1).webp",
     },
     connectUsLink: "/company/contact-us",
   };
@@ -40,7 +40,7 @@ const Infrastructure = () => {
     ],
     paragraphColor: "text-gray-700",
     images: {
-      main: "/Images/infra-weaving.webp",
+      main: "/images/infra-weaving.webp",
     },
     connectUsLink: "/company/contact-us",
   };
@@ -49,7 +49,7 @@ const Infrastructure = () => {
     <div>
       <div>
         <ServicesSection
-          image="/Images/banner1.webp"
+          image="/images/banner1.webp"
           title="Infrastructure"
           description="Connect with Ruia Fabrics, a leader in textiles since 1952. Specializing in high-quality velvet and viscose fabrics, we’re here to assist you with your inquiries and provide world-class solutions. Reach out to us for any assistance or collaboration opportunities."
           link={{ href: "/contact", label: "Get in Touch" }}
@@ -58,7 +58,7 @@ const Infrastructure = () => {
 
       <div className="bg-gradient-to-t to-creamwhite pt-[45px] from-white">
         <Image
-          src="/Images/services-detail-img.jpg"
+          src="/images/services-detail-img.jpg"
           alt="fabric"
           width={800}
           height={800}

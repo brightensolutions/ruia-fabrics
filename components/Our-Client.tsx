@@ -7,37 +7,37 @@ const reviews = [
     name: "Jack",
     username: "@jack",
     body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: "/Images/logo.jpg",
+    img: "/images/logo.jpg",
   },
   {
     name: "Jill",
     username: "@jill",
     body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: "/Images/logo.jpg",
+    img: "/images/logo.jpg",
   },
   {
     name: "John",
     username: "@john",
     body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "/Images/logo.jpg",
+    img: "/images/logo.jpg",
   },
   {
     name: "Jane",
     username: "@jane",
     body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "/Images/logo.jpg",
+    img: "/images/logo.jpg",
   },
   {
     name: "Jenny",
     username: "@jenny",
     body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "/Images/logo.jpg",
+    img: "/images/logo.jpg",
   },
   {
     name: "James",
     username: "@james",
     body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "/Images/logo.jpg",
+    img: "/images/logo.jpg",
   },
 ];
 

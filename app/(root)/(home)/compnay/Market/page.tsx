@@ -26,7 +26,7 @@ const Market = () => {
     ],
     paragraphColor: "text-gray-700",
     images: {
-      main: "/Images/infra-weaving.webp",
+      main: "/images/infra-weaving.webp",
     },
     connectUsLink: "/company/contact-us",
   };
@@ -59,7 +59,7 @@ const Market = () => {
     ],
     paragraphColor: "text-gray-700",
     images: {
-      main: "/Images/infra-weaving.webp",
+      main: "/images/infra-weaving.webp",
     },
     connectUsLink: "/company/contact-us", 
     
@@ -69,7 +69,7 @@ const Market = () => {
     <div>
       <div>
         <ServicesSection
-          image="/Images/banner1.webp"
+          image="/images/banner1.webp"
           title="Market"
           description="Connect with Ruia Fabrics, a leader in textiles since 1952. Specializing in high-quality velvet and viscose fabrics, we’re here to assist you with your inquiries and provide world-class solutions. Reach out to us for any assistance or collaboration opportunities."
           link={{ href: "/contact", label: "Get in Touch" }}

@@ -15,17 +15,17 @@ const OurServices: React.FC = () => {
     {
       title: "Spinning Division",
       description: "$1299 / night",
-      imageUrl: "/Images/Spinning.png",
+      imageUrl: "/images/Spinning.png",
     },
     {
       title: "Sizing Division",
       description: "$1599 / night",
-      imageUrl: "/Images/weaving-preparatory.webp",
+      imageUrl: "/images/weaving-preparatory.webp",
     },
     {
       title: "Weaving Division",
       description: "$899 / night",
-      imageUrl: "/Images/infra-weaving.webp",
+      imageUrl: "/images/infra-weaving.webp",
     },
   ];
 
