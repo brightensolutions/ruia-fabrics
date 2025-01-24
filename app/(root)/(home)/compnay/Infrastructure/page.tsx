@@ -62,7 +62,7 @@ const Infrastructure = () => {
           alt="fabric"
           width={800}
           height={800}
-          className="object-cover m-auto w-[50%] rounded-t-[5px]"
+          className="object-cover md:min-h-full md:min-w-[80%] min-w-[90%] min-h-[350px] m-auto w-[50%] rounded-t-[5px]"
         />
       </div>
 

@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
+
 import React from "react";
 import { MdAddCall, MdEmail, MdLocationOn } from "react-icons/md";
 const ContactUs = () => {
@@ -47,7 +46,7 @@ const ContactUs = () => {
           />
         </div>
 
-        <div className="bg-greencolor w-[70%] m-auto border rounded-[2px] mt-20">
+        <div className="bg-greencolor md:w-[70%] w-[100%] m-auto border rounded-[2px] mt-20">
 
           <div className="bg-gradient-to-l to-greencolor/45 from-greencolor p-4">
             <div className="grid md:grid-cols-2 grid-cols-1 my-3 gap-[15px]">

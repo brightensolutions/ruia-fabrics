@@ -41,7 +41,7 @@ const OurServices: React.FC = () => {
           <h2 className="text-[40px] font-abel"> 
           Textile is What We Do
            </h2>
-          <p className="w-[70%] m-auto font-roboto">
+          <p className="md:w-[70%] w-[100%] m-auto font-roboto">
           <TextAnimate animation="fadeIn"  by="word">
             Ruia Fabrics is a legacy in textiles, rooted in India's rich history
             since 1952. From being a yarn merchant to a global fabric
@@ -55,15 +55,14 @@ const OurServices: React.FC = () => {
         </div>
 
         <div className="pb-11">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-16  ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:mt-16 mt-3  ">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="relative h-[20rem] flex items-center justify-center "
+                className="relative m-auto"
               >
                 <DirectionAwareHover imageUrl={service.imageUrl}>
                   <p className="font-bold text-xl">{service.title}</p>
-                  {/* <p className="font-normal text-sm">{service.description}</p> */}
                 </DirectionAwareHover>
               </div>
             ))}

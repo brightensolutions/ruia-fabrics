@@ -17,8 +17,8 @@ const Quality = () => {
     >
       <div className="absolute inset-0 bg-gradient-to-t to-greencolor from-transparent"></div>
       <div className="lg:max-w-[1440px] m-auto px-[20px] relative z-20">
-        <div className="flex flex-row">
-          <div className="w-[50%]">
+        <div className="flex md:flex-row flex-col gap-y-12">
+          <div className="md:w-[50%] w-[100%]">
             <h2 className="text-[25px] font-rubik text-white">
             Manufacturing Excellence
             </h2>
@@ -33,7 +33,7 @@ const Quality = () => {
               precision, and dedication to quality.
             </p>
 
-            <div className="grid grid-cols-2 mt-[15px] gap-[15px]">
+            <div className="grid md:grid-cols-2 grid-cols-1 mt-[15px] gap-[15px]">
               <div className="bg-greencolor p-5 rounded-xl">
                 <h1 className="font-rubik text-[22px] font-medium text-white">
                   INNOVATIVE TECHNOLOGY
@@ -77,7 +77,7 @@ const Quality = () => {
             </div>
           </div>
 
-          <div className="w-[50%]">
+          <div className="md:w-[50%] w-[100%]">
             <Image
               src="/Images/qual.webp"
               alt="About us"

@@ -28,11 +28,11 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
         backgroundAttachment: "fixed",
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-t to-zinc-900/40 from-creamwhite"></div>
+      <div className="absolute inset-0 bg-gradient-to-t md:to-zinc-900/40 to-creamwhite/60 from-creamwhite"></div>
 
       <div className="relative md:max-w-[1440px] m-auto px-[20px] z-30 ">
         <div className="flex flex-col md:items-center items-end md:justify-center justify-end">
-          <h1 className="md:text-[105px] text-[60px] font-rubik font-bold text-darkgreen">
+          <h1 className="md:text-[105px] text-[45px] font-rubik font-bold text-darkgreen">
             <TextAnimate animation="blurInUp" by="character" as="p">
               {title}
             </TextAnimate>

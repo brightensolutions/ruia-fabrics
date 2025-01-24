@@ -7,10 +7,10 @@ export function InfiniteMovingCardsDemo() {
   return (
     <div className=" relative bg-gradient-to-t to-white from-creamwhite">
       <div className="md:w-[80%] w-[100%]  md:text-center text-right relative z-10 min-h-screen  lg:max-w-[1440px] m-auto px-[20px] md:pt-24 pt-24 ">
-        <h1 className="md:text-[75px] text-[65px] font-abel text-bluecolor font-bold mb-[25px] flex md:flex-row flex-col gap-[5px] items-center justify-center">
-          Welcome to{" "}
+        <h1 className="md:text-[75px] text-[65px] font-abel text-bluecolor font-bold mb-[25px] flex md:flex-row flex-col gap-[5px] md:items-center items-end justify-center">
+          Welcome to
           <span className="text-greencolor font-bold font-roboto">
-            <TextAnimate animation="slideLeft" by="character">
+            <TextAnimate animation="slideLeft" by="character" className="md:text-[75px] text-[35px] text-right">
               Ruia Fabrics
             </TextAnimate>
           </span>

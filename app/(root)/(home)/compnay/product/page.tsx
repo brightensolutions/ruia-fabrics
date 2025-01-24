@@ -74,7 +74,7 @@ const Product = () => {
       },
       {
         paragraph:
-          "We are one of the country's leading producers of value-added yarn.",
+          "We are one of the country&apos;s leading producers of value-added yarn.",
       },
       {
         paragraph:
@@ -98,7 +98,7 @@ const Product = () => {
       <ServicesSection
         image="/Images/banner1.webp"
         title="Our Products"
-        description="Ruia Fabrics, founded in 1952, has evolved into a global leader in high-quality velvet and viscose fabrics. With a robust history of innovation and excellence, we produce a wide range of fabrics, including viscose/rayon velvet, synthetic velvet, and cotton velvet, catering to diverse applications. Our sustainable practices and collaboration with the Aditya Birla Group for eco-friendly viscose fabrics reflect our commitment to a greener future. At Ruia Fabrics, we pride ourselves on delivering world-class quality, combining expertise, precision, and ethical practices to meet both domestic and international market demands."
+        description="Established in 1952, Ruia Fabrics has evolved into a global leader in high-quality velvet and viscose fabrics. With a strong history of innovation and excellence, we produce a wide range of fabrics, including viscose/rayon velvet, synthetic velvet and cotton velvet, that cater to a variety of applications."
         link={{ href: "/contact", label: "Get in Touch" }}
       />
 
@@ -138,7 +138,7 @@ const Product = () => {
           </p>
           <p className="mt-3 sm:mt-4 md:mt-[15px] text-base sm:text-lg md:text-xl font-abel">
             Our experienced professionals quality test the Printed Fabrics
-            against a variety of parameters based on the client's needs and
+            against a variety of parameters based on the client&apos;s needs and
             preferences.
           </p>
         </div>

@@ -68,7 +68,7 @@ const ReviewCard = ({
 
 export function MarqueeDemo() {
   return (
-    <div className="relative bg-greencolor flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg  ">
+    <div className="relative bg-greencolor flex pt-6 w-full flex-col items-center justify-center overflow-hidden rounded-lg  ">
         <div>
             <h2 className="text-[35px] font-rubik mb-12">OUR CLIENT</h2>
         </div>

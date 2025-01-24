@@ -37,12 +37,7 @@ const Footer: React.FC = () => {
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <Link href="/" className="flex items-center">
-              <Image
-                src="/Images/logo.jpg"
-                width={200}
-                height={200}
-                alt="FlowBite Logo"
-              />
+            <Image src="/images/Ruia Fabrics Pvt Ltd Logo-01.png" alt="logo" width={200} height={200}/> 
             </Link>
           </div>
           <div className="grid grid-cols-1 gap-8 sm:gap-6 sm:grid-cols-3">

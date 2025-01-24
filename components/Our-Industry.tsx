@@ -24,7 +24,7 @@ const OurIndustry: React.FC = () => {
             </h1>
           </div>
 
-          <div className="flex flex-col md:flex-wrap md:justify-end  md:gap-14 md:w-[70%] gap-[35px] w-[100%]">
+          <div className="flex flex-col md:flex-row md:justify-end  md:gap-14 md:w-[70%] gap-[35px] w-[100%]">
             {industryData.map((item, index) => (
               <div key={index} className="text-center">
                 <h2 className="text-[55px] font-abel text-textblak  font-extrabold">

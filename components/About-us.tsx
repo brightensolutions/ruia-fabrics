@@ -47,10 +47,10 @@ const Aboutus = () => {
       className="bg-gradient-to-t to-creamwhite pt-[45px] from-white"
     >
       <div className="lg:max-w-[1440px] px-[20px] m-auto py-[50px]">
-        <div className="flex flex-col lg:flex-row my-[50px] lg:my-[100px] relative">
+        <div className="flex flex-col xl:flex-row my-[50px] lg:my-[100px] relative">
           <motion.div
             variants={itemVariants}
-            className="w-full lg:w-[50%] flex flex-row justify-between items-end space-x-5 mb-8 lg:mb-0"
+            className="w-full xl:w-[50%] flex flex-row justify-between items-end space-x-5 mb-8 lg:mb-0"
           >
             <Image
               src="/Images/about-us1.jpg"
@@ -70,7 +70,7 @@ const Aboutus = () => {
             </div>
           </motion.div>
 
-          <div  className="w-full lg:w-[50%] bg-greycolor p-5 rounded-[5px]">
+          <div  className="w-full xl:w-[50%] bg-greycolor p-5 rounded-[5px]">
             <div className="p-5 border-lightgreen border-[1px]">
               <h1  className="font-rubik text-[30px] font-bold text-white mb-5">
                 <TextAnimate animation="blurIn" as="h1">

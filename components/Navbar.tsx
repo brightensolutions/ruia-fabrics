@@ -5,6 +5,9 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
+import Image from "next/image";
+import { CiMenuBurger } from "react-icons/ci";
+import { MdCancel } from "react-icons/md";
 
 interface MenuLink {
   label: string;
@@ -79,7 +82,12 @@ function Navbar({ className }: NavbarProps) {
           <div className="flex w-[100%] flex-row justify-between items-center  md:max-w-[1440px] m-auto px-[20px] ">
             <div>
               <Link href="/" className="font-abel text-white text-[25px] ">
-                Logo
+                <Image
+                  src="/images/ruia fab.png"
+                  alt="logo"
+                  width={150}
+                  height={150}
+                />
               </Link>
             </div>
             <div className="flex flex-row space-x-9">
@@ -112,30 +120,43 @@ function Navbar({ className }: NavbarProps) {
       <div className="bg-darkgreen px-[20px] md:hidden block py-[10px]">
         <div className="flex w-[100%] items-center justify-between">
           <Link href="/" className="text-[45px]">
-            Logo
+            <Image
+              src="/images/ruia fab.png"
+              alt="logo"
+              width={150}
+              height={150}
+            />
           </Link>
-          <button onClick={toggleDrawer}>Show</button>
+          <button onClick={toggleDrawer} className="text-[35px]">
+            <CiMenuBurger />
+          </button>
         </div>
         <Drawer
-        open={isOpen}
-        onClose={toggleDrawer}
-        direction="right"
-        className="bg-white w-[80%] h-full"
-      >
-        <div className="p-4">
-          <button onClick={toggleDrawer} className="text-black mb-4">
-            Close
-          </button>
-          <ul className="space-y-4">
-            {menuData.map((item: MenuData) => (
-              <li key={item.id} className="text-lg text-darkgreen font-rubik font-semibold">
-                <Link  href={item.href || "#"} onClick={toggleDrawer}>
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-6">
+          open={isOpen}
+          onClose={toggleDrawer}
+          direction="right"
+          className="bg-white w-[80%] h-full relative"
+        >
+          <div className="p-4">
+            <button
+              onClick={toggleDrawer}
+              className="text-black mb-4 text-end absolute right-[5px]"
+            >
+              <MdCancel className="text-[35px] text-right " />
+            </button>
+            <ul className="space-y-4 mt-12">
+              {menuData.map((item: MenuData) => (
+                <li
+                  key={item.id}
+                  className="text-lg text-darkgreen font-rubik font-semibold"
+                >
+                  <Link href={item.href || "#"} onClick={toggleDrawer}>
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-6">
               <Link
                 href="/compnay/contact-us"
                 className="inline-block text-[18px] bg-greycolor text-white   py-2 px-5 rounded-[5px] font-rubik"
@@ -143,8 +164,8 @@ function Navbar({ className }: NavbarProps) {
                 Contact Us
               </Link>
             </div>
-        </div>
-      </Drawer>
+          </div>
+        </Drawer>
       </div>
     </div>
   );

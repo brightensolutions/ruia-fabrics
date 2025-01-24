@@ -48,7 +48,7 @@ const WhyChoode = () => {
     >
       <div className="md:max-w-[1440px] m-auto px-[20px] relative z-20">
         <div className="grid md:grid-cols-2 grid-cols-1 gap-[15px] items-center">
-          <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+          <div className="grid md:grid-cols-2 grid-cols-2 gap-4">
             <AnimatedCircularProgressBar
               max={100}
               min={0}
@@ -86,7 +86,7 @@ const WhyChoode = () => {
             />
           </div>
 
-          <div>
+          <div className="md:mt-0 mt-20">
             <h2 className="font-abel text-[25px] text-greencolor font-bold mb-[15px]">
               <TextAnimate animation="blurInUp" by="word" as="p">
                 WHY CHOOSE RUIA
