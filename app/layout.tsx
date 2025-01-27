@@ -44,6 +44,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${rubik.variable} ${abel.variable} ${roboto.variable} antialiased`}
+        suppressHydrationWarning={false}
       >
         {children}
       </body>

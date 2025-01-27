@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-darkgreen dark:bg-gray-900 border-t-[2px] border-darkgreen pt-[30px]">
+    <footer className="bg-darkgreen dark:bg-gray-900 border-t-[2px] border-darkgreen pt-[20px] pb-[10px] sm:pt-[30px] sm:pb-[20px]">
       <div className="mx-auto w-full md:max-w-[1440px] px-[20px] py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
@@ -39,6 +39,7 @@ const Footer: React.FC = () => {
               />
             </Link>
           </div>
+
           <div className="grid grid-cols-1 gap-8 sm:gap-6 sm:grid-cols-2">
             {footerData.map((section, index) => (
               <div key={index}>
@@ -58,28 +59,32 @@ const Footer: React.FC = () => {
             ))}
           </div>
         </div>
+
+      
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-white sm:text-center dark:text-gray-400">
-            © 2025{" "}
-            <Link
-              href="https://brightensolutions.com/"
-              className="hover:underline"
-            >
-              brightensolutions™
-            </Link>
-            . All Rights Reserved.
-          </span>
-          <div className="flex mt-4 sm:justify-center sm:mt-0">
-            <FloatingDockDemo/>
-          </div>
-        </div>
+      
+        <span className="text-sm text-white sm:text-center dark:text-gray-400">
+          © 2025{" "}
+          <Link
+            href="https://brightensolutions.com/"
+            className="hover:underline"
+          >
+            brightensolutions™
+          </Link>
+          . All Rights Reserved.
+         
+        </span>
+        <span className="hidden md:flex ">
+          <FloatingDockDemo />
+        </span>
+
+      </div>
       </div>
 
-      <div>
-           <PulsingWhatsApp/>
+      <div className="fixed z-[999] bottom-4 right-4">
+        <PulsingWhatsApp />
       </div>
-
     </footer>
   );
 };
