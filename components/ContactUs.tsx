@@ -32,17 +32,17 @@ const ContactUs = () => {
           <ContactCard
             icon={<MdAddCall className="h-8 w-8 text-greencolor" />}
             title="Phone"
-            content="+91 00000 00000"
+            content="+91 7021418483 "
           />
           <ContactCard
             icon={<MdEmail className="h-8 w-8 text-greencolor" />}
             title="Email"
-            content="info@ruiafabrics.com"
+            content="admin@ruiafabrics.com"
           />
           <ContactCard
             icon={<MdLocationOn className="h-8 w-8 text-greencolor" />}
             title="Address"
-            content="123 Textile Street, Fabric City, 400001, India"
+            content="187/A-2 Shah & Nahar Ind. Est Lower Parel Mumbai - 400013 (India)"
           />
         </div>
 
