@@ -17,7 +17,7 @@ const AboutusSection = () => {
         />
       </div>
 
-      <div className="bg-gradient-to-t  to-zinc-900  from-zinc-900/45">
+      <div >
         <Aboutus/>
       </div>
 

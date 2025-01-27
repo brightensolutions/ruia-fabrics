@@ -24,8 +24,8 @@ const ContactUs = () => {
   return (
     <div className="bg-gradient-to-t to-creamwhite pt-[45px] from-white pb-[45px]">
       <div className="lg:max-w-[1440px] p-[20px] m-auto">
-        <div className="text-center text-textblak mb-8 text-[40px] font-rubik">
-          <h1>Get in Touch</h1>
+        <div className="font-rubik text-[30px] font-bold text-darkgreen text-center">
+          <h1>Get In Touch</h1>
         </div>
 
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

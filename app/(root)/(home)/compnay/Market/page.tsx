@@ -79,7 +79,7 @@ const Market = () => {
       <div className="bg-gradient-to-t to-creamwhite pt-[45px] from-white">
         <section className="container mx-auto px-4 py-12">
           <div className="mb-12">
-            <h2 className="text-darkgreen text-3xl font-bold mb-4">
+            <h2 className="font-rubik text-[30px] font-bold text-darkgreen">
               
                <TextAnimate animation="blurInUp" by="character" as="p">Who We Are</TextAnimate>
               </h2>
@@ -92,9 +92,9 @@ const Market = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12 ">
             <div className="text-center p-6 border rounded-lg bg-white">
               <div className="flex justify-center mb-4">
-                <Building2 className="w-12 h-12 text-emerald-600" />
+                <Building2 className="w-12 h-12 text-greencolor" />
               </div>
-              <h3 className="text-[#1B2B65] text-2xl font-bold">90 Lakhs</h3>
+              <h3 className="font-rubik text-[30px] font-bold text-darkgreen">90 Lakhs</h3>
               <div className="uppercase text-sm text-gray-600">
                 <div>WOVEN FABRICS</div>
                 <div>METRES / MONTH</div>
@@ -102,9 +102,9 @@ const Market = () => {
             </div>
             <div className="text-center p-6 border rounded-lg bg-white">
               <div className="flex justify-center mb-4">
-                <Factory className="w-12 h-12 text-emerald-600" />
+                <Factory className="w-12 h-12 text-greencolor" />
               </div>
-              <h3 className="text-[#1B2B65] text-2xl font-bold">6 Tons</h3>
+              <h3 className="font-rubik text-[30px] font-bold text-darkgreen">6 Tons</h3>
               <div className="uppercase text-sm text-gray-600">
                 <div>KNITTED FABRICS</div>
                 <div>TONS / DAY</div>
@@ -116,7 +116,7 @@ const Market = () => {
             {/* Mission Card */}
             <Card className="bg-darkgreen text-white p-8">
               <CardContent className="p-0">
-                <h3 className="text-2xl font-bold mb-6"> <TextAnimate animation="blurInDown" by="character" as="p">Our Mission </TextAnimate></h3>
+                <h3 className="font-rubik text-[30px] font-bold text-white"> <TextAnimate animation="blurInDown" by="character" as="p">Our Mission </TextAnimate></h3>
                 <div className="space-y-6">
                   <p>
                     V.P. Tex has been best known for quality for more than three
@@ -160,16 +160,16 @@ const Market = () => {
               {/* Experience Card */}
               <Card>
                 <CardContent className="p-8 bg-white">
-                  <div className="flex items-end gap-4 ">
-                    <div>
-                      <span className="text-emerald-600 text-6xl font-bold">
+                  <div className="flex gap-2 items-center ">
+                    <div className="flex items-center">
+                      <span className="font-rubik text-[55px] font-bold text-darkgreen">
                         25
                       </span>
                       <span className="text-[#1B2B65] text-2xl ml-2">
                         Years
                       </span>
                     </div>
-                    <p className="text-gray-600 mb-2">Industries Experience</p>
+                    <p className="text-gray-600  text-[22px]">Industries Experience</p>
                   </div>
                 </CardContent>
               </Card>
@@ -178,8 +178,8 @@ const Market = () => {
               <Card>
                 <CardContent className="p-8 bg-white">
                   <div className="flex items-center gap-4 mb-4">
-                    <Factory className="w-6 h-6 text-emerald-600" />
-                    <h4 className="text-[#1B2B65] text-xl font-bold">
+                    <Factory className="w-6 h-6 text-greencolor" />
+                    <h4 className="font-rubik text-[30px] font-bold text-darkgreen">
                       Production
                     </h4>
                   </div>
@@ -194,8 +194,8 @@ const Market = () => {
               <Card>
                 <CardContent className="p-8 bg-white">
                   <div className="flex items-center gap-4 mb-4">
-                    <Users className="w-6 h-6 text-emerald-600" />
-                    <h4 className="text-[#1B2B65] text-xl font-bold">
+                    <Users className="w-6 h-6 text-greencolor" />
+                    <h4 className="font-rubik text-[30px] font-bold text-darkgreen">
                       Professional Team
                     </h4>
                   </div>

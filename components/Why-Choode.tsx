@@ -5,6 +5,7 @@ import { FaAngleRight } from "react-icons/fa";
 import Link from "next/link";
 import { TextAnimate } from "./ui/text-animate";
 import { motion, useAnimation, useInView } from "framer-motion";
+import Image from "next/image";
 
 const WhyChoode = () => {
   const controls = useAnimation();
@@ -44,55 +45,21 @@ const WhyChoode = () => {
       initial="hidden"
       animate={controls}
       variants={containerVariants}
-      className="bg-zinc-800 inline-block w-[100%] py-24 bg-gradient-to-t to-creamwhite from-white relative"
+      className="bg-zinc-800 inline-block w-[100%] py-12 bg-gradient-to-t to-creamwhite from-white "
     >
-      <div className="md:max-w-[1440px] m-auto px-[20px] relative z-20">
+      <div className="md:max-w-[1440px] m-auto px-[20px]  z-20">
         <div className="grid md:grid-cols-2 grid-cols-1 gap-[15px] items-center">
-          <div className="grid md:grid-cols-2 grid-cols-2 gap-4">
-            <AnimatedCircularProgressBar
-              max={100}
-              min={0}
-              value={90}
-              gaugePrimaryColor="#007443"
-              gaugeSecondaryColor="#18181B"
-              name="Factory Experience"
-            />
-
-            <AnimatedCircularProgressBar
-              max={100}
-              min={0}
-              value={98}
-              gaugePrimaryColor="#007443"
-              gaugeSecondaryColor="#18181B"
-              name="Textile Material"
-            />
-
-            <AnimatedCircularProgressBar
-              max={100}
-              min={0}
-              value={92}
-              gaugePrimaryColor="#007443"
-              gaugeSecondaryColor="#18181B"
-              name="Worker Skills"
-            />
-
-            <AnimatedCircularProgressBar
-              max={100}
-              min={0}
-              value={93}
-              gaugePrimaryColor="#007443"
-              gaugeSecondaryColor="#18181B"
-              name="Machinery & Equipment"
-            />
+          <div className="relative">
+            <Image src="/images/whychooesus.jpg" alt="images" width={500} height={500} className="relative" style={{ width:"100%" }} />
+            <div className="absolute inset-0 bg-gradient-to-r  to-white from-transparent"></div>
           </div>
-
           <div className="md:mt-0 mt-20">
-            <h2 className="font-abel text-[25px] text-greencolor font-bold mb-[15px]">
+            <h2 className="font-rubik text-[30px] font-bold  text-greencolor mb-[15px]">
               <TextAnimate animation="blurInUp" by="word" as="p">
                 WHY CHOOSE RUIA
               </TextAnimate>
             </h2>
-            <p className="text-[18px] font-rubik mb-[10px] text-greencolor/80">
+            <p className="font-abel text-[40px] font-normal  text-greencolor/80">
               <TextAnimate animation="blurInUp" by="line" as="p">
                 Unbeatable Prices, Exceptional Quality
               </TextAnimate>
@@ -127,16 +94,16 @@ const WhyChoode = () => {
             <div className="mt-16 flex flex-row gap-[15px]">
               <Link
                 href="/about"
-                className="bg-zinc-900 px-5 py-4 flex flex-row items-center gap-[5px] font-rubik w-fit rounded-[5px]"
+                className="bg-darkgreen text-white px-5 py-4 flex flex-row items-center gap-[5px] font-rubik w-fit rounded-[5px]"
               >
-                Learn More{" "}
+                Learn More
                 <span>
                   <FaAngleRight />
                 </span>
               </Link>
               <Link
                 href="/contact"
-                className="bg-zinc-900 px-5 py-4 flex flex-row items-center gap-[5px] font-rubik w-fit rounded-[5px]"
+                className="bg-darkgreen text-white px-5 py-4 flex flex-row items-center gap-[5px] font-rubik w-fit rounded-[5px]"
               >
                 Contact Us{" "}
                 <span>

@@ -44,9 +44,9 @@ const Aboutus = () => {
       initial="hidden"
       animate={controls}
       variants={containerVariants}
-      className="bg-gradient-to-t to-creamwhite pt-[45px] from-white"
+      className="bg-white"
     >
-      <div className="lg:max-w-[1440px] px-[20px] m-auto py-[50px]">
+      <div className="lg:max-w-[1440px] px-[20px] m-auto ">
         <div className="flex flex-col xl:flex-row my-[50px] lg:my-[100px] relative">
           <motion.div
             variants={itemVariants}
@@ -71,7 +71,7 @@ const Aboutus = () => {
           </motion.div>
 
           <div  className="w-full xl:w-[50%] bg-greycolor p-5 rounded-[5px]">
-            <div className="p-5 border-lightgreen border-[1px]">
+            <div className="p-5 border-darkgreen border-[1px]">
               <h1  className="font-rubik text-[30px] font-bold text-white mb-5">
                 <TextAnimate animation="blurIn" as="h1">
                   About Us

@@ -19,7 +19,7 @@ const OurIndustry: React.FC = () => {
       <div className="md:max-w-[1440px] m-auto px-[20px] py-14 ">
         <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-0">
           <div className="md:w-[30%] w-[100%]">
-            <h1 className="text-[45px] font-bold text-textblak font-rubik">
+            <h1 className="font-rubik text-[40px] font-bold text-darkgreen">
               Our Industry In Numbers
             </h1>
           </div>
@@ -31,11 +31,11 @@ const OurIndustry: React.FC = () => {
                   {" "}
                   <NumberTicker
                    value={parseInt(item.number.replace(/\D/g, ''), 10)}
-                    className="whitespace-pre-wrap text-8xl font-medium tracking-tighter text-black dark:text-white"
+                    className="whitespace-pre-wrap text-8xl font-abel tracking-tighter text-darkgreen dark:text-white"
                   />
                   <span>+</span>
                 </h2>
-                <p className="text-lg  font-rubik text-textblak ">
+                <p className="text-[18px]  font-rubik text-textblak ">
                   {item.label}
                 </p>
               </div>

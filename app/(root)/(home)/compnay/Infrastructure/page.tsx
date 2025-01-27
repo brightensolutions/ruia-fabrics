@@ -67,16 +67,16 @@ const Infrastructure = () => {
       </div>
 
       <div className="lg:max-w-[1440px] m-auto px-[20px]">
-        <section className="my-20">
-          <h4 className="text-[18px] font-rubik text-greencolor font-bold">
+        <section className="mt-10">
+          <h4 className="font-rubik text-[30px] font-bold text-darkgreen">
             Infrastructure
           </h4>
-          <h2 className="text-[45px] font-abel font-bold">Spinning</h2>
-          <p className="text-[25px] font-abel">
+          <h2 className="ont-abel text-[40px] font-normal text-greycolor">Spinning</h2>
+          <p className="text-[25px] font-abel text-textblak">
             We stand committed to the business values and ethics in every
             product we turn out!
           </p>
-          <p className="text-[25px] font-abel">
+          <p className="text-[25px] font-abel text-textblak">
             Our spinning division produces 160 tons of yarn daily through
             1,30,000 spindles, providing a diverse range of yarns.
           </p>
@@ -89,7 +89,7 @@ const Infrastructure = () => {
 
       <section className="bg-creamwhite py-10">
         <div className="lg:max-w-[1440px] m-auto px-[20px]">
-          <h2 className="text-[40px] font-abel font-bold text-textblak mb-5">
+          <h2 className="font-rubik text-[30px] font-bold text-darkgreen">
             About Ruia Fabrics
           </h2>
           <p className="text-[18px] font-rubik text-gray-700 leading-7">
@@ -112,7 +112,7 @@ const Infrastructure = () => {
 
       <section className="bg-white py-10">
         <div className="lg:max-w-[1440px] m-auto px-[20px]">
-          <h2 className="text-[40px] font-abel font-bold text-textblak mb-5">
+          <h2 className="font-rubik text-[30px] font-bold text-darkgreen">
             The Klassiq Silk Mills
           </h2>
           <p className="text-[18px] font-rubik text-gray-700 leading-7">

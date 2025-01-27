@@ -6,12 +6,11 @@ import { TextAnimate } from "./ui/text-animate";
 export function InfiniteMovingCardsDemo() {
   return (
     <div className=" relative bg-gradient-to-t to-white from-creamwhite">
-      <div className="md:w-[80%] w-[100%]  md:text-center text-right relative z-10 min-h-screen  lg:max-w-[1440px] m-auto px-[20px] md:pt-24 pt-24 ">
-        <h1 className="md:text-[75px] text-[65px] font-abel text-bluecolor font-bold mb-[25px] flex md:flex-row flex-col gap-[5px] md:items-center items-end justify-center">
-          Welcome to
+      <div className="md:w-[80%] w-[100%]  md:text-center text-right relative z-10 min-h-screen  lg:max-w-[1440px] m-auto px-[20px] md:pt-40 pt-24 ">
+        <h1 className="md:text-[75px] text-[45px] font-abel text-bluecolor font-bold mb-[25px] ">
           <span className="text-greencolor font-bold font-roboto">
-            <TextAnimate animation="slideLeft" by="character" className="md:text-[75px] text-[35px] text-right">
-              Ruia Fabrics
+            <TextAnimate animation="slideLeft" by="word">
+              Welcome to Ruia Fabrics
             </TextAnimate>
           </span>
         </h1>
@@ -42,17 +41,16 @@ export function InfiniteMovingCardsDemo() {
             Contact Us
           </Link>
         </div>
-        <div className="w-[100%]">
-        <div className="rounded-md flex flex-col antialiased bg-transparent dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-          <InfiniteMovingCards
-            items={testimonials}
-            direction="right"
-            speed="normal"
-          />
+        <div className="w-[100%] mt-20">
+          <div className="rounded-md flex flex-col antialiased bg-transparent dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+            <InfiniteMovingCards
+              items={testimonials}
+              direction="right"
+              speed="normal"
+            />
+          </div>
         </div>
       </div>
-      </div>
-      
     </div>
   );
 }

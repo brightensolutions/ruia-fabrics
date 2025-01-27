@@ -119,8 +119,8 @@ const Product = () => {
       >
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/70 to-zinc-900/70"></div>
         <div className="bg-white text-black relative z-10 w-full md:w-[70%] lg:w-[60%] xl:w-[50%] p-6 md:p-8 lg:p-11 md:mr-6 lg:mr-11">
-          <h2 className="font-abel text-base sm:text-lg">Products</h2>
-          <h4 className="font-rubik text-xl sm:text-2xl md:text-[25px] text-greencolor">
+          <h2 className="font-rubik text-[30px] font-bold text-darkgreen">Products</h2>
+          <h4 className="font-abel text-[40px] font-normal text-greencolor">
             Processed Fabric
           </h4>
           <p className="mt-3 sm:mt-4 md:mt-[15px] text-base sm:text-lg md:text-xl font-abel">

@@ -25,7 +25,7 @@ export default function AnimatedCircularProgressBar({
 
   return (
     <div
-      className={cn("relative size-40 text-2xl font-semibold mt-[50px]", className)}
+      className={cn("relative size-40 text-2xl font-semibold inline-blocki", className)}
       style={
         {
           "--circle-size": "100px",

@@ -8,7 +8,7 @@ body {
 
 @layer base {
   :root {
-    --background: 104, 52%, 32%;
+    --background: 0, 0%, 100%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
@@ -54,7 +54,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #007443; /* Scrollbar color */
+  background-color: #112D4E; /* Scrollbar color */
   border-radius: 10px; /* Smooth rounded edges */
   border: 2px solid #f1f1f1; /* Optional padding-like effect */
 }

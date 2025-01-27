@@ -33,15 +33,15 @@ const OurServices: React.FC = () => {
     <div className="bg-greencolor">
       <div className="lg:max-w-[1440px] m-auto px-[20px] py-14">
         <div className="text-center">
-          <h3 className="text-[30px] font-rubik font-medium">
+          <h3 className="font-rubik text-[30px] font-bold text-white">
             <TextAnimate animation="slideRight" as="h3">
               OUR SERVICES
             </TextAnimate>
           </h3>
-          <h2 className="text-[40px] font-abel"> 
+          <h2 className="font-abel text-[40px] font-normal text-white"> 
           Textile is What We Do
            </h2>
-          <p className="md:w-[70%] w-[100%] m-auto font-roboto">
+          <p className="md:w-[70%] w-[100%] m-auto font-roboto text-white">
           <TextAnimate animation="fadeIn"  by="word">
             Ruia Fabrics is a legacy in textiles, rooted in India's rich history
             since 1952. From being a yarn merchant to a global fabric

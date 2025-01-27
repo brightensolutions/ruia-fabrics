@@ -7,28 +7,22 @@ import { TextAnimate } from "./ui/text-animate";
 const Quality = () => {
   return (
     <div
-      className="bg-zinc-800 pt-11 inline-block w-[100%] py-24 bg-gradient-to-t to-white from-creamwhite relative"
-      style={{
-        backgroundImage: `url('/images/Colorful Playful Fabric.jpg')`,
-        backgroundPosition: "center 25%",
-        backgroundSize: "100% 100%",
-        backgroundAttachment: "fixed",
-      }}
+      className="bg-zinc-800 pt-11 inline-block w-[100%] py-24 bg-gradient-to-t to-white from-white relative"
     >
       <div className="absolute inset-0 bg-gradient-to-t to-greencolor from-transparent"></div>
       <div className="lg:max-w-[1440px] m-auto px-[20px] relative z-20">
         <div className="flex md:flex-row flex-col gap-y-12">
           <div className="md:w-[50%] w-[100%]">
-            <h2 className="text-[25px] font-rubik text-white">
+            <h2 className="font-rubik text-[30px] font-bold text-white">
             Manufacturing Excellence
             </h2>
-            <h3 className="text-[45px] font-abel my-2 text-white/80">
+            <h3 className="font-abel text-[40px] font-normal text-white">
             <TextAnimate animation="blurInUp" by="word" as="p">
             Crafting Excellence, One Product at a Time
               </TextAnimate>
              
             </h3>
-            <p className="text-[18px] font-roboto text-white/80">
+            <p className="text-[18px] font-roboto text-white/80 mt-1">
               We deliver world-class manufacturing solutions through innovation,
               precision, and dedication to quality.
             </p>
@@ -58,7 +52,7 @@ const Quality = () => {
             <div className="mt-16 flex flex-row gap-[15px]">
               <Link
                 href="/about"
-                className="bg-zinc-900 px-5 hover:bg-black py-4 flex flex-row items-center gap-[5px] font-rubik w-fit rounded-[5px]"
+                className="bg-darkgreen text-white px-5 hover:bg-black py-4 flex flex-row items-center gap-[5px] font-rubik w-fit rounded-[5px]"
               >
                 Learn More{" "}
                 <span>
@@ -67,7 +61,7 @@ const Quality = () => {
               </Link>
               <Link
                 href="/contact"
-                className="bg-zinc-900 px-5 hover:bg-black py-4 flex flex-row items-center gap-[5px] font-rubik w-fit rounded-[5px]"
+                className="bg-darkgreen text-white px-5 hover:bg-black py-4 flex flex-row items-center gap-[5px] font-rubik w-fit rounded-[5px]"
               >
                 Contact Us{" "}
                 <span>
@@ -83,7 +77,7 @@ const Quality = () => {
               alt="About us"
               width={500}
               height={200}
-              className=" object-cover m-auto -mb-[120px]"
+              className=" object-cover m-auto "
             />
           </div>
         </div>

@@ -85,8 +85,8 @@ function Navbar({ className }: NavbarProps) {
                 <Image
                   src="/images/ruia fab.png"
                   alt="logo"
-                  width={150}
-                  height={150}
+                  width={100}
+                  height={100}
                 />
               </Link>
             </div>

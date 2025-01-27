@@ -29,7 +29,7 @@ export default function CompanyInfo() {
             transition={{ duration: 0.5 }}
             className="bg-white rounded-lg shadow-xl p-6"
           >
-            <h2 className="text-2xl font-semibold text-green-700 font-rubik mb-4">Mission</h2>
+            <h2 className="font-rubik text-[30px] font-bold text-darkgreen">Mission</h2>
             <p className="text-gray-700 leading-relaxed font-abel">
               To empower people and develop leadership qualities to create a process-impelled company capable of delivering high-quality textile products to the global market. We seek steady growth to lead in both the international and domestic markets, as well as to strengthen our global presence through our continuous urge to innovate new ideologies in the textile industry without compromising on quality.
             </p>
@@ -41,7 +41,7 @@ export default function CompanyInfo() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-white rounded-lg shadow-xl p-6"
           >
-            <h2 className="text-2xl font-semibold text-green-700 font-rubik mb-4">Vision</h2>
+            <h2 className="font-rubik text-[30px] font-bold text-darkgreen">Vision</h2>
             <p className="text-gray-700 leading-relaxed font-abel">
               To be one of the country&apos;s leading quality textile manufacturers, from fiber to fabric. To maintain a strong presence in the global textile market and be one of the most esteemed textile companies by adhering to high quality, exceeding the expectations of customers, and practicing a high level of integrity in dealing with all stakeholders.
             </p>

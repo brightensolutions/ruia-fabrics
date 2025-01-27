@@ -22,7 +22,7 @@ interface DetailsAndImageProps {
 
 const AnimatedDetailsAndImage: React.FC<DetailsAndImageProps> = ({
   title,
-  titleColor = "text-blue-600",
+  titleColor = "text-darkgreen",
   details,
   paragraphColor = "text-gray-700",
   images,
@@ -80,7 +80,7 @@ const AnimatedDetailsAndImage: React.FC<DetailsAndImageProps> = ({
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.h1
-            className={`text-4xl font-rubik font-bold mb-6 ${titleColor}`}
+            className={`font-rubik text-[30px] font-bold text-darkgreen`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}

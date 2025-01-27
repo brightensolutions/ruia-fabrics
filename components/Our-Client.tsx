@@ -68,9 +68,9 @@ const ReviewCard = ({
 
 export function MarqueeDemo() {
   return (
-    <div className="relative bg-greencolor flex pt-6 w-full flex-col items-center justify-center overflow-hidden rounded-lg  ">
+    <div className="relative  flex pt-6 w-full flex-col items-center justify-center overflow-hidden rounded-lg  ">
         <div>
-            <h2 className="text-[35px] font-rubik mb-12">OUR CLIENT</h2>
+            <h2 className="font-rubik text-[30px] font-bold text-darkgreen">OUR CLIENT</h2>
         </div>
       <Marquee pauseOnHover className="[--duration:20s]">
         {firstRow.map((review) => (
