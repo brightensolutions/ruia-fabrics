@@ -74,10 +74,6 @@ const Product = () => {
       },
       {
         paragraph:
-          "We are one of the country&apos;s leading producers of value-added yarn.",
-      },
-      {
-        paragraph:
           "Our company is dedicated to meeting the high demands and expectations of customers who require both quality and quantity at a reasonable price.",
       },
       {
@@ -99,7 +95,7 @@ const Product = () => {
         image="/images/banner1.webp"
         title="Our Products"
         description="Established in 1952, Ruia Fabrics has evolved into a global leader in high-quality velvet and viscose fabrics. With a strong history of innovation and excellence, we produce a wide range of fabrics, including viscose/rayon velvet, synthetic velvet and cotton velvet, that cater to a variety of applications."
-        link={{ href: "/contact", label: "Get in Touch" }}
+        link={{ href: "/compnay/contact-us", label: "Contact Us" }}
       />
 
       <div className="bg-gradient-to-t to-creamwhite pt-[45px] from-white">

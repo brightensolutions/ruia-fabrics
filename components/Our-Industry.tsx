@@ -16,15 +16,15 @@ const OurIndustry: React.FC = () => {
 
   return (
     <div className="bg-creamwhite">
-      <div className="md:max-w-[1440px] m-auto px-[20px] py-14 ">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-0">
-          <div className="md:w-[30%] w-[100%]">
-            <h1 className="font-rubik text-[40px] font-bold text-darkgreen">
+      <div className="md:max-w-[1440px] m-auto px-[20px] pb-14 ">
+        <div className="flex flex-col md:flex-col items-center justify-center gap-10 md:gap-10">
+          <div className="md:w-[100%] w-[100%]">
+            <h1 className="font-rubik text-[40px] text-center font-bold text-darkgreen">
               Our Industry In Numbers
             </h1>
           </div>
 
-          <div className="flex flex-col md:flex-row md:justify-end  md:gap-14 md:w-[70%] gap-[35px] w-[100%]">
+          <div className="flex flex-col md:flex-row md:justify-center  md:gap-14 md:w-[70%] gap-[35px] w-[100%]">
             {industryData.map((item, index) => (
               <div key={index} className="text-center">
                 <h2 className="text-[55px] font-abel text-textblak  font-extrabold">

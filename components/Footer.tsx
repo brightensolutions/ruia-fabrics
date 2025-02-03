@@ -10,16 +10,17 @@ const Footer: React.FC = () => {
       title: "Company",
       links: [
         { name: "Home", url: "/" },
-        { name: "About Us", url: "company/aboutus" },
-        { name: "Service", url: "company/services" },
-        { name: "Product", url: "company/product" },
-        { name: "Contact", url: "company/contact" },
+        { name: "About Us", url: "/compnay/about-us" },
+        { name: "Infrastructure", url: "/compnay/Infrastructure" },
+        { name: "Product", url: "/compnay/product" },
+        { name: "Market", url: "/compnay/Market" },
+        { name: "Contact", url: "/compnay/contact-us" },
       ],
     },
     {
-      title: "contact",
+      title: "Connect Us",
       links: [
-        { name: "+91 00000 00000", url: "#" },
+        { name: "+91 7021418483", url: "#" },
         { name: "info@ruiafabrics.com", url: "#" },
       ],
     },

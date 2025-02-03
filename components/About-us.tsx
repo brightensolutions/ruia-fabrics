@@ -1,23 +1,24 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import React from "react"
-import { motion, useInView, useAnimation } from "framer-motion"
-import { TextAnimate } from "./ui/text-animate"
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
+import { TextAnimate } from "./ui/text-animate";
+import { usePathname } from "next/navigation";
 
 const Aboutus = () => {
-  const controls = useAnimation()
-  const ref = React.useRef(null)
-  const isInView = useInView(ref, { once: false })
-
+  const controls = useAnimation();
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: false });
+  const pathname = usePathname();
   React.useEffect(() => {
     if (isInView) {
-      controls.start("visible")
+      controls.start("visible");
     } else {
-      controls.start("hidden")
+      controls.start("hidden");
     }
-  }, [isInView, controls])
+  }, [isInView, controls]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -27,7 +28,7 @@ const Aboutus = () => {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -36,7 +37,7 @@ const Aboutus = () => {
       opacity: 1,
       transition: { duration: 0.5 },
     },
-  }
+  };
 
   return (
     <motion.div
@@ -47,7 +48,7 @@ const Aboutus = () => {
       className="bg-white"
     >
       <div className="lg:max-w-[1440px] px-[20px] m-auto ">
-        <div className="flex flex-col xl:flex-row my-[50px] lg:my-[100px] relative">
+        <div className="flex flex-col xl:flex-row my-[50px] lg:my-[50px] relative">
           <motion.div
             variants={itemVariants}
             className="w-full xl:w-[50%] flex flex-row justify-between items-end space-x-5 mb-8 lg:mb-0"
@@ -70,55 +71,70 @@ const Aboutus = () => {
             </div>
           </motion.div>
 
-          <div  className="w-full xl:w-[50%] bg-greycolor p-5 rounded-[5px]">
+          <div className="w-full xl:w-[50%] bg-greycolor p-5 rounded-[5px]">
             <div className="p-5 border-darkgreen border-[1px]">
-              <h1  className="font-rubik text-[30px] font-bold text-white mb-5">
+              <h1 className="font-rubik text-[30px] font-bold text-white mb-5">
                 <TextAnimate animation="blurIn" as="h1">
                   About Us
                 </TextAnimate>
               </h1>
 
-              <div >
+              <div>
                 <motion.p
                   variants={itemVariants}
                   className="text-white/80 font-abel text-[18px] lg:text-[20px] leading-[1.8] mb-[10px]"
                 >
-                  Ruia Fabrics is a family-owned organization established in 1952 by the late Shri Shubhkaranji Ruia,
-                  who began as a yarn merchant trading across India. Over decades, the company evolved, expanding into
-                  fabric trading and manufacturing. In 1990, Madhusudan Ruia founded Ruia Fabrics Private Limited,
+                  Ruia Fabrics is a family-owned organization established in
+                  1952 by the late Shri Shubhkaranji Ruia, who began as a yarn
+                  merchant trading across India. Over decades, the company
+                  evolved, expanding into fabric trading and manufacturing. In
+                  1990, Madhusudan Ruia founded Ruia Fabrics Private Limited,
                   focusing on quality and innovation in fabrics.
                 </motion.p>
                 <motion.p
                   variants={itemVariants}
                   className="text-white/80 font-abel text-[18px] lg:text-[20px] leading-[1.8] mb-[10px]"
                 >
-                  Today, Ruia Fabrics specializes in sustainable practices, weaving eco-friendly viscose fabrics in
-                  collaboration with the Aditya Birla Group. The company produces over 200,000 meters of LIVA eco-vera
-                  fabrics monthly, adhering to its commitment to sustainability and quality.
+                  Today, Ruia Fabrics specializes in sustainable practices,
+                  weaving eco-friendly viscose fabrics in collaboration with the
+                  Aditya Birla Group. The company produces over 200,000 meters
+                  of LIVA eco-vera fabrics monthly, adhering to its commitment
+                  to sustainability and quality.
                 </motion.p>
                 <motion.p
                   variants={itemVariants}
                   className="text-white/80 font-abel text-[18px] lg:text-[20px] leading-[1.8] mb-[10px]"
                 >
-                  In 2018, Ruia Fabrics expanded further with Klassiq Silk Mills in Surat, importing advanced velvet
-                  manufacturing machines to produce luxurious micro velvet fabrics. With a monthly capacity of one lakh
-                  meters, Klassiq Silk Mills has established a robust distribution network across India and the Middle
-                  East, meeting the highest standards of quality and design.
+                  In 2018, Ruia Fabrics expanded further with Klassiq Silk Mills
+                  in Surat, importing advanced velvet manufacturing machines to
+                  produce luxurious micro velvet fabrics. With a monthly
+                  capacity of one lakh meters, Klassiq Silk Mills has
+                  established a robust distribution network across India and the
+                  Middle East, meeting the highest standards of quality and
+                  design.
                 </motion.p>
                 <motion.p
                   variants={itemVariants}
                   className="text-white/80 font-abel text-[18px] lg:text-[20px] leading-[1.8] mb-[10px]"
                 >
-                  Guided by a futuristic vision, Ruia Fabrics has become a world-class manufacturer, providing voile,
-                  chiffon, crepes, and georgette fabrics for both domestic and international markets. Sustainability and
-                  ethical practices remain at the heart of its operations, ensuring a better future for people and the
-                  planet.
+                  Guided by a futuristic vision, Ruia Fabrics has become a
+                  world-class manufacturer, providing voile, chiffon, crepes,
+                  and georgette fabrics for both domestic and international
+                  markets. Sustainability and ethical practices remain at the
+                  heart of its operations, ensuring a better future for people
+                  and the planet.
                 </motion.p>
               </div>
 
-              <div >
+              <div>
                 <Link
-                  href="/"
+                  href={
+                    pathname === "/"
+                      ? "/compnay/about-us"
+                      : pathname === "/compnay/about-us"
+                      ? "/compnay/contact-us"
+                      : "/"
+                  }
                   className="font-rubik bg-white/35 py-2 inline-block px-7 rounded-[5px] border border-white/15 hover:bg-white/50 transition-colors duration-300"
                 >
                   Learn More
@@ -129,8 +145,7 @@ const Aboutus = () => {
         </div>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default Aboutus
-
+export default Aboutus;

@@ -10,7 +10,7 @@ export default function CompanyInfo() {
   })
 
   return (
-    <div ref={ref} className="min-h-screen bg-white">
+    <div ref={ref} className=" bg-white mb-14">
       <div 
         className="relative h-[300px] md:h-[400px] bg-cover bg-center"
         style={{
@@ -48,7 +48,7 @@ export default function CompanyInfo() {
           </motion.div>
         </div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, delay: 0.4 }}
@@ -68,7 +68,7 @@ export default function CompanyInfo() {
               Committed to sustainability, Ruia Fabrics believes in creating a better tomorrow by innovating and practicing environmentally conscious processes. Their product range includes voile, chiffon, crepes, and georgette fabrics, crafted to meet the unique needs of customers worldwide. The company&apos;s management inspires its workforce to deliver consistent quality, maintaining long-standing relationships with clients and suppliers alike.
             </p>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </div>
   )

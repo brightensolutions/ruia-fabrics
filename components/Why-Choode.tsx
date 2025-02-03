@@ -50,7 +50,14 @@ const WhyChoode = () => {
       <div className="md:max-w-[1440px] m-auto px-[20px]  z-20">
         <div className="grid md:grid-cols-2 grid-cols-1 gap-[15px] items-center">
           <div className="relative">
-            <Image src="/images/whychooesus.jpg" alt="images" width={500} height={500} className="relative" style={{ width:"100%" }} />
+            <Image
+              src="/images/whychooesus.jpg"
+              alt="images"
+              width={500}
+              height={500}
+              className="relative"
+              style={{ width: "100%" }}
+            />
             <div className="absolute inset-0 bg-gradient-to-r  to-white from-transparent"></div>
           </div>
           <div className="md:mt-0 mt-20">
@@ -86,14 +93,14 @@ const WhyChoode = () => {
               variants={itemVariants}
               className="text-[18px] font-rubik mb-[10px] text-textblak"
             >
-              Join the RUIA family today and experience the perfect blend of
+              Join the RFPL today and experience the perfect blend of
               innovation, quality, and affordability. We are more than just a
               brand; we are your trusted partner for excellence.
             </motion.p>
 
             <div className="mt-16 flex flex-row gap-[15px]">
               <Link
-                href="/about"
+                href="/compnay/about-us"
                 className="bg-darkgreen text-white px-5 py-4 flex flex-row items-center gap-[5px] font-rubik w-fit rounded-[5px]"
               >
                 Learn More
@@ -102,7 +109,7 @@ const WhyChoode = () => {
                 </span>
               </Link>
               <Link
-                href="/contact"
+                href="/compnay/contact-us"
                 className="bg-darkgreen text-white px-5 py-4 flex flex-row items-center gap-[5px] font-rubik w-fit rounded-[5px]"
               >
                 Contact Us{" "}

@@ -29,13 +29,13 @@ export function InfiniteMovingCardsDemo() {
 
         <div className="flex justify-center  space-x-6 mb-[40px]">
           <Link
-            href="/"
+            href="/compnay/about-us"
             className="text-[20px] font-rubik bg-greencolor text-white py-[10px] px-[25px] rounded-[5px] hover:bg-greencolor/55 hover:text-black"
           >
             About Us
           </Link>
           <Link
-            href="/"
+            href="/compnay/contact-us"
             className="text-[20px] font-rubik bg-greencolor text-white py-[10px] px-[25px] rounded-[5px] hover:bg-greencolor/55 hover:text-black"
           >
             Contact Us
