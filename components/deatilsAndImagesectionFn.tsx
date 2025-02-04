@@ -18,6 +18,8 @@ interface DetailsAndImageProps {
   connectUsLink?: string
   bgcolor?: string
   sectioncolor?: string
+  btncolor?: string
+
 }
 
 const AnimatedDetailsAndImage: React.FC<DetailsAndImageProps> = ({
@@ -29,7 +31,8 @@ const AnimatedDetailsAndImage: React.FC<DetailsAndImageProps> = ({
   imagePosition = "right",
   connectUsLink = "/compnay/contact-us",
   bgcolor = "bg-white",
-  sectioncolor
+  sectioncolor,
+  btncolor = "bg-greycolor"
 }) => {
   return (
     <div className={`${bgcolor} ${sectioncolor}`}>
@@ -106,7 +109,7 @@ const AnimatedDetailsAndImage: React.FC<DetailsAndImageProps> = ({
           >
             <Link href={connectUsLink} passHref>
               <motion.p
-                className="flex flex-row items-center w-fit gap-[5px] mt-6 px-6 py-3 bg-greycolor text-white font-semibold rounded-lg shadow-md hover:bg-greencolor/50 hover:text-textblak transition duration-300 ease-in-out"
+                className={`flex flex-row items-center w-fit gap-[5px] mt-6 px-6 py-3 ${btncolor}  text-white font-semibold rounded-lg shadow-md hover:bg-greencolor/50 hover:text-textblak transition duration-300 ease-in-out`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

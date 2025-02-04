@@ -62,6 +62,7 @@ const Product = () => {
     },
     connectUsLink: "/compnay/contact-us",
     bgcolor: "bg-greencolor",
+    btncolor: "bg-[#112d4e]"
   };
 
   const YarnFabric = {
