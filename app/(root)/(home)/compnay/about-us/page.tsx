@@ -21,6 +21,7 @@ const AboutusSection = () => {
         <MarqueeDemo/>
       </div>
 
+
       <div >
         <Aboutus/>
       </div>
