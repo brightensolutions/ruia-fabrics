@@ -61,13 +61,12 @@ const Product = () => {
       main: "/images/valvet-fabric.jpg",
     },
     connectUsLink: "/compnay/contact-us",
-    bgcolor: "bg-greencolor",
-    btncolor: "bg-[#112d4e]"
+    bgcolor: "bg-custom-green",
+    btncolor: "bg-custom-black"
   };
 
   const YarnFabric = {
     title: "Yarn  Fabric",
-    titleColor: "text-greencolor",
     details: [
       {
         paragraph:
@@ -108,38 +107,34 @@ const Product = () => {
       <AnimatedDetailsAndImage {...YarnFabric} imagePosition="left" />
 
       <div
-        className="relative bg-cover bg-center flex flex-col items-end justify-end h-[50vh] sm:h-[60vh] md:h-[70vh]"
-        style={{
-          backgroundImage: `url('/images/banner1.webp')`,
-          backgroundAttachment: "fixed",
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/70 to-zinc-900/70"></div>
-        <div className="bg-white text-black relative z-10 w-full md:w-[70%] lg:w-[60%] xl:w-[50%] p-6 md:p-8 lg:p-11 md:mr-6 lg:mr-11">
-          <h2 className="font-rubik text-[30px] font-bold text-darkgreen">Products</h2>
-          <h4 className="font-abel text-[40px] font-normal text-greencolor">
-            Processed Fabric
-          </h4>
-          <p className="mt-3 sm:mt-4 md:mt-[15px] text-base sm:text-lg md:text-xl font-abel">
-            We manufacture an array of Plain Dyed Fabrics in a wide range of
-            colors and patterns to keep up with changing fashion trends,
-            designer demands, and market demands.
-          </p>
-          <p className="mt-3 sm:mt-4 md:mt-[15px] text-base sm:text-lg md:text-xl font-abel">
-            Our main line of Plain Dyed and printed Fabrics and materials
-            reflects vibrancy as well as opulence, which stems from our desire
-            to create something unique that is unparalleled and unmatched
-            anywhere in the world. Our processed fabrics are made with
-            high-quality machines to improve quality and minimize defects and
-            flaws without compromising on quality.
-          </p>
-          <p className="mt-3 sm:mt-4 md:mt-[15px] text-base sm:text-lg md:text-xl font-abel">
-            Our experienced professionals quality test the Printed Fabrics
-            against a variety of parameters based on the client&apos;s needs and
-            preferences.
-          </p>
-        </div>
+      className="relative bg-cover bg-center flex flex-col items-end justify-end h-[50vh] sm:h-[60vh] md:h-[70vh]"
+      style={{
+        backgroundImage: `url('/images/banner1.webp')`,
+        backgroundAttachment: "fixed",
+      }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-t from-custom-green/80 to-custom-black/60"></div>
+      <div className="bg-custom-cream text-custom-black relative z-10 w-full md:w-[70%] lg:w-[60%] xl:w-[50%] p-6 md:p-8 lg:p-11 md:mr-6 lg:mr-11">
+        <h2 className="font-rubik text-3xl md:text-4xl font-bold text-custom-green">Products</h2>
+        <h4 className="font-abel text-3xl md:text-4xl lg:text-5xl font-normal text-custom-black mt-2">
+          Processed Fabric
+        </h4>
+        <p className="mt-4 md:mt-6 text-base sm:text-lg md:text-xl font-roboto text-custom-black/80">
+          We manufacture an array of Plain Dyed Fabrics in a wide range of colors and patterns to keep up with changing
+          fashion trends, designer demands, and market demands.
+        </p>
+        <p className="mt-3 sm:mt-4 md:mt-5 text-base sm:text-lg md:text-xl font-roboto text-custom-black/80">
+          Our main line of Plain Dyed and printed Fabrics and materials reflects vibrancy as well as opulence, which
+          stems from our desire to create something unique that is unparalleled and unmatched anywhere in the world. Our
+          processed fabrics are made with high-quality machines to improve quality and minimize defects and flaws
+          without compromising on quality.
+        </p>
+        <p className="mt-3 sm:mt-4 md:mt-5 text-base sm:text-lg md:text-xl font-roboto text-custom-black/80">
+          Our experienced professionals quality test the Printed Fabrics against a variety of parameters based on the
+          client&apos;s needs and preferences.
+        </p>
       </div>
+    </div>
     </div>
   );
 };

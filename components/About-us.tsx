@@ -1,43 +1,42 @@
-"use client";
-
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import { motion, useInView, useAnimation } from "framer-motion";
-import { TextAnimate } from "./ui/text-animate";
-import { usePathname } from "next/navigation";
+"use client"
+import Image from "next/image"
+import Link from "next/link"
+import React from "react"
+import { motion, useInView, useAnimation } from "framer-motion"
+import { usePathname } from "next/navigation"
 
 const Aboutus = () => {
-  const controls = useAnimation();
-  const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: false });
-  const pathname = usePathname();
+  const controls = useAnimation()
+  const ref = React.useRef(null)
+  const isInView = useInView(ref, { once: false })
+  const pathname = usePathname()
+
   React.useEffect(() => {
     if (isInView) {
-      controls.start("visible");
+      controls.start("visible")
     } else {
-      controls.start("hidden");
+      controls.start("hidden")
     }
-  }, [isInView, controls]);
+  }, [isInView, controls])
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.2,
       },
     },
-  };
+  }
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.5 },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
-  };
+  }
 
   return (
     <motion.div
@@ -45,107 +44,80 @@ const Aboutus = () => {
       initial="hidden"
       animate={controls}
       variants={containerVariants}
-      className="bg-white"
+      className="bg-gradient-to-br z-40 from-custom-white via-custom-cream to-custom-green/10 relative overflow-hidden py-24"
     >
-      <div className="lg:max-w-[1440px] px-[20px] m-auto ">
-        <div className="flex flex-col xl:flex-row my-[50px] lg:my-[50px] relative">
-          <motion.div
-            variants={itemVariants}
-            className="w-full xl:w-[50%] flex flex-row justify-between items-end space-x-5 mb-8 lg:mb-0"
-          >
-            <Image
-              src="/images/about-us1.jpg"
-              alt="About Us"
-              className="w-full lg:w-[80%] m-auto border-[2px] rounded-[5px] rounded-b-none border-white"
-              width={400}
-              height={400}
-            />
-            <div className="hidden lg:block absolute left-1/4 top-1/2 transform -translate-y-1/2">
-              <Image
-                src="/images/about-us1.jpg"
-                alt="About Us"
-                className="w-full m-auto border-[2px] rounded-[5px] rounded-b-none border-white"
-                width={200}
-                height={200}
-              />
-            </div>
+
+           <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-custom-white to-transparent" />
+           <div className="absolute -left-20 top-1/2 transform -translate-y-1/2 w-40 h-40 bg-custom-green/20 rounded-full blur-3xl" />
+           <div className="absolute -right-20 top-1/2 transform -translate-y-1/2 w-40 h-40 bg-custom-green/20 rounded-full blur-3xl" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row gap-16 items-center">
+          {/* Images Section with Overlapping Cards */}
+          <motion.div variants={itemVariants} className="w-full lg:w-1/2 relative h-[600px]">
+            {/* First Image Card */}
+            <motion.div
+              initial={{ x: -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="absolute top-0 left-0 z-20 w-[80%] h-[400px] rounded-3xl overflow-hidden shadow-2xl"
+            >
+              <Image src="/fabric/7.jpg" alt="Premium Fabric" fill className="object-cover" />
+            </motion.div>
+
+            {/* Second Image Card */}
+            <motion.div
+              initial={{ x: 50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="absolute bottom-0 right-0 z-10 w-[80%] h-[400px] rounded-3xl overflow-hidden shadow-2xl"
+            >
+              <Image src="/fabric/8.jpg" alt="Fabric Detail" fill className="object-cover" />
+            </motion.div>
+
+            {/* Decorative Elements */}
+            <div className="absolute -top-4 -right-4 w-32 h-32 bg-custom-green/10 rounded-full blur-2xl" />
+            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-custom-green/10 rounded-full blur-2xl" />
           </motion.div>
 
-          <div className="w-full xl:w-[50%] bg-greycolor p-5 rounded-[5px]">
-            <div className="p-5 border-darkgreen border-[1px]">
-              <h1 className="font-rubik text-[30px] font-bold text-white mb-5">
-                <TextAnimate animation="blurIn" as="h1">
-                  About Us
-                </TextAnimate>
-              </h1>
+          {/* Content Section */}
+          <motion.div variants={itemVariants} className="w-full lg:w-1/2 space-y-8">
+            <motion.h2 variants={itemVariants} className="text-4xl lg:text-5xl font-rubik font-bold text-custom-black">
+              Sustainable trends you'll love forever.
+            </motion.h2>
 
-              <div>
-                <motion.p
-                  variants={itemVariants}
-                  className="text-white/80 font-abel text-[18px] lg:text-[20px] leading-[1.8] mb-[10px]"
-                >
-                  Ruia Fabrics is a family-owned organization established in
-                  1952 by the late Shri Shubhkaranji Ruia, who began as a yarn
-                  merchant trading across India. Over decades, the company
-                  evolved, expanding into fabric trading and manufacturing. In
-                  1990, Madhusudan Ruia founded Ruia Fabrics Private Limited,
-                  focusing on quality and innovation in fabrics.
-                </motion.p>
-                <motion.p
-                  variants={itemVariants}
-                  className="text-white/80 font-abel text-[18px] lg:text-[20px] leading-[1.8] mb-[10px]"
-                >
-                  Today, Ruia Fabrics specializes in sustainable practices,
-                  weaving eco-friendly viscose fabrics in collaboration with the
-                  Aditya Birla Group. The company produces over 200,000 meters
-                  of LIVA eco-vera fabrics monthly, adhering to its commitment
-                  to sustainability and quality.
-                </motion.p>
-                <motion.p
-                  variants={itemVariants}
-                  className="text-white/80 font-abel text-[18px] lg:text-[20px] leading-[1.8] mb-[10px]"
-                >
-                  In 2018, Ruia Fabrics expanded further with Klassiq Silk Mills
-                  in Surat, importing advanced velvet manufacturing machines to
-                  produce luxurious micro velvet fabrics. With a monthly
-                  capacity of one lakh meters, Klassiq Silk Mills has
-                  established a robust distribution network across India and the
-                  Middle East, meeting the highest standards of quality and
-                  design.
-                </motion.p>
-                <motion.p
-                  variants={itemVariants}
-                  className="text-white/80 font-abel text-[18px] lg:text-[20px] leading-[1.8] mb-[10px]"
-                >
-                  Guided by a futuristic vision, Ruia Fabrics has become a
-                  world-class manufacturer, providing voile, chiffon, crepes,
-                  and georgette fabrics for both domestic and international
-                  markets. Sustainability and ethical practices remain at the
-                  heart of its operations, ensuring a better future for people
-                  and the planet.
-                </motion.p>
-              </div>
+            <motion.div variants={itemVariants} className="space-y-6">
+              <p className="text-lg text-custom-black/80 font-abel leading-relaxed">
+                Ruia Fabrics is a family-owned organization established in 1952, evolving from yarn trading to becoming
+                a leading manufacturer of premium fabrics. Our commitment to quality and innovation drives everything we
+                do.
+              </p>
+              <p className="text-lg text-custom-black/80 font-abel leading-relaxed">
+                Today, we specialize in sustainable practices, producing over 200,000 meters of LIVA eco-vera fabrics
+                monthly. Our collaboration with the Aditya Birla Group ensures we maintain the highest standards of
+                eco-friendly production.
+              </p>
+              <p className="text-lg text-custom-black/80 font-abel leading-relaxed">
+                With the establishment of Klassiq Silk Mills in Surat in 2018, we've expanded our capabilities to
+                include luxury micro velvet fabrics, serving markets across India and the Middle East.
+              </p>
+            </motion.div>
 
-              <div>
-                <Link
-                  href={
-                    pathname === "/"
-                      ? "/compnay/about-us"
-                      : pathname === "/compnay/about-us"
-                      ? "/compnay/contact-us"
-                      : "/"
-                  }
-                  className="font-rubik bg-white/35 py-2 inline-block px-7 rounded-[5px] border border-white/15 hover:bg-white/50 transition-colors duration-300"
-                >
-                  Learn More
-                </Link>
-              </div>
-            </div>
-          </div>
+            <motion.div variants={itemVariants} className="pt-4">
+              <Link
+                href={pathname === "/" ? "/compnay/about-us" : "/compnay/contact-us"}
+                className="inline-flex rounded-[5px] items-center px-8 py-3  bg-custom-green text-white font-rubik text-lg 
+                         transition-all duration-300 hover:bg-custom-black hover:scale-105 transform"
+              >
+                Our Story
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default Aboutus;
+export default Aboutus
+

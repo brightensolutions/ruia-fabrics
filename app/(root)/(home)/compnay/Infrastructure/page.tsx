@@ -1,29 +1,29 @@
-"use client";
-import React from "react";
-import ServicesSection from "@/components/ServicesSectionFn";
-import Image from "next/image";
-import AnimatedDetailsAndImage from "@/components/deatilsAndImagesectionFn";
+"use client"
+import ServicesSection from "@/components/ServicesSectionFn"
+import Image from "next/image"
+import AnimatedDetailsAndImage from "@/components/deatilsAndImagesectionFn"
+import { motion } from "framer-motion"
 
 const Infrastructure = () => {
   const greyFabric = {
     title: "Weaving Preparatory",
-    titleColor: "text-textblak",
+    titleColor: "text-custom-green",
     details: [
       {
         paragraph:
           "To convert spun yarns into high-quality warp beams, our sizing machines are distinguished by their ease of operation and precise process control. The sized warp beams ensure maximum weaving efficiency. For sizing, we have 2 Karl Mayer Machines and also supply high-quality sized beams based on customers' weaving loom needs.",
       },
     ],
-    paragraphColor: "text-gray-700",
+    paragraphColor: "text-custom-black/80",
     images: {
       main: "/images/weaving-preparatory (1).webp",
     },
     connectUsLink: "/company/contact-us",
-  };
+  }
 
   const greyFabric2 = {
     title: "Weaving",
-    titleColor: "text-textblak",
+    titleColor: "text-custom-green",
     details: [
       {
         paragraph:
@@ -38,98 +38,109 @@ const Infrastructure = () => {
           "Following yarn selection, the amount of warp required for the fabric is calculated, and our expert technicians monitor the warping process for any flaws, mending imperfections.",
       },
     ],
-    paragraphColor: "text-gray-700",
+    paragraphColor: "text-custom-black/80",
     images: {
       main: "/images/infra-weaving.webp",
     },
     connectUsLink: "/company/contact-us",
-  };
+  }
 
   return (
-    <div>
-      <div>
-        <ServicesSection
-          image="/images/banner1.webp"
-          title="Infrastructure"
-          description="Connect with Ruia Fabrics, a leader in textiles since 1952. Specializing in high-quality velvet and viscose fabrics, we’re here to assist you with your inquiries and provide world-class solutions. Reach out to us for any assistance or collaboration opportunities."
-          link={{ href: "/compnay/contact-us", label: "Contact Us" }}
-        />
-      </div>
+    <div className="bg-custom-cream">
+      <ServicesSection
+        image="/images/banner1.webp"
+        title="Infrastructure"
+        description="Connect with Ruia Fabrics, a leader in textiles since 1952. Specializing in high-quality velvet and viscose fabrics, we're here to assist you with your inquiries and provide world-class solutions. Reach out to us for any assistance or collaboration opportunities."
+        link={{ href: "/company/contact-us", label: "Contact Us" }}
+      />
 
-      <div className="bg-gradient-to-t to-creamwhite pt-[45px] from-white">
-        <Image
-          src="/images/services-detail-img.jpg"
-          alt="fabric"
-          width={800}
-          height={800}
-          className="object-cover md:min-h-full md:min-w-[80%] min-w-[90%] min-h-[350px] m-auto w-[50%] rounded-t-[5px]"
-        />
-      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="bg-custom-white py-12 md:py-20"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Image
+            src="/images/services-detail-img.jpg"
+            alt="fabric"
+            width={800}
+            height={800}
+            className="object-cover w-full md:w-4/5 h-[350px] md:h-[500px] mx-auto rounded-lg shadow-2xl"
+          />
+        </div>
+      </motion.div>
 
-      <div className="lg:max-w-[1440px] m-auto px-[20px]">
-        <section className="mt-10">
-          <h4 className="font-rubik text-[30px] font-bold text-darkgreen">
-            Infrastructure
-          </h4>
-          <h2 className="ont-abel text-[40px] font-normal text-greycolor">Spinning</h2>
-          <p className="text-[25px] font-abel text-textblak">
-            We stand committed to the business values and ethics in every
-            product we turn out!
+    <div className="bg-custom-green">
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 "
+      >
+        <section className="text-center md:text-left ">
+          <h4 className="font-rubik text-3xl md:text-4xl font-bold text-custom-white mb-4">Infrastructure</h4>
+          <h2 className="font-abel text-3xl md:text-5xl font-normal text-custom-cream mb-6">Spinning</h2>
+          <p className="text-xl md:text-2xl font-abel text-custom-white/80 mb-4">
+            We stand committed to the business values and ethics in every product we turn out!
           </p>
-          <p className="text-[25px] font-abel text-textblak">
-            Our spinning division produces 160 tons of yarn daily through
-            1,30,000 spindles, providing a diverse range of yarns.
+          <p className="text-xl md:text-2xl font-abel text-custom-white/80">
+            Our spinning division produces 160 tons of yarn daily through 1,30,000 spindles, providing a diverse range
+            of yarns.
           </p>
         </section>
-      </div>
+      </motion.div>
+    </div>
 
-      <div>
-        <AnimatedDetailsAndImage {...greyFabric} imagePosition="left" />
-      </div>
+      <AnimatedDetailsAndImage {...greyFabric} imagePosition="left" />
 
-      <section className="bg-creamwhite py-10">
-        <div className="lg:max-w-[1440px] m-auto px-[20px]">
-          <h2 className="font-rubik text-[30px] font-bold text-darkgreen">
-            About Ruia Fabrics
-          </h2>
-          <p className="text-[18px] font-rubik text-gray-700 leading-7">
-            Ruia Fabrics, established during the textile revolution of 1952, is
-            a family-owned enterprise known for its high-quality velvet and
-            viscose fabrics. It has evolved under the guidance of Shri
-            Shubhkaranji Ruia and his entrepreneurial family.
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="bg-custom-white py-12 md:py-20"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-rubik text-3xl md:text-4xl font-bold text-custom-green mb-6">About Ruia Fabrics</h2>
+          <p className="text-lg md:text-xl font-roboto text-custom-black/80 leading-relaxed mb-6">
+            Ruia Fabrics, established during the textile revolution of 1952, is a family-owned enterprise known for its
+            high-quality velvet and viscose fabrics. It has evolved under the guidance of Shri Shubhkaranji Ruia and his
+            entrepreneurial family.
           </p>
-          <ul className="list-disc list-inside text-[18px] font-rubik text-gray-700 mt-4">
+          <ul className="list-disc list-inside text-lg md:text-xl font-roboto text-custom-black/80 space-y-2">
             <li>Certified by Grasim Industries (Aditya Birla Group).</li>
             <li>Produces 200,000 meters/month of LIVA eco-vera fabrics.</li>
             <li>Known for sustainable practices since 2018.</li>
           </ul>
         </div>
-      </section>
+      </motion.section>
 
-      <div>
-        <AnimatedDetailsAndImage {...greyFabric2} imagePosition="right" />
-      </div>
+      <AnimatedDetailsAndImage {...greyFabric2} imagePosition="right" />
 
-      <section className="bg-white py-10">
-        <div className="lg:max-w-[1440px] m-auto px-[20px]">
-          <h2 className="font-rubik text-[30px] font-bold text-darkgreen">
-            The Klassiq Silk Mills
-          </h2>
-          <p className="text-[18px] font-rubik text-gray-700 leading-7">
-            Based in Surat, Gujarat, The Klassiq Silk Mills specializes in
-            velvet and viscose fabrics, with a monthly production capacity of
-            three lakh meters. Our state-of-the-art infrastructure ensures
-            top-quality products for both fashion and interior industries.
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="bg-custom-cream py-12 md:py-20"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-rubik text-3xl md:text-4xl font-bold text-custom-green mb-6">The Klassiq Silk Mills</h2>
+          <p className="text-lg md:text-xl font-roboto text-custom-black/80 leading-relaxed mb-6">
+            Based in Surat, Gujarat, The Klassiq Silk Mills specializes in velvet and viscose fabrics, with a monthly
+            production capacity of three lakh meters. Our state-of-the-art infrastructure ensures top-quality products
+            for both fashion and interior industries.
           </p>
-          <ul className="list-disc list-inside text-[18px] font-rubik text-gray-700 mt-4">
+          <ul className="list-disc list-inside text-lg md:text-xl font-roboto text-custom-black/80 space-y-2">
             <li>Viscose/Rayon Velvet</li>
             <li>Synthetic Velvet</li>
             <li>Cotton Velvet</li>
           </ul>
         </div>
-      </section>
+      </motion.section>
     </div>
-  );
-};
+  )
+}
 
-export default Infrastructure;
+export default Infrastructure
+

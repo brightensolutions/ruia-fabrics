@@ -1,7 +1,7 @@
 import Aboutus from "@/components/About-us";
 import ContactUs from "@/components/ContactUs";
 import CompanyInfo from "@/components/mission-vision";
-import { MarqueeDemo } from "@/components/Our-Client";
+import { ClientMarquee } from "@/components/Our-Client";
 import ServicesSection from "@/components/ServicesSectionFn";
 import React from "react";
 
@@ -18,7 +18,7 @@ const AboutusSection = () => {
       </div>
 
       <div>
-        <MarqueeDemo/>
+        <ClientMarquee/>
       </div>
 
 

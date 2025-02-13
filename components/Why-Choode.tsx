@@ -1,24 +1,23 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import AnimatedCircularProgressBar from "./ui/animated-circular-progress-bar";
-import { FaAngleRight } from "react-icons/fa";
-import Link from "next/link";
-import { TextAnimate } from "./ui/text-animate";
-import { motion, useAnimation, useInView } from "framer-motion";
-import Image from "next/image";
+"use client"
 
-const WhyChoode = () => {
-  const controls = useAnimation();
-  const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: false });
+import React, { useEffect } from "react"
+import { FaAngleRight } from "react-icons/fa"
+import Link from "next/link"
+import { motion, useAnimation, useInView } from "framer-motion"
+import Image from "next/image"
+
+const WhyChoose = () => {
+  const controls = useAnimation()
+  const ref = React.useRef(null)
+  const isInView = useInView(ref, { once: false })
 
   useEffect(() => {
     if (isInView) {
-      controls.start("visible");
+      controls.start("visible")
     } else {
-      controls.start("hidden");
+      controls.start("hidden")
     }
-  }, [isInView, controls]);
+  }, [isInView, controls])
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -28,7 +27,7 @@ const WhyChoode = () => {
         staggerChildren: 0.1,
       },
     },
-  };
+  }
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -37,7 +36,7 @@ const WhyChoode = () => {
       opacity: 1,
       transition: { duration: 0.5 },
     },
-  };
+  }
 
   return (
     <motion.div
@@ -45,84 +44,63 @@ const WhyChoode = () => {
       initial="hidden"
       animate={controls}
       variants={containerVariants}
-      className="bg-zinc-800 inline-block w-[100%] py-12 bg-gradient-to-t to-creamwhite from-white "
+      className="bg-custom-white py-24 relative z-40"
     >
-      <div className="md:max-w-[1440px] m-auto px-[20px]  z-20">
-        <div className="grid md:grid-cols-2 grid-cols-1 gap-[15px] items-center">
-          <div className="relative">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          <motion.div variants={itemVariants} className="relative rounded-2xl overflow-hidden shadow-2xl">
             <Image
-              src="/images/whychooesus.jpg"
-              alt="images"
-              width={500}
-              height={500}
-              className="relative"
-              style={{ width: "100%" }}
+              src="/fabric/9.jpg"
+              alt="Ruia Fabrics Quality"
+              width={600}
+              height={600}
+              className="object-cover w-full h-full"
             />
-            <div className="absolute inset-0 bg-gradient-to-r  to-white from-transparent"></div>
-          </div>
-          <div className="md:mt-0 mt-20">
-            <h2 className="font-rubik text-[30px] font-bold  text-greencolor mb-[15px]">
-              <TextAnimate animation="blurInUp" by="word" as="p">
-                WHY CHOOSE RUIA
-              </TextAnimate>
-            </h2>
-            <p className="font-abel text-[40px] font-normal  text-greencolor/80">
-              <TextAnimate animation="blurInUp" by="line" as="p">
-                Unbeatable Prices, Exceptional Quality
-              </TextAnimate>
-            </p>
-            <motion.p
-              variants={itemVariants}
-              className="text-[18px] font-rubik mb-[10px] text-textblak"
-            >
-              At RUIA, we pride ourselves on delivering premium-quality products
-              at the most competitive prices. Our commitment to excellence
-              ensures that every product is crafted with precision, durability,
-              and attention to detail.
+            <div className="absolute inset-0 bg-gradient-to-r from-custom-green/20 to-transparent mix-blend-multiply" />
+          </motion.div>
+
+          <div className="space-y-8">
+            <motion.h2 variants={itemVariants} className="font-rubik text-3xl font-bold text-custom-green">
+              WHY CHOOSE RUIA
+            </motion.h2>
+            <motion.h3 variants={itemVariants} className="font-abel text-4xl md:text-5xl font-normal text-custom-black">
+              Unbeatable Prices, Exceptional Quality
+            </motion.h3>
+            <motion.p variants={itemVariants} className="text-lg font-roboto text-custom-black/80">
+              At RUIA, we pride ourselves on delivering premium-quality products at the most competitive prices. Our
+              commitment to excellence ensures that every product is crafted with precision, durability, and attention
+              to detail.
             </motion.p>
-            <motion.p
-              variants={itemVariants}
-              className="text-[18px] font-rubik mb-[10px] text-textblak"
-            >
-              Our team of experts utilizes advanced technology and sustainable
-              practices to create solutions that meet the highest standards.
-              From raw materials to the finished product, every step undergoes
-              rigorous quality control to guarantee customer satisfaction.
+            <motion.p variants={itemVariants} className="text-lg font-roboto text-custom-black/80">
+              Our team of experts utilizes advanced technology and sustainable practices to create solutions that meet
+              the highest standards. From raw materials to the finished product, every step undergoes rigorous quality
+              control to guarantee customer satisfaction.
             </motion.p>
-            <motion.p
-              variants={itemVariants}
-              className="text-[18px] font-rubik mb-[10px] text-textblak"
-            >
-              Join the RFPL today and experience the perfect blend of
-              innovation, quality, and affordability. We are more than just a
-              brand; we are your trusted partner for excellence.
+            <motion.p variants={itemVariants} className="text-lg font-roboto text-custom-black/80">
+              Join the RFPL today and experience the perfect blend of innovation, quality, and affordability. We are
+              more than just a brand; we are your trusted partner for excellence.
             </motion.p>
 
-            <div className="mt-16 flex flex-row gap-[15px]">
+            <motion.div variants={containerVariants} className="flex flex-wrap gap-4 mt-8">
               <Link
-                href="/compnay/about-us"
-                className="bg-darkgreen text-white px-5 py-4 flex flex-row items-center gap-[5px] font-rubik w-fit rounded-[5px]"
+                href="/company/about-us"
+                className="bg-custom-green text-custom-white px-6 py-3 flex items-center gap-2 font-rubik rounded-lg transition-all duration-300 hover:bg-custom-black"
               >
-                Learn More
-                <span>
-                  <FaAngleRight />
-                </span>
+                Learn More <FaAngleRight />
               </Link>
               <Link
-                href="/compnay/contact-us"
-                className="bg-darkgreen text-white px-5 py-4 flex flex-row items-center gap-[5px] font-rubik w-fit rounded-[5px]"
+                href="/company/contact-us"
+                className="bg-custom-black text-custom-white px-6 py-3 flex items-center gap-2 font-rubik rounded-lg transition-all duration-300 hover:bg-custom-green"
               >
-                Contact Us{" "}
-                <span>
-                  <FaAngleRight />
-                </span>
+                Contact Us <FaAngleRight />
               </Link>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default WhyChoode;
+export default WhyChoose
+

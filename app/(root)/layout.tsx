@@ -1,15 +1,13 @@
-import Footer from '@/components/Footer'
-import { NavbarMenu } from '@/components/Navbar'
-import React from 'react'
+import type { ReactNode } from "react"
+import LayoutWrapper from "./layout-wrapper"
 
-const layout = ({children} : {children : React.ReactNode}) => {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <>
-     <NavbarMenu/>
-      {children}
-      <Footer/>
-    </>
+    <html lang="en">
+      <body>
+        <LayoutWrapper>{children}</LayoutWrapper>
+      </body>
+    </html>
   )
 }
 
-export default layout

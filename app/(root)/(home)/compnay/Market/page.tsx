@@ -1,15 +1,16 @@
-"use client";
-import ServicesSection from "@/components/ServicesSectionFn";
-import React from "react";
-import { Building2, Factory, Users } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import AnimatedDetailsAndImage from "@/components/deatilsAndImagesectionFn";
-import { TextAnimate } from "@/components/ui/text-animate";
+"use client"
+
+import ServicesSection from "@/components/ServicesSectionFn"
+import { Building2, Factory, Users } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import AnimatedDetailsAndImage from "@/components/deatilsAndImagesectionFn"
+import { TextAnimate } from "@/components/ui/text-animate"
+import { motion } from "framer-motion"
 
 const Market = () => {
   const greyFabric2 = {
     title: "Domestic Excellence",
-    titleColor: "text-textblak",
+    titleColor: "text-custom-green",
     details: [
       {
         paragraph:
@@ -24,17 +25,16 @@ const Market = () => {
           "Not only have we earned the trust of our Indian clients, but we have also reached an international clientele with our premium products.",
       },
     ],
-    paragraphColor: "text-gray-700",
+    paragraphColor: "text-custom-black/80",
     images: {
       main: "/images/infra-weaving.webp",
     },
     connectUsLink: "/company/contact-us",
-  };
-  
+  }
 
   const greyFabric = {
     title: "Export Excellence",
-    titleColor: "text-textblak",
+    titleColor: "text-custom-green",
     details: [
       {
         paragraph:
@@ -57,168 +57,145 @@ const Market = () => {
           "We are committed to sustainable practices, producing eco-friendly fabrics in collaboration with Aditya Birla Group. Our LIVA eco-vera certified fabrics highlight our dedication to a greener future.",
       },
     ],
-    paragraphColor: "text-gray-700",
+    paragraphColor: "text-custom-black/80",
     images: {
       main: "/images/infra-weaving.webp",
     },
-    connectUsLink: "/company/contact-us", 
-    
-  };
-  
+    connectUsLink: "/company/contact-us",
+  }
+
   return (
-    <div>
-      <div>
-        <ServicesSection
-          image="/images/banner1.webp"
-          title="Market"
-          description="Connect with Ruia Fabrics, a leader in textiles since 1952. Specializing in high-quality velvet and viscose fabrics, we’re here to assist you with your inquiries and provide world-class solutions. Reach out to us for any assistance or collaboration opportunities."
-          link={{ href: "/compnay/contact-us", label: "Contact Us" }}
-        />
-      </div>
+    <div className="bg-custom-cream">
+      <ServicesSection
+        image="/images/banner1.webp"
+        title="Market"
+        description="Connect with Ruia Fabrics, a leader in textiles since 1952. Specializing in high-quality velvet and viscose fabrics, we're here to assist you with your inquiries and provide world-class solutions. Reach out to us for any assistance or collaboration opportunities."
+        link={{ href: "/company/contact-us", label: "Contact Us" }}
+      />
 
-      <div className="bg-gradient-to-t to-creamwhite pt-[45px] from-white">
-        <section className="container mx-auto px-4 py-12">
-          <div className="mb-12">
-            <h2 className="font-rubik text-[30px] font-bold text-darkgreen">
-              
-               <TextAnimate animation="blurInUp" by="character" as="p">Who We Are</TextAnimate>
-              </h2>
-            <p className="text-darkgreen max-w-3xl">
-              VP Tex is a diverse business group based in Erode, South India,
-              that specializes in spinning & weaving for arduous applications.
-            </p>
-          </div>
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="container mx-auto px-4 py-16"
+      >
+        <div className="mb-12">
+          <h2 className="font-rubik text-3xl md:text-4xl font-bold text-custom-green mb-4">
+            <TextAnimate animation="blurInUp" by="character" as="p">
+              Who We Are
+            </TextAnimate>
+          </h2>
+          <p className="text-custom-black/80 max-w-3xl font-roboto text-lg">
+            VP Tex is a diverse business group based in Erode, South India, that specializes in spinning & weaving for
+            arduous applications.
+          </p>
+        </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12 ">
-            <div className="text-center p-6 border rounded-lg bg-white">
-              <div className="flex justify-center mb-4">
-                <Building2 className="w-12 h-12 text-greencolor" />
-              </div>
-              <h3 className="font-rubik text-[30px] font-bold text-darkgreen">90 Lakhs</h3>
-              <div className="uppercase text-sm text-gray-600">
-                <div>WOVEN FABRICS</div>
-                <div>METRES / MONTH</div>
-              </div>
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <motion.div whileHover={{ scale: 1.05 }} className="text-center p-8 rounded-lg bg-custom-white shadow-lg">
+            <div className="flex justify-center mb-4">
+              <Building2 className="w-16 h-16 text-custom-green" />
             </div>
-            <div className="text-center p-6 border rounded-lg bg-white">
-              <div className="flex justify-center mb-4">
-                <Factory className="w-12 h-12 text-greencolor" />
-              </div>
-              <h3 className="font-rubik text-[30px] font-bold text-darkgreen">6 Tons</h3>
-              <div className="uppercase text-sm text-gray-600">
-                <div>KNITTED FABRICS</div>
-                <div>TONS / DAY</div>
-              </div>
+            <h3 className="font-rubik text-3xl font-bold text-custom-green mb-2">90 Lakhs</h3>
+            <div className="uppercase text-sm text-custom-black/70 font-abel">
+              <div>WOVEN FABRICS</div>
+              <div>METRES / MONTH</div>
             </div>
-          </div>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }} className="text-center p-8 rounded-lg bg-custom-white shadow-lg">
+            <div className="flex justify-center mb-4">
+              <Factory className="w-16 h-16 text-custom-green" />
+            </div>
+            <h3 className="font-rubik text-3xl font-bold text-custom-green mb-2">6 Tons</h3>
+            <div className="uppercase text-sm text-custom-black/70 font-abel">
+              <div>KNITTED FABRICS</div>
+              <div>TONS / DAY</div>
+            </div>
+          </motion.div>
+        </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Mission Card */}
-            <Card className="bg-darkgreen text-white p-8">
-              <CardContent className="p-0">
-                <h3 className="font-rubik text-[30px] font-bold text-white"> <TextAnimate animation="blurInDown" by="character" as="p">Our Mission </TextAnimate></h3>
-                <div className="space-y-6">
-                  <p>
-                    V.P. Tex has been best known for quality for more than three
-                    decades, combining expertise with a passion for excellence
-                    to provide high quality material to the specification of our
-                    clients. We are dedicated to meeting the needs of all of our
-                    stakeholders, which include our customers, employees,
-                    partners, and the general public.
-                  </p>
-                  <ul className="space-y-4">
-                    <li className="flex gap-4">
-                      <span className="block w-4 h-0.5 bg-white mt-3 flex-shrink-0" />
-                      <span>
-                        To produce world class-quality fabric and yarn with the
-                        highest level of competitiveness across all parameters
-                      </span>
-                    </li>
-                    <li className="flex gap-4">
-                      <span className="block w-4 h-0.5 bg-white mt-3 flex-shrink-0" />
-                      <span>
-                        To have long-standing customers by delivering
-                        sustainable fabric and yarn as per the client needs.
-                      </span>
-                    </li>
-                    <li className="flex gap-4">
-                      <span className="block w-4 h-0.5 bg-white mt-3 flex-shrink-0" />
-                      <span>
-                        To effectively harness and integrate all available
-                        technology across various elements of the textile chain,
-                        and to cater to product innovation by mastering
-                        value-added fabric
-                      </span>
-                    </li>
-                  </ul>
+        <div className="grid lg:grid-cols-2 gap-12">
+          <Card className="bg-custom-green text-custom-white p-8 shadow-xl">
+            <CardContent className="p-0">
+              <h3 className="font-rubik text-3xl font-bold mb-6">
+                <TextAnimate animation="blurInDown" by="character" as="p">
+                  Our Mission
+                </TextAnimate>
+              </h3>
+              <div className="space-y-6 font-roboto">
+                <p>
+                  V.P. Tex has been best known for quality for more than three decades, combining expertise with a
+                  passion for excellence to provide high quality material to the specification of our clients. We are
+                  dedicated to meeting the needs of all of our stakeholders, which include our customers, employees,
+                  partners, and the general public.
+                </p>
+                <ul className="space-y-4">
+                  <li className="flex gap-4">
+                    <span className="block w-4 h-0.5 bg-custom-white mt-3 flex-shrink-0" />
+                    <span>
+                      To produce world class-quality fabric and yarn with the highest level of competitiveness across
+                      all parameters
+                    </span>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="block w-4 h-0.5 bg-custom-white mt-3 flex-shrink-0" />
+                    <span>
+                      To have long-standing customers by delivering sustainable fabric and yarn as per the client needs.
+                    </span>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="block w-4 h-0.5 bg-custom-white mt-3 flex-shrink-0" />
+                    <span>
+                      To effectively harness and integrate all available technology across various elements of the
+                      textile chain, and to cater to product innovation by mastering value-added fabric
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </CardContent>
+          </Card>
+
+          <div className="space-y-8">
+            <motion.div whileHover={{ scale: 1.05 }} className="bg-custom-white rounded-lg shadow-lg p-8">
+              <div className="flex gap-4 items-center">
+                <div className="flex items-center">
+                  <span className="font-rubik text-5xl font-bold text-custom-green">25</span>
+                  <span className="text-custom-black text-2xl ml-2 font-abel">Years</span>
                 </div>
-              </CardContent>
-            </Card>
+                <p className="text-custom-black/80 text-xl font-roboto">Industries Experience</p>
+              </div>
+            </motion.div>
 
-            {/* Right Column */}
-            <div className="space-y-8">
-              {/* Experience Card */}
-              <Card>
-                <CardContent className="p-8 bg-white">
-                  <div className="flex gap-2 items-center ">
-                    <div className="flex items-center">
-                      <span className="font-rubik text-[55px] font-bold text-darkgreen">
-                        25
-                      </span>
-                      <span className="text-[#1B2B65] text-2xl ml-2">
-                        Years
-                      </span>
-                    </div>
-                    <p className="text-gray-600  text-[22px]">Industries Experience</p>
-                  </div>
-                </CardContent>
-              </Card>
+            <motion.div whileHover={{ scale: 1.05 }} className="bg-custom-white rounded-lg shadow-lg p-8">
+              <div className="flex items-center gap-4 mb-4">
+                <Factory className="w-8 h-8 text-custom-green" />
+                <h4 className="font-rubik text-2xl font-bold text-custom-green">Production</h4>
+              </div>
+              <ul className="space-y-2 text-custom-black/80 font-roboto">
+                <li>Woven Fabrics : 90 Lakh Metres / Month</li>
+                <li>Knitted Fabric : 6 Tons / day</li>
+              </ul>
+            </motion.div>
 
-              {/* Production Card */}
-              <Card>
-                <CardContent className="p-8 bg-white">
-                  <div className="flex items-center gap-4 mb-4">
-                    <Factory className="w-6 h-6 text-greencolor" />
-                    <h4 className="font-rubik text-[30px] font-bold text-darkgreen">
-                      Production
-                    </h4>
-                  </div>
-                  <ul className="space-y-2 text-gray-600">
-                    <li>Woven Fabrics : 90 Lakh Metres / Month</li>
-                    <li>Knitted Fabric : 6 Tons / day</li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* Team Card */}
-              <Card>
-                <CardContent className="p-8 bg-white">
-                  <div className="flex items-center gap-4 mb-4">
-                    <Users className="w-6 h-6 text-greencolor" />
-                    <h4 className="font-rubik text-[30px] font-bold text-darkgreen">
-                      Professional Team
-                    </h4>
-                  </div>
-                  <p className="text-gray-600">
-                    A versatile production & management team that is willing to
-                    go beyond in its pursuit of quality and delicacy.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
+            <motion.div whileHover={{ scale: 1.05 }} className="bg-custom-white rounded-lg shadow-lg p-8">
+              <div className="flex items-center gap-4 mb-4">
+                <Users className="w-8 h-8 text-custom-green" />
+                <h4 className="font-rubik text-2xl font-bold text-custom-green">Professional Team</h4>
+              </div>
+              <p className="text-custom-black/80 font-roboto">
+                A versatile production & management team that is willing to go beyond in its pursuit of quality and
+                delicacy.
+              </p>
+            </motion.div>
           </div>
-        </section>
-      </div>
+        </div>
+      </motion.section>
 
-      <div>
-        <AnimatedDetailsAndImage {...greyFabric2} imagePosition="left" />
-      </div>
-
-      <div>
-        <AnimatedDetailsAndImage {...greyFabric} imagePosition="right" />
-      </div>
+      <AnimatedDetailsAndImage {...greyFabric2} imagePosition="left" />
+      <AnimatedDetailsAndImage {...greyFabric} imagePosition="right" />
     </div>
-  );
-};
+  )
+}
 
-export default Market;
+export default Market
+

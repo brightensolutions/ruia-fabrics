@@ -1,89 +1,106 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import { FaAngleRight } from "react-icons/fa";
-import { TextAnimate } from "./ui/text-animate";
+"use client"
+
+import Image from "next/image"
+import Link from "next/link"
+import { FaAngleRight } from "react-icons/fa"
+import { motion } from "framer-motion"
 
 const Quality = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  }
+
   return (
-    <div
-      className="bg-zinc-800 pt-11 inline-block w-[100%] py-24 bg-gradient-to-t to-white from-white relative"
-    >
-      <div className="absolute inset-0 bg-gradient-to-t to-greencolor from-transparent"></div>
-      <div className="lg:max-w-[1440px] m-auto px-[20px] relative z-20">
-        <div className="flex md:flex-row flex-col gap-y-12">
-          <div className="md:w-[50%] w-[100%]">
-            <h2 className="font-rubik text-[30px] font-bold text-white">
-            Manufacturing Excellence
-            </h2>
-            <h3 className="font-abel text-[40px] font-normal text-white">
-            <TextAnimate animation="blurInUp" by="word" as="p">
-            Crafting Excellence, One Product at a Time
-              </TextAnimate>
-             
-            </h3>
-            <p className="text-[18px] font-roboto text-white/80 mt-1">
-              We deliver world-class manufacturing solutions through innovation,
-              precision, and dedication to quality.
-            </p>
+    <div className="bg-custom-cream py-24 relative overflow-hidden  z-40">
+      <div className="absolute inset-0 bg-gradient-to-b from-custom-green/10 to-transparent" />
+      <motion.div
+        className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={containerVariants}
+      >
+        <div className="flex flex-col md:flex-row gap-16 items-center">
+          <motion.div className="w-full md:w-1/2 space-y-8" variants={containerVariants}>
+            <motion.h2 variants={itemVariants} className="font-rubik text-3xl font-bold text-custom-green">
+              Manufacturing Excellence
+            </motion.h2>
+            <motion.h3 variants={itemVariants} className="font-abel text-4xl md:text-5xl font-normal text-custom-black">
+              Crafting Excellence, One Product at a Time
+            </motion.h3>
+            <motion.p variants={itemVariants} className="text-lg font-roboto text-custom-black/80">
+              We deliver world-class manufacturing solutions through innovation, precision, and dedication to quality.
+            </motion.p>
 
-            <div className="grid md:grid-cols-2 grid-cols-1 mt-[15px] gap-[15px]">
-              <div className="bg-greencolor p-5 rounded-xl">
-                <h1 className="font-rubik text-[22px] font-medium text-white">
-                  INNOVATIVE TECHNOLOGY
-                </h1>
-                <p className="mt-[2px] font-abel text-[19px] font-normal text-white">
-                  Our cutting-edge technology ensures unparalleled precision in
-                  every step of the manufacturing process.
+            <motion.div variants={containerVariants} className="grid md:grid-cols-2 gap-6">
+              <motion.div variants={itemVariants} className="bg-custom-green p-6 rounded-xl shadow-lg">
+                <h4 className="font-rubik text-xl font-medium text-custom-white mb-2">INNOVATIVE TECHNOLOGY</h4>
+                <p className="font-abel text-lg text-custom-cream">
+                  Our cutting-edge technology ensures unparalleled precision in every step of the manufacturing process.
                 </p>
-              </div>
+              </motion.div>
 
-              <div className="bg-greencolor p-5 rounded-xl">
-                <h1 className="font-rubik text-[22px] font-medium text-white">
-                  RELIABILITY
-                </h1>
-                <p className="mt-[2px] font-abel text-[19px] font-normal text-white">
-                  Trusted by industries worldwide, we consistently deliver
-                  products that exceed expectations.
+              <motion.div variants={itemVariants} className="bg-custom-green p-6 rounded-xl shadow-lg">
+                <h4 className="font-rubik text-xl font-medium text-custom-white mb-2">RELIABILITY</h4>
+                <p className="font-abel text-lg text-custom-cream">
+                  Trusted by industries worldwide, we consistently deliver products that exceed expectations.
                 </p>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <div className="mt-16 flex flex-row gap-[15px]">
+            <motion.div variants={containerVariants} className="flex flex-wrap gap-4 mt-8">
               <Link
                 href="/about"
-                className="bg-darkgreen text-white px-5 hover:bg-black py-4 flex flex-row items-center gap-[5px] font-rubik w-fit rounded-[5px]"
+                className="bg-custom-black text-custom-white px-6 py-3 flex items-center gap-2 font-rubik rounded-[5px] transition-all duration-300 hover:bg-custom-green"
               >
-                Learn More{" "}
-                <span>
-                  <FaAngleRight />
-                </span>
+                Learn More <FaAngleRight />
               </Link>
               <Link
                 href="/contact"
-                className="bg-darkgreen text-white px-5 hover:bg-black py-4 flex flex-row items-center gap-[5px] font-rubik w-fit rounded-[5px]"
+                className="bg-custom-green text-custom-white px-6 py-3 flex items-center gap-2 font-rubik rounded-[5px] transition-all duration-300 hover:bg-custom-black"
               >
-                Contact Us{" "}
-                <span>
-                  <FaAngleRight />
-                </span>
+                Contact Us <FaAngleRight />
               </Link>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            className="w-full md:w-1/2"
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/qual.webp"
+                alt="Manufacturing Excellence"
+                width={600}
+                height={400}
+                className="object-cover w-full h-full"
+              />
+              <div className="absolute inset-0 bg-custom-green/20 mix-blend-multiply" />
             </div>
-          </div>
-
-          <div className="md:w-[50%] w-[100%]">
-            <Image
-              src="/images/qual.webp"
-              alt="About us"
-              width={500}
-              height={200}
-              className=" object-cover m-auto "
-            />
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </div>
-  );
-};
+  )
+}
 
-export default Quality;
+export default Quality
+

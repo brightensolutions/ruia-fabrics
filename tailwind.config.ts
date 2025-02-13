@@ -1,6 +1,6 @@
-import type { Config } from "tailwindcss";
-const { fontFamily } = require("tailwindcss/defaultTheme");
-const { default: flattenColorPalette } = require("tailwindcss/lib/util/flattenColorPalette");
+import type { Config } from "tailwindcss"
+const { fontFamily } = require("tailwindcss/defaultTheme")
+const { default: flattenColorPalette } = require("tailwindcss/lib/util/flattenColorPalette")
 
 export default {
   darkMode: ["class"],
@@ -9,130 +9,117 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{ts,tsx}",
+    "*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-  	extend: {
-  		animation: {
-  			scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
-  			marquee: 'marquee var(--duration) infinite linear',
-  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'
-  		},
-  		keyframes: {
-  			scroll: {
-  				to: {
-  					transform: 'translate(calc(-50% - 0.5rem))'
-  				}
-  			},
-  			marquee: {
-  				from: {
-  					transform: 'translateX(0)'
-  				},
-  				to: {
-  					transform: 'translateX(calc(-100% - var(--gap)))'
-  				}
-  			},
-  			'marquee-vertical': {
-  				from: {
-  					transform: 'translateY(0)'
-  				},
-  				to: {
-  					transform: 'translateY(calc(-100% - var(--gap)))'
-  				}
-  			}
-  		},
-  		fontFamily: {
-  			sans: [
-  				'var(--font-geist-sans)',
-                    ...fontFamily.sans
-                ],
-  			mono: [
-  				'var(--font-geist-mono)',
-                    ...fontFamily.mono
-                ],
-  			rubik: [
-  				'var(--font-rubik)',
-                    ...fontFamily.sans
-                ],
-  			abel: [
-  				'var(--font-abel)',
-                    ...fontFamily.sans
-                ],
-  			roboto: [
-  				'var(--font-roboto)',
-                    ...fontFamily.sans
-                ]
-  		},
-  		colors: {
-  			background: 'hsl(var(--background))',
-  			foreground: 'hsl(var(--foreground))',
-  			bordercolor: '#3a3a3a',
-			darkgreen:'#112D4E',
-  			greycolor: '#3F72AF',
-			greencolor:'#3F72AF',
-			bluecolor:'#DBE2EF',
-			lightgreen:"#85A947",
-			textblak:"#000000",
-			creamwhite:"#F9F7F7",
-  			card: {
-  				DEFAULT: 'hsl(var(--card))',
-  				foreground: 'hsl(var(--card-foreground))'
-  			},
-  			popover: {
-  				DEFAULT: 'hsl(var(--popover))',
-  				foreground: 'hsl(var(--popover-foreground))'
-  			},
-  			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
-  			},
-  			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
-  				foreground: 'hsl(var(--secondary-foreground))'
-  			},
-  			muted: {
-  				DEFAULT: 'hsl(var(--muted))',
-  				foreground: 'hsl(var(--muted-foreground))'
-  			},
-  			accent: {
-  				DEFAULT: 'hsl(var(--accent))',
-  				foreground: 'hsl(var(--accent-foreground))'
-  			},
-  			destructive: {
-  				DEFAULT: 'hsl(var(--destructive))',
-  				foreground: 'hsl(var(--destructive-foreground))'
-  			},
-  			border: 'hsl(var(--border))',
-  			input: 'hsl(var(--input))',
-  			ring: 'hsl(var(--ring))',
-  			chart: {
-  				'1': 'hsl(var(--chart-1))',
-  				'2': 'hsl(var(--chart-2))',
-  				'3': 'hsl(var(--chart-3))',
-  				'4': 'hsl(var(--chart-4))',
-  				'5': 'hsl(var(--chart-5))'
-  			}
-  		},
-  		borderRadius: {
-  			lg: 'var(--radius)',
-  			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
-  		}
-  	}
+    extend: {
+      animation: {
+        scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        marquee: "marquee var(--duration) infinite linear",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+      },
+      keyframes: {
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
+        marquee: {
+          from: {
+            transform: "translateX(0)",
+          },
+          to: {
+            transform: "translateX(calc(-100% - var(--gap)))",
+          },
+        },
+        "marquee-vertical": {
+          from: {
+            transform: "translateY(0)",
+          },
+          to: {
+            transform: "translateY(calc(-100% - var(--gap)))",
+          },
+        },
+      },
+      fontFamily: {
+        sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+        mono: ["var(--font-geist-mono)", ...fontFamily.mono],
+        rubik: ["var(--font-rubik)", ...fontFamily.sans],
+        abel: ["var(--font-abel)", ...fontFamily.sans],
+        roboto: ["var(--font-roboto)", ...fontFamily.sans],
+      },
+      colors: {
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        bordercolor: "#3a3a3a",
+        darkgreen: "#112D4E",
+        greycolor: "#3F72AF",
+        greencolor: "#3F72AF",
+        bluecolor: "#DBE2EF",
+        lightgreen: "#85A947",
+        textblak: "#000000",
+        creamwhite: "#F9F7F7",
+        // New custom colors
+        "custom-cream": "#E7ECD7",
+        "custom-white": "#FFFFFF",
+        "custom-green": "#486A4C",
+        "custom-black": "#0D0D0D",
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        chart: {
+          "1": "hsl(var(--chart-1))",
+          "2": "hsl(var(--chart-2))",
+          "3": "hsl(var(--chart-3))",
+          "4": "hsl(var(--chart-4))",
+          "5": "hsl(var(--chart-5))",
+        },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
+    },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    addVariablesForColors
-  ],
-} satisfies Config;
+  plugins: [require("tailwindcss-animate"), addVariablesForColors],
+} satisfies Config
 
 // Helper function to add custom CSS variables for colors
 function addVariablesForColors({ addBase, theme }: any) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-  );
+  const allColors = flattenColorPalette(theme("colors"))
+  const newVars = Object.fromEntries(Object.entries(allColors).map(([key, val]) => [`--${key}`, val]))
 
   addBase({
     ":root": newVars,
-  });
+  })
 }
+

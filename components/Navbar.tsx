@@ -1,172 +1,171 @@
-"use client";
-import React, { useState, ReactNode } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import Drawer from "react-modern-drawer";
-import "react-modern-drawer/dist/index.css";
-import Image from "next/image";
-import { CiMenuBurger } from "react-icons/ci";
-import { MdCancel } from "react-icons/md";
-
-interface MenuLink {
-  label: string;
-  href: string;
-}
-
-interface Product {
-  title: string;
-  href: string;
-  src: string;
-  description: string;
-}
+"use client"
+import { useState, useEffect } from "react"
+import Link from "next/link"
+import Image from "next/image"
+import { CiMenuBurger } from "react-icons/ci"
+import { MdCancel } from "react-icons/md"
+import Drawer from "react-modern-drawer"
+import "react-modern-drawer/dist/index.css"
+import { cn } from "@/lib/utils"
 
 interface MenuData {
-  id: string;
-  name: string;
-  href?: string;
-  content?: MenuLink[] | Product[];
+  id: string
+  name: string
+  href?: string
 }
+
 const menuData: MenuData[] = [
-  {
-    id: "Home",
-    name: "Home",
-    href: "/",
-  },
-  {
-    id: "About us",
-    name: "About Us",
-    href: "/compnay/about-us",
-  },
-  {
-    id: "Product",
-    name: "Product",
-    href: "/compnay/product",
-  },
-  {
-    id: "Infrastructure",
-    name: "Infrastructure",
-    href: "/compnay/Infrastructure",
-  },
-  {
-    id: "Market",
-    name: "Market",
-    href: "/compnay/Market",
-  },
-];
+  { id: "Home", name: "Home", href: "/" },
+  { id: "About Us", name: "About Us", href: "/compnay/about-us" },
+  { id: "Product", name: "Product", href: "/compnay/product" },
+  { id: "Infrastructure", name: "Infrastructure", href: "/compnay/Infrastructure" },
+  { id: "Market", name: "Market", href: "/compnay/Market" },
+]
 
 export function NavbarMenu() {
   return (
-    <div className="relative w-full flex items-center justify-center ">
-      <Navbar className="top-0" />
+    <div className="relative w-full">
+      <Navbar />
     </div>
-  );
+  )
 }
 
-interface NavbarProps {
-  className?: string;
-}
+function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+  const [active, setActive] = useState<string | null>(null)
+  const [scrolled, setScrolled] = useState(false)
 
-function Navbar({ className }: NavbarProps) {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [active, setActive] = useState<string | null>(null);
-  const toggleDrawer = () => {
-    setIsOpen((prevState) => !prevState);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 20
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [scrolled])
+
+  const toggleDrawer = () => setIsOpen((prevState) => !prevState)
+
   return (
     <div
-      className={cn("fixed top-10 inset-x-0 w-[100%] mx-auto z-50 ", className)}
+      className={cn(
+        "fixed top-0 inset-x-0 w-full z-50 transition-all duration-300",
+        scrolled ? "bg-custom-cream shadow-lg" : "bg-white",
+      )}
     >
+      {/* Desktop Navigation */}
       <div className="md:block hidden">
-        <Menu setActive={setActive}>
-          <div className="flex w-[100%] flex-row justify-between items-center  md:max-w-[1440px] m-auto px-[20px] ">
-            <div>
-              <Link href="/" className="font-abel text-white text-[25px] ">
-                <Image
-                  src="/images/ruia fab.png"
-                  alt="logo"
-                  width={100}
-                  height={100}
-                />
-              </Link>
-            </div>
-            <div className="flex flex-row space-x-9">
-              {menuData.map((menu) => (
-                <Link href={menu.href || "#"} key={menu.id}>
-                  <MenuItem
-                    setActive={setActive}
-                    active={active}
-                    item={menu.name}
-                  >
-                    {/* Add any custom content for the menu item */}
-                    <div className="w-[45px] h-2 bg-greencolor"></div>
-                  </MenuItem>
-                </Link>
-              ))}
-            </div>
-
-            <div>
-              <Link
-                href="/compnay/contact-us"
-                className="inline-block text-[18px] bg-greycolor text-white   py-2 px-5 rounded-[5px] font-rubik"
-              >
-                Contact Us
-              </Link>
-            </div>
-          </div>
-        </Menu>
-      </div>
-
-      <div className="bg-darkgreen px-[20px] md:hidden block py-[10px]">
-        <div className="flex w-[100%] items-center justify-between">
-          <Link href="/" className="text-[45px]">
+        <div className="flex w-full justify-between items-center max-w-[1440px] mx-auto px-8 py-6">
+          <Link href="/" className="relative">
             <Image
               src="/images/ruia fab.png"
               alt="logo"
-              width={150}
-              height={150}
+              width={120}
+              height={120}
+              className={cn(
+                "transition-all duration-300 mix-blend-difference  contrast-200",
+                scrolled ? "" : "mix-blend-difference  contrast-200",
+              )}
             />
           </Link>
-          <button onClick={toggleDrawer} className="text-[35px]">
+
+          <div className="flex space-x-12">
+            {menuData.map((menu) => (
+              <Link
+                href={menu.href || "#"}
+                key={menu.id}
+                className={cn(
+                  "font-rubik text-[20px] transition-colors duration-200 tracking-wide",
+                  active === menu.name
+                    ? "text-custom-green  font-medium"
+                    : scrolled
+                      ? "text-custom-black hover:text-custom-green"
+                      : "text-black hover:text-custom-green",
+                )}
+                onClick={() => setActive(menu.name)}
+              >
+                {menu.name}
+              </Link>
+            ))}
+          </div>
+
+          <Link
+            href="/company/contact-us"
+            className={cn(
+              "px-6 py-3 rounded text-[15px] font-rubik transition-all duration-300",
+              "hover:bg-custom-black active:transform active:scale-95",
+              scrolled ? "bg-custom-green text-white" : "bg-custom-green text-white",
+            )}
+          >
+            Contact Us
+          </Link>
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
+      <div className="md:hidden block">
+        <div className="flex w-full items-center justify-between px-5 py-4">
+          <Link href="/" className="relative">
+            <Image
+              src="/images/ruia fab.png"
+              alt="logo"
+              width={100}
+              height={100}
+              className={cn(
+                "transition-all duration-300 mix-blend-difference  contrast-200",
+                scrolled ? "" : "mix-blend-difference  contrast-200",
+              )}
+            />
+          </Link>
+          <button
+            onClick={toggleDrawer}
+            className={cn(
+              "transition-all text-[25px] duration-300 mix-blend-difference  contrast-200",
+              scrolled ? "" : "mix-blend-difference  contrast-200",
+            )}
+          >
             <CiMenuBurger />
           </button>
         </div>
-        <Drawer
-          open={isOpen}
-          onClose={toggleDrawer}
-          direction="right"
-          className="bg-white w-[80%] h-full relative"
-        >
-          <div className="p-4">
+
+        <Drawer open={isOpen} onClose={toggleDrawer} direction="right" className="bg-custom-cream w-4/5">
+          <div className="p-6">
             <button
               onClick={toggleDrawer}
-              className="text-black mb-4 text-end absolute right-[5px]"
+              className="absolute top-4 right-4 text-custom-black hover:text-custom-green transition-colors"
             >
-              <MdCancel className="text-[35px] text-right " />
+              <MdCancel className="text-3xl" />
             </button>
-            <ul className="space-y-4 mt-12">
-              {menuData.map((item: MenuData) => (
-                <li
-                  key={item.id}
-                  className="text-lg text-darkgreen font-rubik font-semibold"
-                >
-                  <Link href={item.href || "#"} onClick={toggleDrawer}>
+            <ul className="space-y-6 mt-16">
+              {menuData.map((item) => (
+                <li key={item.id} className="text-lg font-rubik">
+                  <Link
+                    href={item.href || "#"}
+                    onClick={toggleDrawer}
+                    className="text-custom-black hover:text-custom-green transition-colors duration-200"
+                  >
                     {item.name}
                   </Link>
                 </li>
               ))}
+              <li className="pt-4">
+                <Link
+                  href="/company/contact-us"
+                  onClick={toggleDrawer}
+                  className="bg-custom-green text-white px-6 py-2 rounded text-[15px] font-rubik 
+                           transition-all duration-300 hover:bg-custom-black active:transform active:scale-95"
+                >
+                  Contact Us
+                </Link>
+              </li>
             </ul>
-            <div className="mt-6">
-              <Link
-                href="/compnay/contact-us"
-                className="inline-block text-[18px] bg-greycolor text-white   py-2 px-5 rounded-[5px] font-rubik"
-              >
-                Contact Us
-              </Link>
-            </div>
           </div>
         </Drawer>
       </div>
     </div>
-  );
+  )
 }
+
