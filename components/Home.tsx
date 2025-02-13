@@ -99,14 +99,14 @@ export function InfiniteMovingCardsDemo() {
             className="flex justify-center gap-6"
           >
             <Link
-              href="/company/about-us"
+              href="/compnay/about-us"
               className="inline-flex items-center px-8 py-3 rounded-lg bg-custom-green text-custom-white font-rubik text-lg 
                        transition-all duration-300 hover:bg-custom-black hover:scale-105 transform"
             >
               About Us
             </Link>
             <Link
-              href="/company/contact-us"
+              href="/compnay/contact-us"
               className="inline-flex items-center px-8 py-3 rounded-lg border-2 border-custom-green text-custom-green font-rubik text-lg 
                        transition-all duration-300 hover:bg-custom-green hover:text-custom-white hover:scale-105 transform"
             >
