@@ -153,7 +153,7 @@ function Navbar() {
               ))}
               <li className="pt-4">
                 <Link
-                  href="/company/contact-us"
+                  href="/compnay/contact-us"
                   onClick={toggleDrawer}
                   className="bg-custom-green text-white px-6 py-2 rounded text-[15px] font-rubik 
                            transition-all duration-300 hover:bg-custom-black active:transform active:scale-95"

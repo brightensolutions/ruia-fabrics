@@ -18,7 +18,7 @@ const Infrastructure = () => {
     images: {
       main: "/images/weaving-preparatory (1).webp",
     },
-    connectUsLink: "/company/contact-us",
+    connectUsLink: "/compnay/contact-us",
   }
 
   const greyFabric2 = {
@@ -42,7 +42,7 @@ const Infrastructure = () => {
     images: {
       main: "/images/infra-weaving.webp",
     },
-    connectUsLink: "/company/contact-us",
+    connectUsLink: "/compnay/contact-us",
   }
 
   return (
@@ -51,7 +51,7 @@ const Infrastructure = () => {
         image="/images/banner1.webp"
         title="Infrastructure"
         description="Connect with Ruia Fabrics, a leader in textiles since 1952. Specializing in high-quality velvet and viscose fabrics, we're here to assist you with your inquiries and provide world-class solutions. Reach out to us for any assistance or collaboration opportunities."
-        link={{ href: "/company/contact-us", label: "Contact Us" }}
+        link={{ href: "/compnay/contact-us", label: "Contact Us" }}
       />
 
       <motion.div
