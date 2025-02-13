@@ -116,7 +116,7 @@ export function InfiniteMovingCardsDemo() {
         </motion.div>
 
         {/* Fabric Showcase */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9, duration: 0.8 }}
@@ -141,7 +141,7 @@ export function InfiniteMovingCardsDemo() {
               />
             </div>
           )}
-        </motion.div>
+        </motion.div> */}
       </div>
     </div>
   )
