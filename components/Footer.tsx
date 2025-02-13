@@ -11,9 +11,9 @@ const Footer: React.FC = () => {
       links: [
         { name: "Home", url: "/" },
         { name: "About Us", url: "/compnay/about-us" },
-        { name: "Infrastructure", url: "/compnay/infrastructure" },
+        { name: "Infrastructure", url: "/compnay/Infrastructure" },
         { name: "Product", url: "/compnay/product" },
-        { name: "Market", url: "/compnay/market" },
+        { name: "Market", url: "/compnay/Market" },
         { name: "Contact", url: "/compnay/contact-us" },
       ],
     },

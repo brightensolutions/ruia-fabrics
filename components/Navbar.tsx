@@ -93,7 +93,7 @@ function Navbar() {
           </div>
 
           <Link
-            href="/company/contact-us"
+            href="/compnay/contact-us"
             className={cn(
               "px-6 py-3 rounded text-[15px] font-rubik transition-all duration-300",
               "hover:bg-custom-black active:transform active:scale-95",
