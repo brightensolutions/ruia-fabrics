@@ -65,13 +65,13 @@ const Quality = () => {
 
             <motion.div variants={containerVariants} className="flex flex-wrap gap-4 mt-8">
               <Link
-                href="/about"
+               href="/compnay/about-us"
                 className="bg-custom-black text-custom-white px-6 py-3 flex items-center gap-2 font-rubik rounded-[5px] transition-all duration-300 hover:bg-custom-green"
               >
                 Learn More <FaAngleRight />
               </Link>
               <Link
-                href="/contact"
+                href="/compnay/contact-us"
                 className="bg-custom-green text-custom-white px-6 py-3 flex items-center gap-2 font-rubik rounded-[5px] transition-all duration-300 hover:bg-custom-black"
               >
                 Contact Us <FaAngleRight />

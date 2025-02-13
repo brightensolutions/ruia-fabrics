@@ -83,13 +83,13 @@ const WhyChoose = () => {
 
             <motion.div variants={containerVariants} className="flex flex-wrap gap-4 mt-8">
               <Link
-                href="/company/about-us"
+                 href="/compnay/about-us"
                 className="bg-custom-green text-custom-white px-6 py-3 flex items-center gap-2 font-rubik rounded-lg transition-all duration-300 hover:bg-custom-black"
               >
                 Learn More <FaAngleRight />
               </Link>
               <Link
-                href="/company/contact-us"
+                href="/compnay/contact-us"
                 className="bg-custom-black text-custom-white px-6 py-3 flex items-center gap-2 font-rubik rounded-lg transition-all duration-300 hover:bg-custom-green"
               >
                 Contact Us <FaAngleRight />
