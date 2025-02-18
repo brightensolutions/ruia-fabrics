@@ -222,7 +222,7 @@ export default function ClientPage() {
               </div>
             </div>
             <div className="flex justify-end gap-3 pt-4 border-t">
-              <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
+              <Button variant="outline"  onClick={() => setIsDialogOpen(false)}  className="bg-[#4a77b5] hover:bg-[#3a67a5] text-white shadow-sm transition-all duration-300">
                 Cancel
               </Button>
               <Button

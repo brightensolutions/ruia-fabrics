@@ -80,5 +80,8 @@ body {
   overflow-x: hidden;
   line-height: 1;
 }
+button#radix-\:r0\:-trigger-all {
+  color: white;
+}
 
 

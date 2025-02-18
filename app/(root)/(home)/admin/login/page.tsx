@@ -18,7 +18,7 @@ export default function AdminLogin() {
     // Check if user is already logged in
     const adminId = localStorage.getItem("adminId")
     if (adminId) {
-      router.push("/admin/dashboard")
+      router.push("/admin/Fabric-Photo")
     }
   }, [router])
 
@@ -41,7 +41,7 @@ export default function AdminLogin() {
         // Store adminId in localStorage
         localStorage.setItem("adminId", data.adminId)
         toast.success("Login successful")
-        router.push("/admin/dashboard")
+        router.push("/admin/Fabric-Photo")
       } else {
         toast.error(data.error || "Login failed")
       }
