@@ -10,13 +10,14 @@ import type React from "react";
 import { toast } from "react-toastify";
 import Image from "next/image";
 import { IoCloudUploadOutline } from "react-icons/io5";
+import { IoIosContact } from "react-icons/io";
 
 const sidebarItems = [
-  { icon: LayoutDashboard, label: "Dashboard", href: "/admin/dashboard" },
+  // { icon: LayoutDashboard, label: "Dashboard", href: "/admin/dashboard" },
   { icon: IoCloudUploadOutline, label: "Upload Fabric", href: "/admin/Fabric-Photo" },
-  { icon: Users, label: "Users", href: "/admin/users" },
+  { icon: IoIosContact, label: "contact", href: "/admin/contact" },
   { icon: Users, label: "client", href: "/admin/clients" },
-  { icon: Settings, label: "Settings", href: "/admin/settings" },
+  // { icon: Settings, label: "Settings", href: "/admin/settings" },  
 ];
 
 export default function AdminLayout({
@@ -53,7 +54,7 @@ export default function AdminLayout({
   const SidebarContent = () => (
     <div className="flex flex-col h-full bg-[#0B2447] text-white">
       <div className="p-5 text-xl font-bold ">
-        <Link href="/admin/dashboard" className="font-abel text-white text-[25px] m-auto ">
+        <Link href="/admin/Fabric-Photo" className="font-abel text-white text-[25px] m-auto ">
           <Image
             src="/images/ruia fab.png"
             alt="logo"

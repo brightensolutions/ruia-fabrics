@@ -1,5 +1,7 @@
 "use client"
+
 import type React from "react"
+
 import { useState, useCallback, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { PlusCircle, Upload, X, Trash2 } from "lucide-react"
@@ -8,29 +10,21 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
-import { toast, ToastContainer } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
+import { toast } from "react-hot-toast"
 import { motion } from "framer-motion"
-import { Skeleton } from "@/components/ui/skeleton"
 
 interface Client {
   _id: string
-  logoUrl: string
-  createdAt: string
-  updatedAt: string
+  logoUrls: string[]
 }
 
-export default function ClientPage() {
+export default function ClientsPage() {
   const [logos, setLogos] = useState<File[]>([])
   const [isDragging, setIsDragging] = useState(false)
   const [isUploading, setIsUploading] = useState(false)
   const [clients, setClients] = useState<Client[]>([])
   const [isDialogOpen, setIsDialogOpen] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    fetchClients()
-  }, [])
+  const [isLoading, setIsLoading] = useState(false)
 
   const fetchClients = async () => {
     setIsLoading(true)
@@ -47,6 +41,7 @@ export default function ClientPage() {
       }
 
       const data = await response.json()
+      console.log("Fetched client data:", data)
       setClients(data.clients)
     } catch (error) {
       console.error("Error fetching clients:", error)
@@ -113,21 +108,19 @@ export default function ClientPage() {
         throw new Error(errorData.error || "Failed to upload logos")
       }
 
-      toast.success("Client logos added successfully!", { autoClose: 3000 })
-      fetchClients() // Refresh the client list after upload
-      setIsDialogOpen(false) // Close the dialog after successful upload
+      toast.success("Client logos added successfully!")
+      fetchClients()
+      setIsDialogOpen(false)
     } catch (error) {
       console.error("Error uploading logos:", error)
-      toast.error(error instanceof Error ? error.message : "Failed to upload logos. Please try again.", {
-        autoClose: 3000,
-      })
+      toast.error(error instanceof Error ? error.message : "Failed to upload logos. Please try again.")
     } finally {
       setIsUploading(false)
       setLogos([])
     }
   }
 
-  const deleteClient = async (clientId: string) => {
+ const deleteClient = async (clientId: string) => {
     try {
       const response = await fetch("/api/delete-client", {
         method: "DELETE",
@@ -141,13 +134,17 @@ export default function ClientPage() {
         throw new Error("Failed to delete client logo")
       }
 
-      toast.success("Client logo deleted successfully!", { autoClose: 3000 })
+      toast.success("Client logo deleted successfully!")
       fetchClients() // Refresh the client list after deletion
     } catch (error) {
       console.error("Error deleting client logo:", error)
-      toast.error("Failed to delete client logo. Please try again.", { autoClose: 3000 })
+      toast.error("Failed to delete client logo. Please try again.")
     }
   }
+
+  useEffect(() => {
+    fetchClients()
+  }, [])
 
   return (
     <div className="p-4">
@@ -196,7 +193,7 @@ export default function ClientPage() {
                         <div key={index} className="relative group aspect-square">
                           <Image
                             src={URL.createObjectURL(logo) || "/placeholder.svg"}
-                            alt={`Client Logo ${index + 1}`}
+                            alt={`Logo Preview ${index + 1}`}
                             fill
                             className="object-contain rounded-lg border border-gray-200"
                           />
@@ -206,7 +203,6 @@ export default function ClientPage() {
                           >
                             <X className="h-4 w-4" />
                           </button>
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-200 rounded-lg" />
                         </div>
                       ))}
                       {logos.length < 6 && (
@@ -236,9 +232,11 @@ export default function ClientPage() {
         </Dialog>
       </div>
 
-      <div className="grid mt-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      <div className="grid mt-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
         {isLoading
-          ? Array.from({ length: 6 }).map((_, index) => <Skeleton key={index} className="w-full h-40 rounded-lg" />)
+          ? Array.from({ length: 6 }).map((_, index) => (
+              <div key={index} className="w-40 h-40 bg-gray-100 rounded-lg animate-pulse" />
+            ))
           : clients.map((client) => (
               <motion.div
                 key={client._id}
@@ -247,13 +245,13 @@ export default function ClientPage() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="relative w-40 h-96">
+                <div className="relative w-40 h-40">
                   <Image
-                    src={client.logoUrl || "/placeholder.svg"}
+                    src={client.logoUrls[0] || "/placeholder.svg"}
                     alt="Client Logo"
-                    width={200}
-                    height={200}
-                    className="object-contain"
+                    fill
+                    className="object-contain p-2"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
                 <button
@@ -265,7 +263,6 @@ export default function ClientPage() {
               </motion.div>
             ))}
       </div>
-      <ToastContainer />
     </div>
   )
 }
