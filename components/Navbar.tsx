@@ -15,11 +15,11 @@ interface MenuData {
 }
 
 const menuData: MenuData[] = [
-  { id: "Home", name: "Home", href: "/" },
-  { id: "About Us", name: "About Us", href: "/compnay/about-us" },
-  { id: "Product", name: "Product", href: "/compnay/product" },
-  { id: "Infrastructure", name: "Infrastructure", href: "/compnay/Infrastructure" },
-  { id: "Market", name: "Market", href: "/compnay/Market" },
+  // { id: "Home", name: "Home", href: "/" }, 
+  // { id: "About Us", name: "About Us", href: "/compnay/about-us" },
+  // { id: "Product", name: "Product", href: "/compnay/product" },
+  // { id: "Infrastructure", name: "Infrastructure", href: "/compnay/Infrastructure" },
+  // { id: "Market", name: "Market", href: "/compnay/Market" },
 ]
 
 export function NavbarMenu() {
