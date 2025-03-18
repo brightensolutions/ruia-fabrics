@@ -6,20 +6,16 @@ import AnimatedDetailsAndImage from "@/components/deatilsAndImagesectionFn";
 
 const Product = () => {
   const greyFabric = {
-    title: "Grey Fabric",
+    title: "Cotton Fabric",
     titleColor: "text-textblak",
     details: [
       {
         paragraph:
-          "We take pride in producing the best in the form of Rayon Grey Fabric.",
+          "We are committed to producing the finest premium cotton fabrics.",
       },
       {
         paragraph:
-          "We are unrivaled in terms of quality because it is made with quality-assured yarn.",
-      },
-      {
-        paragraph:
-          "Because of the high-quality standards, the market value of this finely crafted fabric material is high. The use of technologically advanced processing machines improves the appearance and overall appeal of the fabric. We produce some of the best Cotton Grey Fabric & Rayon Grey Fabric which are the in-demand fabric in the market.",
+          "We stand out for our exceptional quality, specializing in fine cotton voile, cotton dobbies, and cotton slubs, all crafted from 100% pure cotton in fine counts. Our cotton fabrics range from 55 GSM to 200 GSM, offering versatility for different applications. We also offer sustainable fabrics that are BCI and GOTS certified, internationally recognized for their high environmental and ethical standards.",
       },
     ],
     paragraphColor: "text-gray-700",
@@ -32,28 +28,58 @@ const Product = () => {
   };
 
   const velvetFabric = {
-    title: "Velvet  Fabric",
+    title: "Viscose Fabric",
     titleColor: "text-white",
     details: [
       {
         paragraph:
-          "Ruia Fabrics, a family-owned business since 1952, has evolved from a yarn merchant into a major textile producer, focusing on high-quality velvet fabrics.",
+          "We specialize in producing the finest premium viscose fabrics.",
       },
       {
         paragraph:
-          "In 2018, the company established The Klassiq Silk Mills in Surat, specializing in velvet fabrics such as Viscose/Rayon Velvet, Synthetic Velvet, and Cotton Velvet, known for their luxurious feel and durability.",
+          "Known for their soft, flowy texture and elegant shine, our viscose fabrics include georgettes, chiffons, tissues, organzas, and crepes, produced with intricate dobbies. We also craft high-quality viscose fabrics using Tencel Lux and Bemberg yarn. Our viscose fabrics range from 30 GSM to 300 GSM, offering versatility for different applications from scarves to apparels . Our fabrics are certified with international sustainable standards, including ECOLEVA, ECOVERO, and FSE.",
+      },
+    ],
+    paragraphColor: "text-white/85",
+    images: {
+      main: "/fabric/9.jpg",
+    },
+    connectUsLink: "/compnay/contact-us",
+    bgcolor: "bg-custom-green",
+    btncolor: "bg-custom-black"
+  };
+
+  const YarnFabric = {
+    title: "Linen ",
+    details: [
+      {
+        paragraph:
+          "We offer a diverse range of linen fabrics, from pure linen to high-quality blends.",
       },
       {
         paragraph:
-          "Klassiq Silk Mills also produces sustainable viscose fabrics in collaboration with Aditya Birla Group, contributing to eco-friendly textile manufacturing.",
+          "Our collection includes 100% linen as well as linen blends with cotton, viscose, lyocell, and hemp. We produce linen fabrics ranging from 70 GSM to 300 GSM, ensuring suitability is met at every step. To maintain superior quality, we use premium European flax in our fabrics. Our fabrics are crafted to meet international sustainable standards.",
+      },
+    ],
+    paragraphColor: "text-textblak",
+    images: {
+      main: "/fabric/Linen.webp",
+      overlay: "/images/yarn-fabric-machine.jpg",
+    },
+    connectUsLink: "/compnay/contact-us",
+  };
+
+  const velvetFabric2 = {
+    title: "Velvet ",
+    titleColor: "text-white",
+    details: [
+      {
+        paragraph:
+          "Soft, luxurious, and royal, velvet is known for its rich texture and elegant appearance.",
       },
       {
         paragraph:
-          "In addition to velvet, the mills produce resort wear fabrics like chiffon, crepe, georgette, and satin voile, offering unique textures and finishes for elegant clothing.",
-      },
-      {
-        paragraph:
-          "With a monthly production capacity of over 300,000 meters, Ruia Fabrics and Klassiq Silk Mills have a strong presence in the textile industry, both domestically and internationally.",
+          "We produce high-quality micro-velvet, viscose velvet, and nylon-viscose velvet, along with Brasso velvets ( Devoré ). Our velvet fabrics range from 150 GSM to 300 GSM, offering versatility for various applications. Our fabrics are certified with international sustainable standards.",
       },
     ],
     paragraphColor: "text-white/85",
@@ -63,30 +89,6 @@ const Product = () => {
     connectUsLink: "/compnay/contact-us",
     bgcolor: "bg-custom-green",
     btncolor: "bg-custom-black"
-  };
-
-  const YarnFabric = {
-    title: "Yarn  Fabric",
-    details: [
-      {
-        paragraph:
-          "Good quality fabric can be possible only if the best of yarn used to make the fabric.",
-      },
-      {
-        paragraph:
-          "Our company is dedicated to meeting the high demands and expectations of customers who require both quality and quantity at a reasonable price.",
-      },
-      {
-        paragraph:
-          "We bring them the highest quality materials, such as 100% Viscose, 100% Micro Modal, Cotton Linen/Cotton Flax, Rayon Linen/Rayon Flax, Modal Linen, and many others, which have numerous applications in the textile industry.",
-      },
-    ],
-    paragraphColor: "text-textblak",
-    images: {
-      main: "/images/Yarn-fabric.jpg",
-      overlay: "/images/yarn-fabric-machine.jpg",
-    },
-    connectUsLink: "/compnay/contact-us",
   };
 
   return (
@@ -105,6 +107,8 @@ const Product = () => {
       <AnimatedDetailsAndImage {...velvetFabric} imagePosition="right" />
 
       <AnimatedDetailsAndImage {...YarnFabric} imagePosition="left" />
+
+      <AnimatedDetailsAndImage {...velvetFabric2} imagePosition="right" />
 
       <div
       className="relative bg-cover bg-center flex flex-col items-end justify-end h-[50vh] sm:h-[60vh] md:h-[70vh]"

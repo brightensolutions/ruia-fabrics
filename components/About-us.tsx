@@ -88,19 +88,12 @@ const Aboutus = () => {
 
             <motion.div variants={itemVariants} className="space-y-6">
               <p className="text-lg text-custom-black/80 font-abel leading-relaxed">
-                Ruia Fabrics is a family-owned organization established in 1952, evolving from yarn trading to becoming
-                a leading manufacturer of premium fabrics. Our commitment to quality and innovation drives everything we
-                do.
+              Ruia Fabrics is a premier textile solutions provider in Western India, specializing in the manufacturing and trading of a diverse range of high-quality fabrics.With over a decade of industry expertise, we are committed to delivering value-added textile solutions while establishing a strong and distinguished presence in the Indian textile market.
               </p>
               <p className="text-lg text-custom-black/80 font-abel leading-relaxed">
-                Today, we specialize in sustainable practices, producing over 200,000 meters of LIVA eco-vera fabrics
-                monthly. Our collaboration with the Aditya Birla Group ensures we maintain the highest standards of
-                eco-friendly production.
+              Our expertise lies in producing premium resort wear fabrics, including 100% cotton, 100% linen, and blends with Lyocell, Modal, and Viscose. We also offer luxurious fabrics such as chiffon, crepe, and georgette, catering to the evolving needs of the fashion industry. Expanding into the realm of luxury clothing, including velvet fabric, Ruia Fabrics continues to set new benchmarks in quality, innovation, and craftsmanship.
               </p>
-              <p className="text-lg text-custom-black/80 font-abel leading-relaxed">
-                With the establishment of Klassiq Silk Mills in Surat in 2018, we've expanded our capabilities to
-                include luxury micro velvet fabrics, serving markets across India and the Middle East.
-              </p>
+             
             </motion.div>
 
             <motion.div variants={itemVariants} className="pt-4">

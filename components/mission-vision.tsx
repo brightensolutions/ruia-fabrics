@@ -1,37 +1,71 @@
-'use client'
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function CompanyInfo() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  })
+  });
 
   return (
     <div ref={ref} className=" bg-white mb-14">
-      <div 
+      <div
         className="relative h-[300px] md:h-[400px] bg-cover bg-center"
         style={{
           backgroundImage: `url('/images/about-company.jpg')`,
-          backgroundPosition: 'center 25%'
+          backgroundPosition: "center 25%",
         }}
       >
         <div className="absolute inset-0 bg-black/50" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-32 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
             className="bg-white rounded-lg shadow-xl p-6"
           >
-            <h2 className="font-rubik text-[30px] font-bold text-darkgreen">Mission</h2>
+            <h2 className="font-rubik text-[30px] font-bold text-darkgreen">
+              Our Legacy{" "}
+            </h2>
             <p className="text-gray-700 leading-relaxed font-abel">
-              To empower people and develop leadership qualities to create a process-impelled company capable of delivering high-quality textile products to the global market. We seek steady growth to lead in both the international and domestic markets, as well as to strengthen our global presence through our continuous urge to innovate new ideologies in the textile industry without compromising on quality.
+              As a third-generation family business, our journey in the textile
+              industry began over five decades ago with a strong foundation in
+              fabric trading. Initially, we sourced yarn and fabrics from
+              leading mills across India, supplying to both the local and export
+              markets.
+            </p>
+            <br />
+            <p className="text-gray-700 leading-relaxed font-abel">
+              In 1991, we took a significant step forward by establishing Ruia
+              Fabrics Pvt. Ltd., specializing in the manufacturing and trading
+              of viscose fabrics. Our first state-of-the-art manufacturing unit
+              was set up in Surat, Gujarat, marking our entry into large-scale
+              fabric production.
+            </p>
+            <br />
+            <p className="text-gray-700 leading-relaxed font-abel">
+              With a vision for innovation and sustainability, we expanded our
+              portfolio in 2004, introducing linen and eco-friendly fabrics such
+              as EcoVero, LivaEco, BCI Cotton, and European Flax.
+            </p>
+            <br />
+            <p className="text-gray-700 leading-relaxed font-abel">
+              In 2017, we established Klassiq Silk Mills in Surat to manufacture
+              premium velvet fabrics, with an annual production capacity of 18
+              lakh meters. This facility features an end-to-end production
+              process, from sizing to finishing, ensuring the highest quality
+              standards.
+            </p>
+            <br />
+            <p className="text-gray-700 leading-relaxed font-abel">
+              From our humble beginnings in 1960 to our evolution into a leader
+              in sustainable and luxury textiles, our legacy is built on
+              craftsmanship, innovation, and a commitment to excellence.
             </p>
           </motion.div>
 
@@ -41,9 +75,20 @@ export default function CompanyInfo() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-white rounded-lg shadow-xl p-6"
           >
-            <h2 className="font-rubik text-[30px] font-bold text-darkgreen">Vision</h2>
+            <h2 className="font-rubik text-[30px] font-bold text-darkgreen">
+              Vision
+            </h2>
             <p className="text-gray-700 leading-relaxed font-abel">
-              To be one of the country&apos;s leading quality textile manufacturers, from fiber to fabric. To maintain a strong presence in the global textile market and be one of the most esteemed textile companies by adhering to high quality, exceeding the expectations of customers, and practicing a high level of integrity in dealing with all stakeholders.
+              To be recognized as one of the leading textile producers in the
+              country, committed to quality, sustainability, and innovation. We
+              aim to establish a strong global presence in the textile industry
+              while upholding the highest standards of craftsmanship.
+            </p><br/>
+            <p className="text-gray-700 leading-relaxed font-abel">
+              Our goal is to exceed customer expectations by delivering premium,
+              sustainable fabrics and to be among the most esteemed textile
+              companies by maintaining integrity, transparency, and excellence
+              in all our stakeholder relationships.
             </p>
           </motion.div>
         </div>
@@ -71,5 +116,5 @@ export default function CompanyInfo() {
         </motion.div> */}
       </div>
     </div>
-  )
+  );
 }
