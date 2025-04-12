@@ -1,13 +1,32 @@
 "use client"
 
 import ServicesSection from "@/components/ServicesSectionFn"
-import { Building2, Factory, Users } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
 import AnimatedDetailsAndImage from "@/components/deatilsAndImagesectionFn"
-import { TextAnimate } from "@/components/ui/text-animate"
-import { motion } from "framer-motion"
+import { useEffect } from "react"
 
 const Market = () => {
+  // Handle hash navigation when page loads
+  useEffect(() => {
+    // Check if there's a hash in the URL
+    if (window.location.hash) {
+      const id = window.location.hash.substring(1) // Remove the # character
+      const element = document.getElementById(id)
+      if (element) {
+        // Add a slight delay to ensure the page is fully loaded
+        setTimeout(() => {
+          const navbarHeight = 100 // Approximate navbar height in pixels
+          const elementPosition = element.getBoundingClientRect().top
+          const offsetPosition = elementPosition + window.pageYOffset - navbarHeight
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          })
+        }, 300)
+      }
+    }
+  }, [])
+
   const greyFabric2 = {
     title: "Weaving",
     titleColor: "text-custom-green",
@@ -23,7 +42,7 @@ const Market = () => {
     ],
     paragraphColor: "text-custom-black/80",
     images: {
-      main: "/images/infra-weaving.webp",
+      main: "/company/014A7597.JPG",
     },
     connectUsLink: "/compnay/contact-us",
   }
@@ -43,7 +62,7 @@ const Market = () => {
     ],
     paragraphColor: "text-custom-black/80",
     images: {
-      main: "/images/infra-weaving.webp",
+      main: "/images/banner1.webp",
     },
     connectUsLink: "/compnay/contact-us",
   }
@@ -57,13 +76,16 @@ const Market = () => {
         link={{ href: "/compnay/contact-us", label: "Contact Us" }}
       />
 
-      
+      <div id="weaving">
+        <AnimatedDetailsAndImage {...greyFabric2} imagePosition="left" />
+      </div>
 
-      <AnimatedDetailsAndImage {...greyFabric2} imagePosition="left" />
-      <AnimatedDetailsAndImage {...greyFabric} imagePosition="right" />
+      <div id="trading">
+        <AnimatedDetailsAndImage {...greyFabric} imagePosition="right" />
+      </div>
     </div>
   )
 }
 
 export default Market
-
+  

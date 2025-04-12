@@ -31,24 +31,26 @@ const Page = () => {
         <section className="bg-custom-white text-custom-black z-40 relative">
           <InfiniteMovingCardsDemo />
         </section>
-        <section className="bg-custom-cream text-custom-black relative z-40">
-          <Aboutus />
-        </section>
-        <section className="bg-custom-white text-custom-black">
-          <OurIndustry />
-        </section>
         <section className="bg-custom-green text-custom-white">
           <OurServices />
-        </section>
-        <section className="bg-custom-cream text-custom-black">
-          <Quality />
         </section>
         <section className="bg-custom-white text-custom-black">
           <WhyChoode />
         </section>
-        <section className="bg-custom-green text-custom-white">
-          <ClientMarquee />
+        <section className="bg-custom-cream text-custom-black relative z-40">
+          <Aboutus />
         </section>
+        {/* <section className="bg-custom-white text-custom-black">
+          <OurIndustry />
+        </section> */}
+        
+        {/* <section className="bg-custom-cream text-custom-black">
+          <Quality />
+        </section> */}
+       
+        {/* <section className="bg-custom-green text-custom-white">
+          <ClientMarquee />
+        </section> */}
         <section className="bg-custom-cream text-custom-black">
           <ContactUs />
         </section>
