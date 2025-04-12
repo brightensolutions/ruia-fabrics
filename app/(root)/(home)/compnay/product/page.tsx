@@ -41,8 +41,7 @@ const Product = () => {
     ],
     paragraphColor: "text-gray-700",
     images: {
-      main: "/images/grey.webp",
-      overlay: "/images/greyfabric2.jpg",
+      main: "/fabric/cotton 2.jpg",
     },
     connectUsLink: "/compnay/contact-us",
     sectioncolor: "bg-gradient-to-t to-creamwhite from-white",
@@ -62,7 +61,8 @@ const Product = () => {
     ],
     paragraphColor: "text-white/85",
     images: {
-      main: "/fabric/9.jpg",
+      main: "/fabric/viscose.jpg",
+      overlay: "/fabric/viscose 1.webp",
     },
     connectUsLink: "/compnay/contact-us",
     bgcolor: "bg-custom-green",
@@ -83,7 +83,7 @@ const Product = () => {
     paragraphColor: "text-textblak",
     images: {
       main: "/fabric/linen 2.jpg",
-      overlay: "/images/yarn-fabric-machine.jpg",
+      overlay: "/fabric/linen .jpg",
     },
     connectUsLink: "/compnay/contact-us",
   }
@@ -102,7 +102,8 @@ const Product = () => {
     ],
     paragraphColor: "text-black",
     images: {
-      main: "/images/valvet-fabric.jpg",
+      main: "/fabric/velvet .jpeg.jpg",
+      overlay: "/fabric/velevet 2.jpg",
     },
     connectUsLink: "/compnay/contact-us",
     bgcolor: "bg-custom-cream/50",
