@@ -240,7 +240,7 @@ function Navbar() {
                             <motion.div key={item.id} variants={itemVariants}>
                               <Link
                                 href={item.href || "#"}
-                                className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-custom-green transition-colors duration-200 flex items-center group"
+                                className=" px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-custom-green transition-colors duration-200 flex items-center group"
                                 onClick={() => handleDropdownItemClick(item)}
                               >
                                 <span className="w-1.5 h-1.5 rounded-full bg-custom-green mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
@@ -285,10 +285,7 @@ function Navbar() {
               alt="logo"
               width={100}
               height={100}
-              className={cn(
-                "transition-all duration-300 mix-blend-difference contrast-200",
-                scrolled ? "" : "mix-blend-difference contrast-200",
-              )}
+              className={cn("", scrolled ? "mix-blend-difference contrast-200" : "")}
             />
           </Link>
           <button
