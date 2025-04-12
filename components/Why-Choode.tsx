@@ -126,15 +126,15 @@ const WhyChooseAlternative = () => {
           variants={containerVariants}
           className="text-center mb-20"
         >
-          <motion.div variants={itemVariants} className="inline-block relative mb-4">
+          {/* <motion.div variants={itemVariants} className="inline-block relative mb-4">
             <div className="absolute -inset-1 bg-gradient-to-r from-[#2c5e3f] via-[#d3a456] to-[#2c5e3f] blur-md opacity-30 rounded-lg" />
             <h2 className="relative bg-white/80 backdrop-blur-sm font-rubik px-6 py-2 rounded-lg text-[#2c5e3f] text-lg font-medium tracking-wider uppercase">
-              Why Choose Ruia
+            Why ruia fabrics
             </h2>
-          </motion.div>
+          </motion.div> */}
 
           <motion.h3 variants={itemVariants} className="text-4xl md:text-6xl font-abel font-bold text-black mb-8">
-            Why Weaving Excellence?
+             Why ruia fabrics
           </motion.h3>
 
           <motion.div variants={itemVariants} className="w-32 h-1 mx-auto mb-8 relative overflow-hidden">
