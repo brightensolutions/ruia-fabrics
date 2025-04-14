@@ -20,7 +20,7 @@ export default function PremiumTimeline() {
       year: "1991",
       title: "Ruia Fabrics Established",
       description:
-        "We established Ruia Fabrics Pvt. Ltd., specializing in the manufacturing and trading of Viscose, Cotton And linen fabrics  with our first state-of-the-art manufacturing unit in Surat, Gujarat.",
+        "We established Ruia Fabrics Pvt. Ltd., specializing in the manufacturing and trading of Viscose, Cotton And Linen fabrics  with our first state-of-the-art manufacturing unit in Surat, Gujarat.",
       color: "#d3a456",
     },
     {
@@ -54,14 +54,7 @@ export default function PremiumTimeline() {
       </div> */}
 
       {/* Floating decorative elements */}
-      <FloatingElement
-        className="absolute top-20 left-10 w-40 h-40 rounded-full border border-[#2c5e3f]/20"
-        animationProps={{
-          y: [0, 20, 0],
-          rotate: [0, 5, 0],
-        }}
-        duration={10}
-      />
+      
 
       <FloatingElement
         className="absolute bottom-40 right-10 w-60 h-60 rounded-full border border-[#d3a456]/20"

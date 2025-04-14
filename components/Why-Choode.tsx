@@ -72,52 +72,7 @@ const WhyChooseAlternative = () => {
 
   return (
     <section className="relative py-24 overflow-hidden">
-      {/* Hexagonal background pattern */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 " />
-        <svg className="absolute inset-0 w-full h-full opacity-5" viewBox="0 0 100 100" preserveAspectRatio="none" >
-          <pattern id="hexagons" width="50" height="43.4" patternUnits="userSpaceOnUse" patternTransform="scale(0.5)">
-            <polygon
-              points="25,0 50,0 62.5,21.7 50,43.4 25,43.4 12.5,21.7"
-              fill="none"
-              stroke="#2c5e3f"
-              strokeWidth="1"
-            />
-            <polygon
-              points="75,0 100,0 112.5,21.7 100,43.4 75,43.4 62.5,21.7"
-              fill="none"
-              stroke="#2c5e3f"
-              strokeWidth="1"
-            />
-            <polygon
-              points="0,0 25,0 37.5,21.7 25,43.4 0,43.4 -12.5,21.7"
-              fill="none"
-              stroke="#2c5e3f"
-              strokeWidth="1"
-            />
-            <polygon
-              points="25,43.4 50,43.4 62.5,65.1 50,86.8 25,86.8 12.5,65.1"
-              fill="none"
-              stroke="#2c5e3f"
-              strokeWidth="1"
-            />
-            <polygon
-              points="75,43.4 100,43.4 112.5,65.1 100,86.8 75,86.8 62.5,65.1"
-              fill="none"
-              stroke="#2c5e3f"
-              strokeWidth="1"
-            />
-            <polygon
-              points="0,43.4 25,43.4 37.5,65.1 25,86.8 0,86.8 -12.5,65.1"
-              fill="none"
-              stroke="#2c5e3f"
-              strokeWidth="1"
-            />
-          </pattern>
-          <rect width="100%" height="100%" fill="url(#hexagons)" />
-        </svg>
-      </div>
-
+      
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <motion.div
           ref={ref}
@@ -126,31 +81,12 @@ const WhyChooseAlternative = () => {
           variants={containerVariants}
           className="text-center mb-20"
         >
-          {/* <motion.div variants={itemVariants} className="inline-block relative mb-4">
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#2c5e3f] via-[#d3a456] to-[#2c5e3f] blur-md opacity-30 rounded-lg" />
-            <h2 className="relative bg-white/80 backdrop-blur-sm font-rubik px-6 py-2 rounded-lg text-[#2c5e3f] text-lg font-medium tracking-wider uppercase">
-            Why ruia fabrics
-            </h2>
-          </motion.div> */}
 
-          <motion.h3 variants={itemVariants} className="text-4xl md:text-6xl font-abel font-bold text-black mb-8">
-             Why ruia fabrics
-          </motion.h3>
+          <h3  className="text-4xl md:text-6xl font-abel font-bold text-black mb-8">
+             Why Ruia Fabrics
+          </h3>
 
-          <motion.div variants={itemVariants} className="w-32 h-1 mx-auto mb-8 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#2c5e3f] via-[#d3a456] to-[#2c5e3f]" />
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-[#2c5e3f] via-[#d3a456] to-[#2c5e3f]"
-              animate={{
-                x: ["-100%", "100%"],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Number.POSITIVE_INFINITY,
-                repeatType: "loop",
-              }}
-            />
-          </motion.div>
+         
 
           <motion.p variants={itemVariants} className="max-w-5xl mx-auto text-black font-abel font-semibold text-2xl">
             At Ruia Fabrics, we combine traditional craftsmanship with modern innovation to create fabrics that stand
@@ -175,19 +111,9 @@ const WhyChooseAlternative = () => {
 
                   {/* Icon with animated background */}
                   <div className="relative w-16 h-16 mb-6 rounded-full overflow-hidden">
-                    <div className="absolute inset-0 bg-custom-cream group-hover:bg-[#2c5e3f]/20 transition-colors duration-300" />
-                    <motion.div
-                      className="absolute inset-0 bg-white/5"
-                      animate={{
-                        x: ["-100%", "100%"],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Number.POSITIVE_INFINITY,
-                        repeatType: "loop",
-                      }}
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center text-black group-hover:text-white">
+                    <div className="absolute inset-0 bg-custom-cream  transition-colors duration-300" />
+                    
+                    <div className="absolute inset-0 flex items-center justify-center text-black ">
                       {feature.icon}
                     </div>
                   </div>
@@ -229,44 +155,7 @@ const WhyChooseAlternative = () => {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Floating decorative elements */}
-      <motion.div
-        className="absolute top-20 left-[5%] w-24 h-24 border border-[#d3a456]/30 rounded-full"
-        animate={{
-          y: [0, 15, 0],
-          rotate: [0, 10, 0],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Number.POSITIVE_INFINITY,
-          repeatType: "reverse",
-        }}
-      />
-      <motion.div
-        className="absolute bottom-20 right-[10%] w-32 h-32 border border-[#2c5e3f]/30 rounded-full"
-        animate={{
-          y: [0, -20, 0],
-          rotate: [0, -15, 0],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Number.POSITIVE_INFINITY,
-          repeatType: "reverse",
-        }}
-      />
-      <motion.div
-        className="absolute top-1/3 right-[5%] w-16 h-16 border border-[#d3a456]/30 rounded-full"
-        animate={{
-          y: [0, 10, 0],
-          rotate: [0, 20, 0],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Number.POSITIVE_INFINITY,
-          repeatType: "reverse",
-        }}
-      />
+ 
     </section>
   )
 }
