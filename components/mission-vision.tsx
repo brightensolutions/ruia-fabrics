@@ -77,7 +77,7 @@ export default function PremiumTimeline() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold font-serif text-[#2c5e3f] mb-6">
             Our Rich Heritage
           </h1>
-          <p className="text-lg md:text-xl font-abel font-semibold text-gray-700 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl  font-abel font-semibold text-gray-700 lg:max-w-3xl sm:max-w-[550px] mx-auto">
           A legacy of textile excellence rooted in innovation, craftsmanship, and a commitment to quality.
           </p>
         </motion.div>
@@ -129,7 +129,7 @@ export default function PremiumTimeline() {
               </div>
 
               <div className="relative h-[300px] md:h-auto">
-                <Image src="/company/014A7656.JPG" alt="Our vision" fill className="object-cover" />
+                <Image src="/company/OurVision.jpg" alt="Our vision" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent md:bg-gradient-to-l" />
                 <div className="absolute bottom-0 left-0 right-0 p-8 md:hidden">
                   <h3 className="text-2xl font-serif text-white mb-2">Crafting Tomorrow's Textiles</h3>
