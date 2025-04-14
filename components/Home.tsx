@@ -28,10 +28,10 @@ export function InfiniteMovingCardsDemo() {
             className="md:max-w-[90%] w-full mx-auto"
           >
             <p className="text-lg sm:text-2xl text-custom-black font-semibold font-abel mb-6 leading-relaxed">
-            Ruia Fabrics is a premier textile solutions provider in Western India, specializing in the manufacturing and trading of a diverse range of high-quality fabrics.With over a decade of industry expertise, we are committed to delivering value-added textile solutions while establishing a strong and distinguished presence in the Indian textile market.
+            Ruia Fabrics is a premier textile solutions provider based in Western India, specializing in the manufacturing and trading of a diverse range of high-quality fabrics. With over a decade of industry expertise, we are committed to delivering value-added textile solutions while building a strong and distinguished presence in the Indian textile market.
             </p>
             <p className="text-lg sm:text-2xl text-custom-black font-semibold font-abel mb-12 leading-relaxed">
-            Our expertise lies in producing premium resort wear fabrics, including 100% cotton, 100% linen, and blends with Lyocell, Modal, and Viscose. We also offer luxurious fabrics such as chiffon, crepe, and georgette, catering to the evolving needs of the fashion industry. Expanding into the realm of luxury clothing, including velvet fabric, Ruia Fabrics continues to set new benchmarks in quality, innovation, and craftsmanship.
+            Our core expertise lies in producing premium resort wear fabrics, including 100% Cotton, 100% Linen, and Blends with Lyocell, Modal, and Viscose. We also offer luxurious fabrics such as Chiffon, Crepe, and Georgette, catering to the evolving needs of the fashion industry. With our expansion into luxury textiles—particularly Velvet—Ruia Fabrics continues to set new benchmarks in quality, innovation, and craftsmanship.
             </p>
           </motion.div>
 

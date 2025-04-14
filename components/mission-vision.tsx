@@ -13,35 +13,35 @@ export default function PremiumTimeline() {
       year: "1960",
       title: "Our Beginnings",
       description:
-        "Our journey in the textile industry began over five decades ago with a strong foundation in fabric trading, sourcing yarn and fabrics from leading mills across India.",
+        "Our journey in the textile industry began over five decades ago, rooted in a strong foundation of fabric trading. We specialized in sourcing premium yarns and fabrics from leading mills across India.",
       color: "#2c5e3f",
     },
     {
       year: "1991",
       title: "Ruia Fabrics Established",
       description:
-        "We established Ruia Fabrics Pvt. Ltd., specializing in the manufacturing and trading of Viscose, Cotton And Linen fabrics  with our first state-of-the-art manufacturing unit in Surat, Gujarat.",
+        "Ruia Fabrics Pvt. Ltd. was established with a focus on manufacturing and trading high-quality viscose, cotton, and linen fabrics. Our first state-of-the-art manufacturing facility is located in Surat, Gujarat.",
       color: "#d3a456",
     },
     {
       year: "2004",
       title: "Sustainable Innovation",
       description:
-        "With a vision for innovation and sustainability, we expanded our portfolio, introducing linen and eco-friendly fabrics such as EcoVero, LivaEco, BCI Cotton, and European Flax.",
+        "Driven by a vision for innovation and sustainability, we expanded our portfolio to include linen and eco-friendly fabrics such as EcoVero,LivaEco, Bci Cotton, Organic Cotton and European Flax.",
       color: "#5e2c4f",
     },
     {
       year: "2017",
       title: "The Klassiq Silk Mills",
       description:
-        "We established The Klassiq Silk Mills in Surat to manufacture premium velvet fabrics, with an annual production capacity of 18 lakh meters, featuring an end-to-end production process.",
+        "Further expanding our capabilities, we developed The Klassiq Silk Mills in Surat to manufacture premium Velvet fabrics. With a current monthly production capacity exceeding 200,000 meters, the facility features a fully integrated, end-to-end production process.",
       color: "#2c4e5e",
     },
     {
       year: "Present",
       title: "Global Excellence",
       description:
-        "From our humble beginnings to our evolution into a leader in sustainable and luxury textiles, our legacy continues with craftsmanship, innovation, and a commitment to excellence.",
+        "From humble beginnings to our evolution as a leader in sustainable and luxury textiles, our legacy is defined by craftsmanship, innovation, and an unwavering commitment to excellence.",
       color: "#5e452c",
     },
   ]
@@ -91,7 +91,7 @@ export default function PremiumTimeline() {
             className="h-1 bg-[#d3a456] mx-auto mb-6"
           />
           <p className="text-lg md:text-xl font-abel font-semibold text-gray-700 max-w-3xl mx-auto">
-            A legacy of excellence in textiles spanning three generations and over five decades of innovation
+          A legacy of textile excellence rooted in innovation, craftsmanship, and a commitment to quality.
           </p>
         </motion.div>
       </div>

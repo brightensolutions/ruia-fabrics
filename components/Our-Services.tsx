@@ -81,11 +81,11 @@ const OurServices: React.FC = () => {
         <motion.div className="text-center mb-16" variants={itemVariants}>
           {/* <h3 className="font-rubik text-2xl font-bold text-custom-cream mb-2">OUR SERVICES</h3> */}
           <h2 className=" text-4xl md:text-5xl font-semibold font-abel text-custom-white mb-6">Textile is What We Do</h2>
+          <p className="md:w-[70%] w-full mx-auto font-roboto font-normal text-custom-white text-lg leading-relaxed mb-2">
+          At Ruia Fabrics, textiles are at the core of who we are. We specialize in high-quality Velvet, Voile, Chiffon, Crepe, Georgette, and Linen fabrics, tailored for both domestic and international markets.
+          </p>
           <p className="md:w-[70%] w-full mx-auto font-roboto font-normal text-custom-white text-lg leading-relaxed">
-            Ruia Fabrics is a legacy in textiles, rooted in India's rich history since 1952. From being a yarn merchant
-            to a global fabric manufacturer, we've embraced change and innovation. We produce voile, chiffon, crepe, and
-            georgette fabrics, catering to both domestic and international markets. Sustainability is at our core,
-            collaborating with Aditya Birla Group to produce eco-friendly fabrics like LIVA and LIVA EcoVera.
+          Guided by innovation and a commitment to sustainability, we offer eco-conscious fabric solutions including BCI Cotton, European Flax, FSE Viscose, EcoLIVA, and EcoVero—delivering style with responsibility.
           </p>
         </motion.div>
 

@@ -47,11 +47,11 @@ const SustainableFabrics = () => {
     },
     {
       id: 6,
-      name: "European flex",
+      name: "European Flax",
       image: "/fabric/linen .jpg",
       icon: "/Manufacturing/European flex logo.png",
       description:
-        "European flax is known for  long, strong fibers, contributing to the luxurious feel and durability of linen.",
+        "European Flax is known for  long, strong fibers, contributing to the luxurious feel and durability of linen.",
     },
     {
       id: 2,
@@ -109,13 +109,10 @@ const SustainableFabrics = () => {
           <h2 className="text-4xl lg:text-5xl font-rubik font-bold text-custom-black mb-8">Sustainable Style, Woven with Care.</h2>
 
           <p className="text-xl text-custom-black font-abel font-semibold  leading-relaxed ">
-            "Sustainability is an exercise in both social and environmental well-being. It goes beyond simply doing
-            good; it's about creating a meaningful and positive impact on people, the planet, and our collective
-            prosperity."
+            "Sustainability for us means creating long-term value for people, the planet, and shared prosperity. It’s not just about doing good—it’s about making a lasting impact through every choice we make."
           </p>
           <p className="text-lg text-custom-black font-semibold font-abel mt-4">
-            Our 'Responsible For' framework is more than a plan—it's a commitment to act with greater responsibility in
-            every step we take.
+          Our Responsible For framework reflects our commitment to mindful sourcing, ethical production, and conscious decision-making—ensuring every fabric is crafted with purpose and care.
           </p>
         </motion.div>
 

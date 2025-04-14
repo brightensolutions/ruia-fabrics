@@ -89,8 +89,7 @@ const WhyChooseAlternative = () => {
          
 
           <motion.p variants={itemVariants} className="max-w-5xl mx-auto text-black font-abel font-semibold text-2xl">
-            At Ruia Fabrics, we combine traditional craftsmanship with modern innovation to create fabrics that stand
-            the test of time.
+          At Ruia Fabrics, we blend timeless craftsmanship with modern innovation to deliver fabrics that embody quality, durability, and refined design.
           </motion.p>
         </motion.div>
 

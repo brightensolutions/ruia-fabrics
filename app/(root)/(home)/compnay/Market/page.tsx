@@ -33,11 +33,7 @@ const Market = () => {
     details: [
       {
         paragraph:
-          "At Ruia Fabrics, our in-house weaving unit is equipped with 24 advanced air-jet looms, allowing us to produce high-quality woven fabrics with precision and efficiency. Our weaving division specializes in customized weaves and intricate patterns, ensuring innovation and versatility in fabric design.",
-      },
-      {
-        paragraph:
-          "In addition, we operate 110 cutting-edge velvet manufacturing machines, offering a diverse range of premium velvet fabrics for both the apparel and home furnishing markets. ",
+          "At Ruia Fabrics, our in-house weaving facility is equipped with 24 advanced air-jet looms, enabling the production of high-quality woven fabrics with exceptional precision and efficiency. We specialize in customized weaves and intricate patterns, ensuring innovation and adaptability across fabric designs. Complementing this, our 110 state-of-the-art velvet machines support a wide range of premium velvet offerings tailored for both apparel and home furnishing applications.",
       },
     ],
     paragraphColor: "text-custom-black/80",
@@ -53,12 +49,9 @@ const Market = () => {
     details: [
       {
         paragraph:
-          "We partner with leading textile mills across India to facilitate large-scale fabric manufacturing. This strategic collaboration enables us to deliver a cost-effective, diverse, and high-quality product range, catering to the demands of various industries. With a legacy spanning over four decades, our commitment to sustainable textile practices remains at the core of our operations.",
+          "At Ruia Fabrics, we collaborate with leading textile mills across India to support large-scale fabric manufacturing with efficiency and reliability. These strategic partnerships allow us to offer a diverse, cost-effective, and high-quality product range tailored to the needs of multiple industries. With over four decades of experience, sustainability remains central to our approach. Our partner mills uphold the highest quality and environmental standards, holding certifications such as OEKO-TEX®️, BCI, GOTS, Verified Sustainable Viscose, Inditex, FSC, and the Organic 100 Content Standard.",
       },
-      {
-        paragraph:
-          "The mills we collaborate with in India adhere to the highest quality standards and hold certifications such as OEKO-TEX®, BCI, GOTS, Verified Sustainable Viscose, Inditex, FSC, and the Organic 100 Content Standard, ensuring a commitment to sustainability and excellence.",
-      },
+      
     ],
     paragraphColor: "text-custom-black/80",
     images: {

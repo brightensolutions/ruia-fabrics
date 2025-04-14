@@ -12,7 +12,7 @@ const AboutusSection = () => {
         <ServicesSection
           image="/company/about-us-images.jpg"
           title="About Us"
-          description="Founded in 1952, Ruia Fabrics is a leader in textiles, specializing in high-quality velvet and viscose fabrics. With a legacy of innovation and sustainability, we proudly serve domestic and international markets, offering competitive, world-class products."
+          description="Ruia Fabrics is a leading name in the textile industry, specializing in high-quality Velvet, Linen, and Viscose fabrics. With a legacy built on innovation, craftsmanship, and sustainability, we proudly cater to both domestic and international markets—offering competitive, world-class textile solutions that meet the evolving demands of fashion and lifestyle industries."
           link={{ href: "/compnay/contact-us", label: "Contact Us" }}
         />
       </div>

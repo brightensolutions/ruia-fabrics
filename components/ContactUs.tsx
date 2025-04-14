@@ -160,8 +160,8 @@ const ContactUs = () => {
       >
         <motion.div variants={itemVariants} className="text-center">
           <h1 className="font-rubik text-4xl md:text-5xl font-bold text-custom-green mb-4">Get In Touch</h1>
-          <p className="font-abel text-xl text-custom-black/80 max-w-2xl mx-auto">
-            We'd love to hear from you. Please fill out this form or reach out using the contact details below.
+          <p className="font-abel text-xl text-custom-black/80 max-w-2xl font-semibold mx-auto">
+          Connect with us for any inquiries or collaboration opportunities. We’re here to assist you and provide tailored, world-class textile solutions.
           </p>
         </motion.div>
 
