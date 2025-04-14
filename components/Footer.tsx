@@ -11,9 +11,8 @@ const Footer: React.FC = () => {
       links: [
         { name: "Home", url: "/" },
         { name: "About Us", url: "/compnay/about-us" },
-        { name: "Infrastructure", url: "/compnay/Infrastructure" },
         { name: "Product", url: "/compnay/product" },
-        { name: "Market", url: "/compnay/Market" },
+        { name: "Business", url: "/compnay/Market" },
         { name: "Contact", url: "/compnay/contact-us" },
       ],
     },
@@ -40,9 +39,8 @@ const Footer: React.FC = () => {
                 className="brightness-0 invert"
               />
             </Link>
-            <p className="mt-4 text-custom-cream font-roboto text-sm">
-              Crafting excellence in textiles since 1952. Your trusted partner for premium fabrics and sustainable
-              solutions.
+            <p className="mt-4 text-custom-cream font-roboto  text-[18px] leading-normal">
+            Crafting textile excellence since 1952, Ruia Fabrics is your trusted partner for premium fabrics and sustainable solutions.
             </p>
           </div>
 

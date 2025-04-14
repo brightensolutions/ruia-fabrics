@@ -88,7 +88,7 @@ const WhyChooseAlternative = () => {
 
          
 
-          <motion.p variants={itemVariants} className="max-w-5xl mx-auto text-black font-abel font-semibold text-2xl">
+          <motion.p variants={itemVariants} className="md:max-w-4xl w-[100%] mx-auto text-black font-abel font-semibold text-2xl">
           At Ruia Fabrics, we blend timeless craftsmanship with modern innovation to deliver fabrics that embody quality, durability, and refined design.
           </motion.p>
         </motion.div>
@@ -98,10 +98,7 @@ const WhyChooseAlternative = () => {
             <motion.div key={index} variants={itemVariants} whileHover={{ y: -5 }} className="group">
               <div className="relative">
                 {/* Decorative thread */}
-                <div className="absolute -top-5 -left-5 w-10 h-10">
-                  <div className="absolute w-full h-0.5 bg-[#d3a456] rotate-45 origin-bottom-left" />
-                  <div className="absolute w-0.5 h-full bg-[#d3a456] rotate-45 origin-bottom-left" />
-                </div>
+               
 
                 {/* Main content */}
                 <div className="relative p-8 bg-custom-green backdrop-blur-3xl rounded-xl min-h-[280px] shadow-lg border border-gray-100 overflow-hidden group-hover:shadow-xl transition-all duration-300">

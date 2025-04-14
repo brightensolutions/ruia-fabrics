@@ -32,11 +32,8 @@ const Product = () => {
     titleColor: "text-textblak",
     details: [
       {
-        paragraph: "We are dedicated to crafting premium-quality cotton fabrics with precision and care.",
-      },
-      {
         paragraph:
-          "Our expertise lies in producing fine Cotton Voile, Cotton Dobbies, and Cotton Slubs—each made from 100% pure cotton in fine counts. With a weight range from 55 GSM to 200 GSM, our fabrics offer versatility for a wide variety of applications. Committed to sustainability, we also provide BCI and GOTS certified fabrics that meet globally recognised environmental and ethical standards.",
+          "We are dedicated to crafting premium-quality cotton fabrics with precision and care. Our expertise lies in producing fine Cotton Voile, Cotton Dobbies, and Cotton Slubs—each made from 100% pure cotton in fine counts. With a weight range from 55 GSM to 200 GSM, our fabrics offer versatility for a wide variety of applications. Committed to sustainability, we also provide BCI and GOTS certified fabrics that meet globally recognised environmental and ethical standards.",
       },
     ],
     paragraphColor: "text-gray-700",
@@ -52,11 +49,8 @@ const Product = () => {
     titleColor: "text-white",
     details: [
       {
-        paragraph: "We specialize in premium viscose fabrics known for their luxurious drape,",
-      },
-      {
         paragraph:
-          "soft texture, and elegant sheen. Our collection includes Georgettes, Chiffons, Tissues, Organzas, and Crepes—many crafted with intricate dobbies for added character. We also produce high-quality viscose fabrics using advanced fibers like Tencel Luxe and Bemberg yarn. With a GSM range of 30 to 300, our viscose fabrics are suitable for a wide array of applications, from delicate scarves to sophisticated apparel. All our viscose offerings are certified by globally recognized sustainability standards, including ECOLIVA, ECOVERO, and FSE.",
+          "We specialize in premium viscose fabrics known for their luxurious drape, soft texture, and elegant sheen. Our collection includes Georgettes, Chiffons, Tissues, Organzas, and Crepes—many crafted with intricate dobbies for added character. We also produce high-quality viscose fabrics using advanced fibers like Tencel Luxe and Bemberg yarn. With a GSM range of 30 to 300, our viscose fabrics are suitable for a wide array of applications, from delicate scarves to sophisticated apparel. All our viscose offerings are certified by globally recognized sustainability standards, including ECOLIVA, ECOVERO, and FSE.",
       },
     ],
     paragraphColor: "text-white/85",
@@ -73,11 +67,8 @@ const Product = () => {
     title: "Linen ",
     details: [
       {
-        paragraph: "Ruia Fabrics offers a versatile range of linen fabrics, from pure linen to premium blends tailored for performance and style.",
-      },
-      {
         paragraph:
-          "Our collection features 100% linen as well as blends with Cotton, Viscose, Lyocell, and Hemp, catering to a wide spectrum of design and functional needs. With fabric weights ranging from 70 GSM to 300 GSM, our linens are crafted for diverse applications. We use premium European flax to ensure superior quality and durability, and our linen fabrics adhere to internationally recognized sustainability standards.",
+          "Ruia Fabrics offers a versatile range of linen fabrics, from pure linen to premium blends tailored for performance and style. Our collection features 100% linen as well as blends with Cotton, Viscose, Lyocell, and Hemp, catering to a wide spectrum of design and functional needs. With fabric weights ranging from 70 GSM to 300 GSM, our linens are crafted for diverse applications. We use premium European flax to ensure superior quality and durability, and our linen fabrics adhere to internationally recognized sustainability standards.",
       },
     ],
     paragraphColor: "text-textblak",
@@ -93,11 +84,8 @@ const Product = () => {
     titleColor: "text-black",
     details: [
       {
-        paragraph: "Renowned for its soft touch and regal elegance, is a hallmark of luxury—and at Ruia Fabrics, we craft it to perfection.",
-      },
-      {
         paragraph:
-          "Our offerings include high-quality Micro-Velvet, Viscose Velvet, Nylon-Viscose Belvet, and Brasso (Devoré) velvets, all designed to deliver exceptional texture and visual appeal. With a GSM range of 150 to 300, our velvet fabrics are tailored for diverse applications across fashion and interior design. Each fabric is produced in accordance with internationally recognized sustainability standards, ensuring both beauty and responsibility.",
+          "Renowned for its soft touch and regal elegance, is a hallmark of luxury—and at Ruia Fabrics, we craft it to perfection. Our offerings include high-quality Micro-Velvet, Viscose Velvet, Nylon-Viscose Belvet, and Brasso (Devoré) velvets, all designed to deliver exceptional texture and visual appeal. With a GSM range of 150 to 300, our velvet fabrics are tailored for diverse applications across fashion and interior design. Each fabric is produced in accordance with internationally recognized sustainability standards, ensuring both beauty and responsibility.",
       },
     ],
     paragraphColor: "text-black",

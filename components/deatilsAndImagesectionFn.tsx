@@ -205,7 +205,7 @@ const AnimatedDetailsAndImage: React.FC<DetailsAndImageProps> = ({
                 {detail.paragraph}
               </motion.p>
             ))}
-            <motion.div variants={buttonVariants}>
+            {/* <motion.div variants={buttonVariants}>
               <Link href={connectUsLink} passHref>
                 <motion.p
                   className={`flex flex-row items-center w-fit gap-[5px] mt-6 px-6 py-3 ${btncolor} text-custom-white font-rubik font-semibold rounded-lg shadow-md hover:bg-custom-black transition duration-300 ease-in-out`}
@@ -218,7 +218,7 @@ const AnimatedDetailsAndImage: React.FC<DetailsAndImageProps> = ({
                   </span>
                 </motion.p>
               </Link>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </motion.div>

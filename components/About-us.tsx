@@ -64,7 +64,7 @@ const SustainableFabrics = () => {
     {
       id: 3,
       name: "100% Organic Cotton",
-      image: "/fabric/cotton 2.jpg",
+      image: "/fabric/100cottonfabric.jpg",
       icon: "/Manufacturing/home-f-icon-3.png",
       description:
         "Grown without harmful chemicals, organic cotton creates soft, hypoallergenic fabrics while protecting farmer health and reducing environmental impact.",
@@ -103,10 +103,7 @@ const SustainableFabrics = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Sustainability Quote Section */}
         <motion.div variants={itemVariants} className="mb-20 max-w-4xl mx-auto text-center relative">
-          <div className="absolute -top-6 -left-6 w-12 h-12 border-t-2 border-l-2 border-custom-green opacity-40"></div>
-          <div className="absolute -bottom-6 -right-6 w-12 h-12 border-b-2 border-r-2 border-custom-green opacity-40"></div>
-
-          <h2 className="text-4xl lg:text-5xl font-rubik font-bold text-custom-black mb-8">Sustainable Style, Woven with Care.</h2>
+          <h2 className="text-4xl lg:text-5xl font-rubik font-bold text-custom-black mb-8">Sustainable Style, Woven With Care.</h2>
 
           <p className="text-xl text-custom-black font-abel font-semibold  leading-relaxed ">
             "Sustainability for us means creating long-term value for people, the planet, and shared prosperity. It’s not just about doing good—it’s about making a lasting impact through every choice we make."
@@ -163,7 +160,7 @@ const SustainableFabrics = () => {
                 </div>
 
                 <div className="relative">
-                  <div className="absolute top-0 left-0 w-12 h-1  bg-custom-green"></div>
+                 
                   <p className="text-lg text-custom-black/80 font-roboto font-semibold leading-relaxed pt-6">{fabric.description}</p>
                 </div>
               </div>

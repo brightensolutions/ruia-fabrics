@@ -65,14 +65,7 @@ export default function PremiumTimeline() {
         duration={15}
       />
 
-      <FloatingElement
-        className="absolute top-1/3 right-20 w-24 h-24 rounded-full border border-[#5e2c4f]/20"
-        animationProps={{
-          y: [0, 15, 0],
-          rotate: [0, -5, 0],
-        }}
-        duration={8}
-      />
+      
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
         <motion.div
@@ -84,12 +77,6 @@ export default function PremiumTimeline() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold font-serif text-[#2c5e3f] mb-6">
             Our Rich Heritage
           </h1>
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: "100px" }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="h-1 bg-[#d3a456] mx-auto mb-6"
-          />
           <p className="text-lg md:text-xl font-abel font-semibold text-gray-700 max-w-3xl mx-auto">
           A legacy of textile excellence rooted in innovation, craftsmanship, and a commitment to quality.
           </p>
@@ -122,14 +109,13 @@ export default function PremiumTimeline() {
           viewport={{ once: true, amount: 0.3 }}
           className="relative"
         >
-          <div className="absolute -top-16 -left-16 w-32 h-32 border border-[#d3a456]/30 rounded-full" />
-          <div className="absolute -bottom-16 -right-16 w-32 h-32 border border-[#2c5e3f]/30 rounded-full" />
+          
 
           <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="p-8 md:p-12 flex flex-col justify-center">
                 <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#2c5e3f] mb-6">Our Vision</h2>
-                <div className="w-16 h-1 bg-[#d3a456] mb-6" />
+                
                 <p className="text-gray-700 leading-relaxed mb-6 font-roboto font-semibold">
                   To be recognized as one of the leading textile producers in the country, committed to quality,
                   sustainability, and innovation. We aim to establish a strong global presence in the textile industry
@@ -211,35 +197,11 @@ function FabricTimelineEvent({ year, title, description, color, delay, isLast }:
           }}
           className="relative"
         >
-          {/* Thread connecting to timeline */}
-          <motion.div
-            initial={{ width: 0 }}
-            animate={isInView ? { width: 40 } : { width: 0 }}
-            transition={{ duration: 0.3, delay: delay + 0.3 }}
-            className="absolute top-1/2 right-full h-[2px] -translate-y-1/2 mr-2"
-            style={{ backgroundColor: color }}
-          />
-
           {/* Year bubble */}
           <div
             className="w-16 h-16 rounded-full flex items-center justify-center text-white font-medium text-sm shadow-lg relative z-10"
             style={{ backgroundColor: color }}
           >
-            {/* Pulsing effect */}
-            <motion.div
-              className="absolute inset-0 rounded-full"
-              style={{ backgroundColor: color }}
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [1, 0.7, 1],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Number.POSITIVE_INFINITY,
-                repeatType: "reverse",
-              }}
-            />
-
             <span className="relative z-10">{year}</span>
           </div>
         </motion.div>
@@ -274,25 +236,10 @@ function FabricTimelineEvent({ year, title, description, color, delay, isLast }:
           <p className="text-gray-700 font-roboto font-normal leading-normal text-xl">{description}</p>
         </div>
 
-        {/* Decorative thread corner */}
-        <div className="absolute bottom-0 right-0 w-12 h-12 overflow-hidden">
-          <div
-            className="absolute bottom-0 right-0 w-24 h-24 -rotate-45 transform origin-bottom-right opacity-10"
-            style={{ backgroundColor: color }}
-          />
-        </div>
+       
       </motion.div>
 
-      {/* Connecting thread to next event */}
-      {!isLast && (
-        <motion.div
-          initial={{ height: 0 }}
-          animate={isInView ? { height: 40 } : { height: 0 }}
-          transition={{ duration: 0.3, delay: delay + 0.5 }}
-          className="absolute left-[-80px] ml-8 top-full w-[2px]"
-          style={{ backgroundColor: color }}
-        />
-      )}
+      
     </div>
   )
 }

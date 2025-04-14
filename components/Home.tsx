@@ -18,7 +18,7 @@ export function InfiniteMovingCardsDemo() {
           className="text-center"
         >
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-rubik font-bold mb-6 bg-gradient-to-r from-custom-green to-custom-black bg-clip-text text-transparent">
-            Welcome to Ruia Fabrics
+            Welcome To Ruia Fabrics
           </h1>
 
           <motion.div
