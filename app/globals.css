@@ -33,6 +33,10 @@ body {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+  .theme {
+    --animate-marquee: marquee var(--duration) infinite linear;
+    --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  }
 }
 
 @layer base {
@@ -59,8 +63,6 @@ body {
   border: 2px solid #f1f1f1; /* Optional padding-like effect */
 }
 
-
-
 * {
   margin: 0;
   padding: 0;
@@ -84,4 +86,21 @@ button#radix-\:r0\:-trigger-all {
   color: white;
 }
 
-
+@theme inline {
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+}

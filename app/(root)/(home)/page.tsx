@@ -2,6 +2,7 @@
 import { lazy, Suspense } from "react"
 import { Homevideo } from "@/components/home-video"
 import { ClientMarquee } from "@/components/Our-Client"
+import { MarqueeDemo } from "@/components/rotating-logo-carousel-3d"
 
 const InfiniteMovingCardsDemo = lazy(() =>
   import("@/components/Home").then((mod) => ({ default: mod.InfiniteMovingCardsDemo })),
@@ -9,7 +10,6 @@ const InfiniteMovingCardsDemo = lazy(() =>
 const Aboutus = lazy(() => import("@/components/About-us"))
 const OurIndustry = lazy(() => import("@/components/Our-Industry"))
 const OurServices = lazy(() => import("@/components/Our-Services"))
-const Quality = lazy(() => import("@/components/Quality"))
 const WhyChoode = lazy(() => import("@/components/Why-Choode"))
 // If MarqueeDemo is a default export
 
@@ -28,6 +28,7 @@ const Page = () => {
           </div>
         }
       >
+        <MarqueeDemo/>
         <section className="bg-custom-white text-custom-black z-40 relative">
           <InfiniteMovingCardsDemo />
         </section>
@@ -40,17 +41,6 @@ const Page = () => {
         <section className="bg-custom-cream text-custom-black relative z-40">
           <Aboutus />
         </section>
-        {/* <section className="bg-custom-white text-custom-black">
-          <OurIndustry />
-        </section> */}
-        
-        {/* <section className="bg-custom-cream text-custom-black">
-          <Quality />
-        </section> */}
-       
-        {/* <section className="bg-custom-green text-custom-white">
-          <ClientMarquee />
-        </section> */}
         <section className="bg-custom-cream text-custom-black">
           <ContactUs />
         </section>

@@ -14,18 +14,33 @@ export const Homevideo = () => {
   const slides = [
     {
       id: 1,
-      mainImage: "/slider-images/candy_cane_img4_2048x2048.webp",
-      title: "Candy Cane Collection",
+      mainImage: "/slider-images/Linen .png",
+      title: "Linen Serenity",
     },
     {
       id: 2,
-      mainImage: "/slider-images/home_natural_fabric_img.webp",
-      title: "Natural Fabric Collection",
+      mainImage: "/slider-images/Cotton.png",
+      title: "Comfort In Cotton",
     },
     {
       id: 3,
-      mainImage: "/slider-images/Block_Berry_img4_2048x2048.webp",
-      title: "Block Berry Collection",
+      mainImage: "/slider-images/Viscose.png",
+      title: "Lustrous Viscose Flow",
+    },
+    {
+      id: 4,
+      mainImage: "/slider-images/Velvet 1.png",
+      title: "Pastel Luxe",
+    },
+    {
+      id: 5,
+      mainImage: "/slider-images/Velvet 2.png",
+      title: "Luxe Velvet",
+    },
+    {
+      id: 6,
+      mainImage: "/slider-images/Velvet 3.png",
+      title: "Textured Elegance",
     },
   ]
 
@@ -140,7 +155,7 @@ export const Homevideo = () => {
                 damping: 30,
                 duration: 0.5,
               }}
-              className="w-full h-full"
+              className="w-full h-full relative"
             >
               <div className="lg:max-h-[85vh] h-full w-full overflow-hidden shadow-2xl rounded-md">
                 <img
@@ -148,6 +163,10 @@ export const Homevideo = () => {
                   alt={slides[currentSlide].title}
                   className="w-full h-full object-cover lg:object-cover"
                 />
+              </div>
+
+              <div className="absolute top-0 ">
+                <h1 className="bg-custom-green px-5 py-2 rounded-br-xl">{slides[currentSlide].title}</h1>
               </div>
             </motion.div>
           </AnimatePresence>
