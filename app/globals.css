@@ -104,3 +104,12 @@ button#radix-\:r0\:-trigger-all {
     }
   }
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50%));
+  }
+}

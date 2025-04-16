@@ -165,8 +165,8 @@ export const Homevideo = () => {
                 />
               </div>
 
-              <div className="absolute top-0 ">
-                <h1 className="bg-custom-green px-5 py-2 rounded-br-xl">{slides[currentSlide].title}</h1>
+              <div className="absolute bottom-0 left-0 right-0 ">
+                <h1 className="bg-white px-5 py-2 text-black text-center font-bold text-xl">{slides[currentSlide].title}</h1>
               </div>
             </motion.div>
           </AnimatePresence>
