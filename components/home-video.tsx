@@ -105,13 +105,13 @@ export const Homevideo = () => {
     }
   }
 
-  // Auto-advance slides every 5 seconds
+  // Auto-advance slides every 2 seconds
   useEffect(() => {
     if (slides.length === 0) return
 
     const slideInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
-    }, 5000)
+    }, 2000)
 
     return () => clearInterval(slideInterval)
   }, [slides.length])
@@ -181,7 +181,7 @@ export const Homevideo = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        transition={{ duration: 1.2, ease: "easeInOut" }}
+                        transition={{ duration: 0.7, ease: "easeInOut" }}
                       >
                         <img
                           src={slide.image || "/placeholder.svg"}
@@ -202,7 +202,7 @@ export const Homevideo = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.3 }}
                   className="bg-white px-5 py-2"
                 >
                   <h1 className="text-black text-center font-bold text-xl">{slides[currentSlide].title}</h1>
