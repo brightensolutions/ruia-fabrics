@@ -18,7 +18,6 @@ export const Homevideo = () => {
   const [isMobile, setIsMobile] = useState(false)
   const [slides, setSlides] = useState<Slide[]>([])
   const [loading, setLoading] = useState(true)
-  const [direction, setDirection] = useState(0) // -1 for left, 1 for right
   const sliderRef = useRef<HTMLDivElement>(null)
 
   // Fetch slides from API
@@ -111,7 +110,6 @@ export const Homevideo = () => {
     if (slides.length === 0) return
 
     const slideInterval = setInterval(() => {
-      setDirection(1)
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
     }, 5000)
 
@@ -120,70 +118,16 @@ export const Homevideo = () => {
 
   const goToPrevious = () => {
     if (slides.length === 0) return
-    setDirection(-1)
     setCurrentSlide((prevIndex) => (prevIndex === 0 ? slides.length - 1 : prevIndex - 1))
   }
 
   const goToNext = () => {
     if (slides.length === 0) return
-    setDirection(1)
     setCurrentSlide((prevIndex) => (prevIndex === slides.length - 1 ? 0 : prevIndex + 1))
   }
 
   const goToSlide = (index: number) => {
-    setDirection(index > currentSlide ? 1 : -1)
     setCurrentSlide(index)
-  }
-
-  // Animation variants
-  const slideVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-      scale: 0.85,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      scale: 1,
-      transition: {
-        x: { type: "spring", stiffness: 300, damping: 30 },
-        opacity: { duration: 0.5 },
-        scale: { duration: 0.5 },
-      },
-    },
-    exit: (direction: number) => ({
-      x: direction > 0 ? -1000 : 1000,
-      opacity: 0,
-      scale: 0.85,
-      transition: {
-        x: { type: "spring", stiffness: 300, damping: 30 },
-        opacity: { duration: 0.5 },
-        scale: { duration: 0.5 },
-      },
-    }),
-  }
-
-  // Title animation variants
-  const titleVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        delay: 0.3,
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-    exit: {
-      y: -20,
-      opacity: 0,
-      transition: {
-        duration: 0.3,
-        ease: "easeIn",
-      },
-    },
   }
 
   if (loading) {
@@ -215,64 +159,50 @@ export const Homevideo = () => {
       onTouchEnd={handleTouchEnd}
     >
       {/* Decorative elements */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.3 }}
-        transition={{ duration: 1.5 }}
-        className="absolute top-8 left-8 w-16 h-16 border-t border-l border-[#d3a456] opacity-30"
-      />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.3 }}
-        transition={{ duration: 1.5 }}
-        className="absolute bottom-8 right-8 w-16 h-16 border-b border-r border-[#d3a456] opacity-30"
-      />
+      <div className="absolute top-8 left-8 w-16 h-16 border-t border-l border-[#d3a456] opacity-30"></div>
+      <div className="absolute bottom-8 right-8 w-16 h-16 border-b border-r border-[#d3a456] opacity-30"></div>
 
       {/* Main image section - now takes full width */}
       <div className="h-full w-full relative flex items-center justify-center">
         <div className="w-[85%] h-[85%] relative">
           {/* Decorative frame */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 0.6, scale: 1 }}
-            transition={{ duration: 1 }}
-            className="absolute -top-3 -left-3 w-12 h-12 border-t-2 border-l-2 border-[#d3a456] opacity-60"
-          />
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 0.6, scale: 1 }}
-            transition={{ duration: 1 }}
-            className="absolute -bottom-3 -right-3 w-12 h-12 border-b-2 border-r-2 border-[#d3a456] opacity-60"
-          />
+          <div className="absolute -top-3 -left-3 w-12 h-12 border-t-2 border-l-2 border-[#d3a456] opacity-60"></div>
+          <div className="absolute -bottom-3 -right-3 w-12 h-12 border-b-2 border-r-2 border-[#d3a456] opacity-60"></div>
 
           <div className="w-full h-full relative">
             <div className="lg:max-h-[85vh] h-full w-full overflow-hidden shadow-2xl rounded-md">
-              <AnimatePresence initial={false} custom={direction} mode="wait">
-              <motion.div
-                  key={`title-${currentSlide}`}
-                  variants={titleVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  className="bg-white px-5 py-2"
-                >
-                  <img
-                    src={slides[currentSlide].image || "/placeholder.svg"}
-                    alt={slides[currentSlide].title}
-                    className="w-full h-full object-cover lg:object-cover"
-                  />
-                </motion.div>
-              </AnimatePresence>
+              {/* Crossfade Image Transition */}
+              <div className="relative w-full h-full">
+                {slides.map((slide, index) => (
+                  <AnimatePresence key={slide._id} initial={false}>
+                    {index === currentSlide && (
+                      <motion.div
+                        className="absolute inset-0"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 1.2, ease: "easeInOut" }}
+                      >
+                        <img
+                          src={slide.image || "/placeholder.svg"}
+                          alt={slide.title}
+                          className="w-full h-full object-cover lg:object-cover"
+                        />
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                ))}
+              </div>
             </div>
 
             <div className="absolute bottom-0 left-0 right-0">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={`title-${currentSlide}`}
-                  variants={titleVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5 }}
                   className="bg-white px-5 py-2"
                 >
                   <h1 className="text-black text-center font-bold text-xl">{slides[currentSlide].title}</h1>
@@ -284,34 +214,22 @@ export const Homevideo = () => {
 
         {/* Navigation dots - visible on all devices */}
         <div className="absolute bottom-8 left-0 right-0 flex justify-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-            className="flex space-x-3 px-4 py-2 bg-white/30 backdrop-blur-sm rounded-full shadow-md"
-          >
+          <div className="flex space-x-3 px-4 py-2 bg-white/30 backdrop-blur-sm rounded-full shadow-md">
             {slides.map((_, index) => (
-              <motion.button
+              <button
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   currentSlide === index ? "bg-[#d3a456] w-6" : "bg-white/70"
                 }`}
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
-          </motion.div>
+          </div>
         </div>
 
         {/* Navigation arrows */}
-        <motion.button
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.7, duration: 0.5 }}
-          whileHover={{ scale: 1.1, backgroundColor: "rgba(72, 106, 76, 0.9)" }}
-          whileTap={{ scale: 0.9 }}
+        <button
           onClick={goToPrevious}
           className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-custom-green hover:bg-custom-green/85 backdrop-blur-sm rounded-full transition-all duration-300"
           aria-label="Previous slide"
@@ -330,14 +248,9 @@ export const Homevideo = () => {
           >
             <path d="M15 18l-6-6 6-6" />
           </svg>
-        </motion.button>
+        </button>
 
-        <motion.button
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.7, duration: 0.5 }}
-          whileHover={{ scale: 1.1, backgroundColor: "rgba(72, 106, 76, 0.9)" }}
-          whileTap={{ scale: 0.9 }}
+        <button
           onClick={goToNext}
           className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-custom-green hover:bg-custom-green/85 backdrop-blur-sm rounded-full transition-all duration-300"
           aria-label="Next slide"
@@ -356,7 +269,7 @@ export const Homevideo = () => {
           >
             <path d="M9 18l6-6-6-6" />
           </svg>
-        </motion.button>
+        </button>
       </div>
     </div>
   )
