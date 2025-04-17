@@ -107,7 +107,7 @@ const ContactUs: React.FC = () => {
     email: "admin@ruiafabrics.com",
     factoryAddress:
       "The Klassiq Silk Mills, Govindji Industrial Park-3 Plot No: 0-168/ 0-171, Near Hotel Sabar, Palsana Road, Surat : 394315 Gujarat",
-    headOfficeAddress: "Ruia Fabrics Pvt Ltd, A2/187 Shah & Nahar Ind Est, Lower Parel- West Mumbai : 400013",
+    headOfficeAddress: "Ruia Fabrics Pvt Ltd, A2/187 Shah & Nahar Ind Est, Lower Parel- West, Mumbai : 400013",
   }
   const isLoading = false
 
