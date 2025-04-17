@@ -245,19 +245,8 @@ export default function BrandsPage() {
         {successMessage && (
           <div className="mb-4 bg-green-50 border border-green-200 text-green-800 p-4 rounded-md">{successMessage}</div>
         )}
-
-        <Card className="border-custom-cream mb-6">
-          <CardHeader className="bg-custom-cream/20">
-            <CardTitle className="font-rubik text-custom-green">Preview</CardTitle>
-            <CardDescription className="font-roboto">
-              This is how your brand logos will appear on the website.
-            </CardDescription>
-          </CardHeader>
-         
-        </Card>
-
         <Card className="border-custom-cream">
-          <CardHeader className="bg-custom-cream/20">
+          <CardHeader className="bg-custom-cream">
             <div className="flex items-center justify-between">
               <div>
                 <CardTitle className="font-rubik text-custom-green">Brand Logos</CardTitle>
@@ -278,7 +267,7 @@ export default function BrandsPage() {
               </div>
             </div>
           </CardHeader>
-          <CardContent className="pt-6">
+          <CardContent className="pt-6 bg-white">
             {loading ? (
               // Loading skeletons
               <div className="space-y-4">
@@ -325,7 +314,7 @@ export default function BrandsPage() {
                                 <img
                                   src={brand.image || "/placeholder.svg"}
                                   alt="Brand logo"
-                                  className="h-20 w-full md:h-20 md:w-32 object-contain rounded-md"
+                                  className="h-20 w-full bg-custom-green md:h-20 md:w-32 object-contain rounded-md"
                                 />
                               </div>
                               <div className="flex items-center space-x-2 mt-4 md:mt-0">
@@ -333,17 +322,17 @@ export default function BrandsPage() {
                                   variant="outline"
                                   size="sm"
                                   className={`border-${brand.active ? "amber-500" : "green-500"} text-${
-                                    brand.active ? "amber-500" : "green-500"
-                                  } hover:bg-${brand.active ? "amber-50" : "green-50"}`}
+                                    brand.active ? "amber-500 text-black" : "green-500 text-red-500"
+                                  } `}
                                   onClick={() => handleToggleActive(brand)}
                                 >
                                   {brand.active ? (
                                     <>
-                                      <EyeOff className="h-4 w-4 mr-2" /> Deactivate
+                                      <EyeOff className="h-4 w-4 mr-2 text-custome-green" /> Deactivate
                                     </>
                                   ) : (
                                     <>
-                                      <Eye className="h-4 w-4 mr-2" /> Activate
+                                      <Eye className="h-4 w-4 mr-2 text-custome-green" /> Activate
                                     </>
                                   )}
                                 </Button>

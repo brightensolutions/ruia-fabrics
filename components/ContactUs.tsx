@@ -68,8 +68,8 @@ const AddressCard: React.FC<ContactCardProps> = ({ icon, title, content, isLoadi
     phone: "+91 7021418483",
     email: "admin@ruiafabrics.com",
     factoryAddress:
-      "Plot No. 0-168 To 0-171, Govindji ind. Park, Vill. Makhinga, Nr. Sabar Hotel. Palsana. Dist. Surat",
-    headOfficeAddress: "Ruia Fabrics Pvt Ld\nA2/187 Shah & Nahar Ind Est\nLower Parel\nMumbai : 400013",
+      "The Klassiq Silk Mills, Govindji Industrial Park-3 Plot No: 0-168/ 0-171, Near Hotel Sabar, Palsana Road, Surat : 394315 Gujarat",
+    headOfficeAddress: "Ruia Fabrics Pvt Ltd, A2/187 Shah & Nahar Ind Est, Lower Parel- West Mumbai : 400013",
   }
   return (
     <motion.div
@@ -106,7 +106,7 @@ const ContactUs: React.FC = () => {
     phone: "+91 7021418483",
     email: "admin@ruiafabrics.com",
     factoryAddress:
-      "The Klassiq Silk Mills, Govindji Industrial Park-3 Plot No: 0-168/ 0-171, Near Hotel Sabar, Palsana Road, Surat : 394315   Gujarat",
+      "The Klassiq Silk Mills, Govindji Industrial Park-3 Plot No: 0-168/ 0-171, Near Hotel Sabar, Palsana Road, Surat : 394315 Gujarat",
     headOfficeAddress: "Ruia Fabrics Pvt Ltd, A2/187 Shah & Nahar Ind Est, Lower Parel- West Mumbai : 400013",
   }
   const isLoading = false
