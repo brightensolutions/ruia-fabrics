@@ -3,7 +3,6 @@
 import type React from "react"
 import { DirectionAwareHover } from "./ui/direction-aware-hover"
 import { motion } from "framer-motion"
-import Image from "next/image" // Import the correct Image component from Next.js
 
 interface Service {
   imageUrl: string
@@ -12,43 +11,17 @@ interface Service {
 const OurServices: React.FC = () => {
   const services: Service[] = [
     {
-      imageUrl: "/fabric/014A7479.JPG",
+      imageUrl: "/fabric/fabric1.jpeg",
     },
     {
-      imageUrl: "/fabric/014A7326.JPG",
+      imageUrl: "/fabric/fabric3.jpeg",
     },
     {
-      imageUrl: "/fabric/014A7500.JPG",
+      imageUrl: "/fabric/fabric2.jpeg",
     },
   ]
 
-  const Manufacturing = [
-    {
-      id: 1,
-      name: "Hemp Fabric",
-      image: "/Manufacturing/home-f-icon-1.png",
-    },
-    {
-      id: 2,
-      name: "Bamboo Fabric",
-      image: "/Manufacturing/home-f-icon-2.png",
-    },
-    {
-      id: 3,
-      name: "100% Organic Cotton",
-      image: "/Manufacturing/home-f-icon-3.png",
-    },
-    {
-      id: 4,
-      name: "Aloe Vera Fabric",
-      image: "/Manufacturing/home-f-icon-4.png",
-    },
-    {
-      id: 5,
-      name: "Tencel Fabric",
-      image: "/Manufacturing/home-f-icon-5.png",
-    },
-  ]
+
 
   const containerVariants = {
     hidden: { opacity: 0 },

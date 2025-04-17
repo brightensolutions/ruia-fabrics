@@ -1,6 +1,6 @@
 "use client"
 
-import type React from "react"
+import React from "react"
 import { MdAddCall, MdEmail, MdLocationOn } from "react-icons/md"
 import { motion } from "framer-motion"
 import { Skeleton } from "@/components/ui/skeleton"
@@ -64,6 +64,13 @@ const ContactCard: React.FC<ContactCardProps> = ({ icon, title, content, isLoadi
 }
 
 const AddressCard: React.FC<ContactCardProps> = ({ icon, title, content, isLoading }) => {
+  const contactData = {
+    phone: "+91 7021418483",
+    email: "admin@ruiafabrics.com",
+    factoryAddress:
+      "Plot No. 0-168 To 0-171, Govindji ind. Park, Vill. Makhinga, Nr. Sabar Hotel. Palsana. Dist. Surat",
+    headOfficeAddress: "Ruia Fabrics Pvt Ld\nA2/187 Shah & Nahar Ind Est\nLower Parel\nMumbai : 400013",
+  }
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
@@ -74,12 +81,20 @@ const AddressCard: React.FC<ContactCardProps> = ({ icon, title, content, isLoadi
           <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-custom-cream">
             <div className="text-custom-green">{icon}</div>
           </div>
-          <h3 className="mt-6 text-xl font-rubik font-semibold text-custom-black">{title}</h3>
         </div>
         {isLoading ? (
           <Skeleton className="h-6 w-3/4 mx-auto mt-3" />
         ) : (
-          <p className="mt-3 text-base font-roboto text-custom-black/70">{content}</p>
+          <div className="mt-3 text-base font-roboto text-custom-black/70">
+            <div className="mb-4">
+              <h4 className="font-bold mb-1 font-roboto text-2xl ">Head Office:</h4>
+              <p className="text-black text-xl font-semibold">{contactData.headOfficeAddress}</p>
+            </div>
+            <div>
+            <h4 className="font-bold mb-1 font-roboto text-2xl ">Factory Address:</h4>
+            <p className="text-black text-xl font-semibold">{contactData.factoryAddress}</p>
+            </div>
+          </div>
         )}
       </div>
     </motion.div>
@@ -90,7 +105,9 @@ const ContactUs: React.FC = () => {
   const contactData = {
     phone: "+91 7021418483",
     email: "admin@ruiafabrics.com",
-    address: "Plot No. 0-168 To 0-171, Govindji ind. Park, Vill. Makhinga, Nr. Sabar Hotel. Palsana. Dist. Surat",
+    factoryAddress:
+      "The Klassiq Silk Mills, Govindji Industrial Park-3 Plot No: 0-168/ 0-171, Near Hotel Sabar, Palsana Road, Surat : 394315   Gujarat",
+    headOfficeAddress: "Ruia Fabrics Pvt Ltd, A2/187 Shah & Nahar Ind Est, Lower Parel- West Mumbai : 400013",
   }
   const isLoading = false
 
@@ -104,7 +121,12 @@ const ContactUs: React.FC = () => {
           </p>
         </div>
 
-        <motion.div variants={containerVariants} className="mt-16 grid gap-8 sm:grid-cols-2">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="mt-16 grid gap-8 sm:grid-cols-2"
+        >
           <motion.div variants={itemVariants} className="h-full">
             <ContactCard
               icon={<MdAddCall className="h-8 w-8" />}
@@ -123,12 +145,12 @@ const ContactUs: React.FC = () => {
           </motion.div>
         </motion.div>
 
-        <motion.div variants={containerVariants} className="mt-8">
+        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="mt-8">
           <motion.div variants={itemVariants} className="h-full">
             <AddressCard
               icon={<MdLocationOn className="h-8 w-8" />}
-              title="Address"
-              content={contactData.address}
+              title="Our Addresses"
+              content=""
               isLoading={isLoading}
             />
           </motion.div>
@@ -139,4 +161,3 @@ const ContactUs: React.FC = () => {
 }
 
 export default ContactUs
-

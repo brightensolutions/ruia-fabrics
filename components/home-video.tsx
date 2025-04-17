@@ -3,45 +3,68 @@
 import type React from "react"
 
 import { useState, useEffect, useRef } from "react"
+import { Skeleton } from "@/components/ui/skeleton"
+
+interface Slide {
+  _id: string
+  title: string
+  image: string
+  order: number
+}
 
 export const Homevideo = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
+  const [slides, setSlides] = useState<Slide[]>([])
+  const [loading, setLoading] = useState(true)
   const sliderRef = useRef<HTMLDivElement>(null)
 
-  // Slide data with images
-  const slides = [
-    {
-      id: 1,
-      mainImage: "/slider-images/Linen .png",
-      title: "Linen Serenity",
-    },
-    {
-      id: 2,
-      mainImage: "/slider-images/Cotton.png",
-      title: "Comfort In Cotton",
-    },
-    {
-      id: 3,
-      mainImage: "/slider-images/Viscose.png",
-      title: "Lustrous Viscose Flow",
-    },
-    {
-      id: 4,
-      mainImage: "/slider-images/Velvet 1.png",
-      title: "Pastel Luxe",
-    },
-    {
-      id: 5,
-      mainImage: "/slider-images/Velvet 2.png",
-      title: "Luxe Velvet",
-    },
-    {
-      id: 6,
-      mainImage: "/slider-images/Velvet 3.png",
-      title: "Textured Elegance",
-    },
-  ]
+  // Fetch slides from API
+  useEffect(() => {
+    const fetchSlides = async () => {
+      try {
+        setLoading(true)
+        const response = await fetch("/api/sliders")
+        if (!response.ok) throw new Error("Failed to fetch sliders")
+
+        const data = await response.json()
+        // Ensure slides are sorted by order
+        const sortedData = [...data].sort((a, b) => a.order - b.order)
+        console.log(
+          "Sorted slides by order:",
+          sortedData.map((s) => `${s.title} (order: ${s.order})`),
+        )
+        setSlides(sortedData)
+      } catch (error) {
+        console.error("Error fetching sliders:", error)
+        // Fallback to default slides if API fails
+        setSlides([
+          {
+            _id: "1",
+            title: "Linen Serenity",
+            image: "/slider-images/Linen .png",
+            order: 0,
+          },
+          {
+            _id: "2",
+            title: "Comfort In Cotton",
+            image: "/slider-images/Cotton.png",
+            order: 1,
+          },
+          {
+            _id: "3",
+            title: "Lustrous Viscose Flow",
+            image: "/slider-images/Viscose.png",
+            order: 2,
+          },
+        ])
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchSlides()
+  }, [])
 
   // Check if mobile view
   useEffect(() => {
@@ -83,6 +106,8 @@ export const Homevideo = () => {
 
   // Auto-advance slides every 5 seconds
   useEffect(() => {
+    if (slides.length === 0) return
+
     const slideInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
     }, 5000)
@@ -91,15 +116,37 @@ export const Homevideo = () => {
   }, [slides.length])
 
   const goToPrevious = () => {
+    if (slides.length === 0) return
     setCurrentSlide((prevIndex) => (prevIndex === 0 ? slides.length - 1 : prevIndex - 1))
   }
 
   const goToNext = () => {
+    if (slides.length === 0) return
     setCurrentSlide((prevIndex) => (prevIndex === slides.length - 1 ? 0 : prevIndex + 1))
   }
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index)
+  }
+
+  if (loading) {
+    return (
+      <div className="w-full h-screen mt-20 overflow-hidden">
+        <div className="h-full w-full relative flex items-center justify-center">
+          <div className="w-[85%] h-[85%] relative">
+            <Skeleton className="w-full h-full rounded-md" />
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  if (slides.length === 0) {
+    return (
+      <div className="w-full h-screen mt-20 overflow-hidden flex items-center justify-center">
+        <p className="text-gray-500">No slider images available</p>
+      </div>
+    )
   }
 
   return (
@@ -124,7 +171,7 @@ export const Homevideo = () => {
           <div className="w-full h-full relative">
             <div className="lg:max-h-[85vh] h-full w-full overflow-hidden shadow-2xl rounded-md">
               <img
-                src={slides[currentSlide].mainImage || "/placeholder.svg"}
+                src={slides[currentSlide].image || "/placeholder.svg"}
                 alt={slides[currentSlide].title}
                 className="w-full h-full object-cover lg:object-cover"
               />

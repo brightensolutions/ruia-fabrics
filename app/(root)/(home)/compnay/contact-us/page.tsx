@@ -9,7 +9,7 @@ const page = () => {
         <ServicesSection
           image="/images/banner1.webp"
           title="Contact Us"
-          description="Connect with Ruia Fabrics, a leader in textiles since 1952. Specializing in high-quality velvet and viscose fabrics, we’re here to assist you with your inquiries and provide world-class solutions. Reach out to us for any assistance or collaboration opportunities."
+          description="At Ruia Fabrics, we craft premium quality fabrics for discerning clients. For personalized assistance or collaboration inquiries, we welcome you to get in touch."
           link={{ href: "https://wa.me/917021418483", label: "Get in Touch" }}
         />
       </div>

@@ -32,7 +32,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ image, title, descrip
               {title}
             </TextAnimate>
           </h1>
-          <p className="mt-4 text-[25px] leading-snug md:text-center text-right  text-custom-black font-bold">
+          <p className="mt-4 text-[25px] leading-snug md:text-center text-right md:max-w-[1200px]  text-custom-black font-bold">
             {description}
           </p>
           <div className="mt-8">
