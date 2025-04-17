@@ -236,7 +236,7 @@ export default function BrandsPage() {
   }
 
   return (
-    <div className="overflow-hidden md:w-[80%]">
+    <div className="overflow-hidden ">
       <header className="bg-custom-white border-b border-custom-cream p-4 hidden md:flex items-center justify-between">
         <h1 className="text-2xl font-bold font-rubik text-custom-green">Brand Logos</h1>
       </header>

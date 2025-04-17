@@ -142,7 +142,7 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
         </header>
 
         {/* Main Content */}
-        <div className="flex-1 md:ml-64 md:w-[71.3%] overflow-y-auto">{children}</div>
+        <div className="flex-1 md:ml-64  overflow-y-auto">{children}</div>
       </div>
     </div>
   )

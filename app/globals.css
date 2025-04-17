@@ -113,3 +113,33 @@ button#radix-\:r0\:-trigger-all {
     transform: translateX(calc(-50%));
   }
 }
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 1rem));
+  }
+}
+
+.animate-scroll {
+  animation: scroll var(--duration, 20s) linear infinite;
+}
+
+/* Prevent image flickering during animations */
+.slider-image {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
