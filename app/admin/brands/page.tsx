@@ -245,7 +245,7 @@ export default function BrandsPage() {
         {successMessage && (
           <div className="mb-4 bg-green-50 border border-green-200 text-green-800 p-4 rounded-md">{successMessage}</div>
         )}
-        <Card className="border-custom-cream">
+        <Card className="border-custom-cream bg-custom-cream">
           <CardHeader className="bg-custom-cream">
             <div className="flex items-center justify-between">
               <div>
@@ -267,7 +267,7 @@ export default function BrandsPage() {
               </div>
             </div>
           </CardHeader>
-          <CardContent className="pt-6 bg-white">
+          <CardContent className="pt-6 bg-custom-cream">
             {loading ? (
               // Loading skeletons
               <div className="space-y-4">

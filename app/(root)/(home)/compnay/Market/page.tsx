@@ -1,6 +1,7 @@
 "use client"
 
 import ServicesSection from "@/components/ServicesSectionFn"
+import Business from "@/components/business"
 import AnimatedDetailsAndImage from "@/components/deatilsAndImagesectionFn"
 import { useEffect } from "react"
 
@@ -61,22 +62,9 @@ const Market = () => {
   }
 
   return (
-    <div className="bg-custom-cream">
-      <ServicesSection
-        image="/images/banner1.webp"
-        title="Business"
-        description=""
-        link={{ href: "/compnay/contact-us", label: "Contact Us" }}
-      />
-
-      <div id="weaving">
-        <AnimatedDetailsAndImage {...greyFabric2} imagePosition="left" />
-      </div>
-
-      <div id="trading">
-        <AnimatedDetailsAndImage {...greyFabric} imagePosition="right" />
-      </div>
-    </div>
+    <div>
+    <Business />
+  </div>
   )
 }
 

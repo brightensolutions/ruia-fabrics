@@ -6,7 +6,7 @@ import { useState, useEffect } from "react"
 import { usePathname, useRouter } from "next/navigation"
 import Link from "next/link"
 import { AuthProvider, useAuth } from "@/contexts/auth-context"
-import { LogOut,Award, ImageIcon, FileText, Home, Info, Phone, Briefcase, Leaf, Menu, Loader2 } from "lucide-react"
+import { LogOut,Award, ImageIcon, FileText, Home, Info,Clock, Phone,Eye,Package, Briefcase, Leaf, Menu, Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -65,12 +65,14 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
     { href: "/admin", icon: Home, label: "Dashboard" },
     { href: "/admin/slider", icon: ImageIcon, label: "Slider Images" },
     { href: "/admin/brands", icon: Award, label: "Brand Logos" },
-    { href: "/admin/welcome", icon: Award, label: "Welcome" },
-    { href: "/admin/services", icon: Award, label: "What We Do" },
-    { href: "/admin/sustainable-fabrics", icon: Leaf, label: "Sustainable" },
-    { href: "/admin/about", icon: Info, label: "About Us" },
+    { href: "/admin/welcome", icon: FileText, label: "Welcome" },
+    { href: "/admin/services", icon: FileText, label: "What We Do" },
+    { href: "/admin/sustainable-fabrics", icon: Leaf, label: "Sustainable Fabrics" },
+    { href: "/admin/about-us", icon: Info, label: "About Us" },
+    { href: "/admin/company-timeline", icon: Clock, label: "Company Timeline" },
+    { href: "/admin/company-vision", icon: Eye, label: "Company Vision" },
     { href: "/admin/contact", icon: Phone, label: "Contact Us" },
-    { href: "/admin/products", icon: FileText, label: "Products" },
+    { href: "/admin/products", icon: Package, label: "Products" },
     { href: "/admin/business", icon: Briefcase, label: "Business" },
   ]
 

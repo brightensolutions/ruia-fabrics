@@ -216,7 +216,7 @@ export default function SliderPage() {
           <div className="mb-4 bg-green-50 border border-green-200 text-green-800 p-4 rounded-md">{successMessage}</div>
         )}
 
-        <Card className="border-custom-cream bg-white">
+        <Card className="border-custom-cream bg-custom-cream">
           <CardHeader className="bg-custom-cream/20">
             <div className="flex items-center justify-between">
               <div>

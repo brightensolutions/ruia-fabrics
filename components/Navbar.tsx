@@ -25,44 +25,86 @@ interface DropdownItem {
   href?: string
 }
 
-// Product dropdown items
-const productDropdown: DropdownItem[] = [
-  { id: "cotton", name: "Cotton Fabric", href: "/compnay/product#cotton" },
-  { id: "viscose", name: "Viscose Fabric", href: "/compnay/product#viscose" },
-  { id: "linen", name: "Linen", href: "/compnay/product#linen" },
-  { id: "velvet", name: "Velvet", href: "/compnay/product#velvet" },
-]
-
-// Update the menuData array to include dropdown items for the Business section
-const menuData: MenuData[] = [
-  { id: "Home", name: "Home", href: "/" },
-  { id: "About Us", name: "About Us", href: "/compnay/about-us" },
-  {
-    id: "Product",
-    name: "Product",
-    href: "/compnay/product",
-    dropdown: productDropdown,
-  },
-  {
-    id: "Business",
-    name: "Business",
-    href: "/compnay/Market",
-    dropdown: [
-      { id: "weaving", name: "Weaving", href: "/compnay/Market#weaving" },
-      { id: "trading", name: "Trading", href: "/compnay/Market#trading" },
-    ],
-  },
-]
+interface Product {
+  _id: string
+  title: string
+}
 
 export function NavbarMenu() {
+  const [productDropdown, setProductDropdown] = useState<DropdownItem[]>([])
+  const [loading, setLoading] = useState(true)
+
+  // Fetch products for the dropdown
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("/api/products")
+        if (response.ok) {
+          const products: Product[] = await response.json()
+
+          // Transform products into dropdown items
+          const dropdownItems = products.map((product) => ({
+            id: product.title.toLowerCase().replace(/\s+/g, "-"),
+            name: product.title,
+            href: `/compnay/product#${product.title.toLowerCase().replace(/\s+/g, "-")}`,
+          }))
+
+          setProductDropdown(dropdownItems)
+        } else {
+          // Fallback to default items if API fails
+          setProductDropdown([
+            { id: "cotton", name: "Cotton Fabric", href: "/compnay/product#cotton" },
+            { id: "viscose", name: "Viscose Fabric", href: "/compnay/product#viscose" },
+            { id: "linen", name: "Linen", href: "/compnay/product#linen" },
+            { id: "velvet", name: "Velvet", href: "/compnay/product#velvet" },
+          ])
+        }
+      } catch (error) {
+        console.error("Error fetching products for navbar:", error)
+        // Fallback to default items if API fails
+        setProductDropdown([
+          { id: "cotton", name: "Cotton Fabric", href: "/compnay/product#cotton" },
+          { id: "viscose", name: "Viscose Fabric", href: "/compnay/product#viscose" },
+          { id: "linen", name: "Linen", href: "/compnay/product#linen" },
+          { id: "velvet", name: "Velvet", href: "/compnay/product#velvet" },
+        ])
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchProducts()
+  }, [])
+
+  // Update the menuData array to include dynamic dropdown items for the Product section
+  const menuData: MenuData[] = [
+    { id: "Home", name: "Home", href: "/" },
+    { id: "About Us", name: "About Us", href: "/compnay/about-us" },
+    {
+      id: "Product",
+      name: "Product",
+      href: "/compnay/product",
+      dropdown: productDropdown,
+    },
+    {
+      id: "Business",
+      name: "Business",
+      href: "/compnay/Market",
+      dropdown: [
+        { id: "weaving", name: "Weaving", href: "/compnay/Market#weaving" },
+        { id: "trading", name: "Trading", href: "/compnay/Market#trading" },
+      ],
+    },
+  ]
+
   return (
     <div className="relative w-full">
-      <Navbar />
+      <Navbar menuData={menuData} loading={loading} />
     </div>
   )
 }
 
-function Navbar() {
+function Navbar({ menuData, loading }: { menuData: MenuData[]; loading: boolean }) {
   const [isOpen, setIsOpen] = useState(false)
   const [active, setActive] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
@@ -236,24 +278,30 @@ function Navbar() {
                         <div className="h-1 w-full bg-custom-green"></div>
 
                         <div className="py-2">
-                          {menu.dropdown.map((item, index) => (
-                            <motion.div key={item.id} variants={itemVariants}>
-                              <Link
-                                href={item.href || "#"}
-                                className=" px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-custom-green transition-colors duration-200 flex items-center group"
-                                onClick={() => handleDropdownItemClick(item)}
-                              >
-                                <span className="w-1.5 h-1.5 rounded-full bg-custom-green mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                                <span className="font-medium">{item.name}</span>
-                                <span className="ml-auto transform translate-x-0 group-hover:translate-x-1 transition-transform duration-200 opacity-0 group-hover:opacity-100">
-                                  →
-                                </span>
-                              </Link>
-                              {menu.dropdown && index < menu.dropdown.length - 1 && (
-                                <div className="mx-4 border-t border-gray-100"></div>
-                              )}
-                            </motion.div>
-                          ))}
+                          {loading && menu.id === "Product" ? (
+                            <div className="px-4 py-3 flex items-center justify-center">
+                              <div className="w-5 h-5 border-2 border-custom-green border-t-transparent rounded-full animate-spin"></div>
+                            </div>
+                          ) : (
+                            menu.dropdown.map((item, index) => (
+                              <motion.div key={item.id} variants={itemVariants}>
+                                <Link
+                                  href={item.href || "#"}
+                                  className="px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-custom-green transition-colors duration-200 flex items-center group"
+                                  onClick={() => handleDropdownItemClick(item)}
+                                >
+                                  <span className="w-1.5 h-1.5 rounded-full bg-custom-green mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                                  <span className="font-medium">{item.name}</span>
+                                  <span className="ml-auto transform translate-x-0 group-hover:translate-x-1 transition-transform duration-200 opacity-0 group-hover:opacity-100">
+                                    →
+                                  </span>
+                                </Link>
+                                {menu.dropdown && index < menu.dropdown.length - 1 && (
+                                  <div className="mx-4 border-t border-gray-100"></div>
+                                )}
+                              </motion.div>
+                            ))
+                          )}
                         </div>
                       </div>
                     </motion.div>
@@ -336,23 +384,30 @@ function Navbar() {
                             transition={{ duration: 0.3 }}
                             className="ml-4 mt-2 space-y-2 overflow-hidden"
                           >
-                            {item.dropdown.map((dropdownItem, index) => (
-                              <motion.li
-                                key={dropdownItem.id}
-                                initial={{ x: -10, opacity: 0 }}
-                                animate={{ x: 0, opacity: 1 }}
-                                transition={{ delay: index * 0.05 }}
-                              >
-                                <Link
-                                  href={dropdownItem.href || "#"}
-                                  className="text-custom-black hover:text-custom-green transition-colors duration-200 text-base flex items-center"
-                                  onClick={() => handleDropdownItemClick(dropdownItem)}
+                            {loading && item.id === "Product" ? (
+                              <div className="py-2 flex items-center">
+                                <div className="w-4 h-4 border-2 border-custom-green border-t-transparent rounded-full animate-spin mr-2"></div>
+                                <span>Loading...</span>
+                              </div>
+                            ) : (
+                              item.dropdown.map((dropdownItem, index) => (
+                                <motion.li
+                                  key={dropdownItem.id}
+                                  initial={{ x: -10, opacity: 0 }}
+                                  animate={{ x: 0, opacity: 1 }}
+                                  transition={{ delay: index * 0.05 }}
                                 >
-                                  <span className="w-1.5 h-1.5 rounded-full bg-custom-green mr-2"></span>
-                                  {dropdownItem.name}
-                                </Link>
-                              </motion.li>
-                            ))}
+                                  <Link
+                                    href={dropdownItem.href || "#"}
+                                    className="text-custom-black hover:text-custom-green transition-colors duration-200 text-base flex items-center"
+                                    onClick={() => handleDropdownItemClick(dropdownItem)}
+                                  >
+                                    <span className="w-1.5 h-1.5 rounded-full bg-custom-green mr-2"></span>
+                                    {dropdownItem.name}
+                                  </Link>
+                                </motion.li>
+                              ))
+                            )}
                           </motion.ul>
                         )}
                       </AnimatePresence>

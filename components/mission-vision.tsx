@@ -1,10 +1,33 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 import { motion, useInView } from "framer-motion"
 import Image from "next/image"
+import { Skeleton } from "@/components/ui/skeleton"
 
-// Update the FabricTimelineEvent component to be more responsive on mobile
+interface TimelineEvent {
+  year: string
+  title: string
+  description: string
+  color: string
+  order: number
+}
+
+interface TimelineData {
+  title: string
+  subtitle: string
+  events: TimelineEvent[]
+}
+
+interface VisionData {
+  title: string
+  paragraph1: string
+  paragraph2: string
+  image: string
+  mobileTitle: string
+}
+
+// FabricTimelineEvent component
 function FabricTimelineEvent({ year, title, description, color, delay, isLast }: FabricTimelineEventProps) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
@@ -26,10 +49,10 @@ function FabricTimelineEvent({ year, title, description, color, delay, isLast }:
         >
           {/* Year bubble */}
           <div
-            className="w-10 h-10 md:w-16 md:h-16 rounded-full flex items-center justify-center text-white font-medium text-xs md:text-sm shadow-lg relative z-10"
+            className="w-11 h-11 md:w-16 md:h-16 rounded-full flex items-center justify-center text-white font-medium text-xs md:text-sm shadow-lg relative z-10"
             style={{ backgroundColor: color }}
           >
-            <span className="relative z-10">{year}</span>
+            <span className="relative z-10 md:text-sm text-[11px]">{year}</span>
           </div>
         </motion.div>
       </div>
@@ -67,48 +90,160 @@ function FabricTimelineEvent({ year, title, description, color, delay, isLast }:
   )
 }
 
-// Update the main component to improve mobile responsiveness
-export default function PremiumTimeline() {
-  const containerRef = useRef(null)
+// FloatingElement component
+function FloatingElement({ className, animationProps, duration }: FloatingElementProps) {
+  return (
+    <motion.div
+      className={className}
+      animate={animationProps}
+      transition={{
+        duration,
+        repeat: Number.POSITIVE_INFINITY,
+        repeatType: "reverse",
+      }}
+    />
+  )
+}
 
-  // Timeline events
-  const timelineEvents = [
-    {
-      year: "1960",
-      title: "Our Beginnings",
-      description:
-        "Our journey in the textile industry began over five decades ago, rooted in a strong foundation of fabric trading. We specialized in sourcing premium yarns and fabrics from leading mills across India.",
-      color: "#2c5e3f",
-    },
-    {
-      year: "1991",
-      title: "Ruia Fabrics Established",
-      description:
-        "Ruia Fabrics Pvt. Ltd. was established with a focus on manufacturing and trading high-quality viscose, cotton, and linen fabrics. Our first state-of-the-art manufacturing facility is located in Surat, Gujarat.",
-      color: "#d3a456",
-    },
-    {
-      year: "2004",
-      title: "Sustainable Innovation",
-      description:
-        "Driven by a vision for innovation and sustainability, we expanded our portfolio to include linen and eco-friendly fabrics such as EcoVero,LivaEco, Bci Cotton, Organic Cotton and European Flax.",
-      color: "#5e2c4f",
-    },
-    {
-      year: "2017",
-      title: "The Klassiq Silk Mills",
-      description:
-        "Further expanding our capabilities, we developed The Klassiq Silk Mills in Surat to manufacture premium Velvet fabrics. With a current monthly production capacity exceeding 200,000 meters, the facility features a fully integrated, end-to-end production process.",
-      color: "#2c4e5e",
-    },
-    {
-      year: "Present",
-      title: "Global Excellence",
-      description:
-        "From humble beginnings to our evolution as a leader in sustainable and luxury textiles, our legacy is defined by craftsmanship, innovation, and an unwavering commitment to excellence.",
-      color: "#5e452c",
-    },
-  ]
+// Main CompanyInfo component
+export default function CompanyInfo() {
+  const containerRef = useRef(null)
+  const [timelineData, setTimelineData] = useState<TimelineData | null>(null)
+  const [visionData, setVisionData] = useState<VisionData | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true)
+
+        // Fetch timeline data
+        const timelineResponse = await fetch("/api/company-timeline")
+        if (!timelineResponse.ok) {
+          throw new Error("Failed to fetch company timeline")
+        }
+        const timelineResult = await timelineResponse.json()
+
+        // Sort events by order
+        const sortedEvents = [...timelineResult.events].sort((a, b) => a.order - b.order)
+        setTimelineData({
+          ...timelineResult,
+          events: sortedEvents,
+        })
+
+        // Fetch vision data
+        const visionResponse = await fetch("/api/company-vision")
+        if (!visionResponse.ok) {
+          throw new Error("Failed to fetch company vision")
+        }
+        const visionResult = await visionResponse.json()
+        setVisionData(visionResult)
+      } catch (err) {
+        console.error("Error fetching company information:", err)
+        setError("Failed to load company information. Using default values.")
+
+        // Set default timeline data
+        setTimelineData({
+          title: "Our Rich Heritage",
+          subtitle: "A legacy of textile excellence rooted in innovation, craftsmanship, and a commitment to quality.",
+          events: [
+            {
+              year: "1960",
+              title: "Our Beginnings",
+              description:
+                "Our journey in the textile industry began over five decades ago, rooted in a strong foundation of fabric trading. We specialized in sourcing premium yarns and fabrics from leading mills across India.",
+              color: "#2c5e3f",
+              order: 0,
+            },
+            {
+              year: "1991",
+              title: "Ruia Fabrics Established",
+              description:
+                "Ruia Fabrics Pvt. Ltd. was established with a focus on manufacturing and trading high-quality viscose, cotton, and linen fabrics. Our first state-of-the-art manufacturing facility is located in Surat, Gujarat.",
+              color: "#d3a456",
+              order: 1,
+            },
+            {
+              year: "2004",
+              title: "Sustainable Innovation",
+              description:
+                "Driven by a vision for innovation and sustainability, we expanded our portfolio to include linen and eco-friendly fabrics such as EcoVero,LivaEco, Bci Cotton, Organic Cotton and European Flax.",
+              color: "#5e2c4f",
+              order: 2,
+            },
+            {
+              year: "2017",
+              title: "The Klassiq Silk Mills",
+              description:
+                "Further expanding our capabilities, we developed The Klassiq Silk Mills in Surat to manufacture premium Velvet fabrics. With a current monthly production capacity exceeding 200,000 meters, the facility features a fully integrated, end-to-end production process.",
+              color: "#2c4e5e",
+              order: 3,
+            },
+            {
+              year: "Present",
+              title: "Global Excellence",
+              description:
+                "From humble beginnings to our evolution as a leader in sustainable and luxury textiles, our legacy is defined by craftsmanship, innovation, and an unwavering commitment to excellence.",
+              color: "#5e452c",
+              order: 4,
+            },
+          ],
+        })
+
+        // Set default vision data
+        setVisionData({
+          title: "Our Vision",
+          paragraph1:
+            "To be recognized as one of the leading textile producers in the country, committed to quality, sustainability, and innovation. We aim to establish a strong global presence in the textile industry while upholding the highest standards of craftsmanship.",
+          paragraph2:
+            "Our goal is to exceed customer expectations by delivering premium, sustainable fabrics and to be among the most esteemed textile companies by maintaining integrity, transparency, and excellence in all our stakeholder relationships.",
+          image: "/company/OurVision.jpg",
+          mobileTitle: "Crafting Tomorrow's Textiles",
+        })
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchData()
+  }, [])
+
+  if (loading) {
+    return (
+      <section className="relative overflow-hidden bg-custom-white py-12 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 md:mb-20">
+          <div className="text-center">
+            <Skeleton className="h-12 w-3/4 mx-auto mb-4" />
+            <Skeleton className="h-6 w-1/2 mx-auto" />
+          </div>
+        </div>
+
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="space-y-16">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <div key={i} className="relative pl-0 md:pl-[160px]">
+                <Skeleton className="h-40 w-full rounded-xl" />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 md:mt-32">
+          <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <div className="p-6 md:p-12">
+                <Skeleton className="h-10 w-1/2 mb-6" />
+                <Skeleton className="h-24 w-full mb-4" />
+                <Skeleton className="h-24 w-full" />
+              </div>
+              <Skeleton className="h-[250px] md:h-auto" />
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section ref={containerRef} className="relative overflow-hidden bg-custom-white py-12 md:py-20">
@@ -129,10 +264,11 @@ export default function PremiumTimeline() {
           className="text-center"
         >
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold font-serif text-[#2c5e3f] mb-4 md:mb-6">
-            Our Rich Heritage
+            {timelineData?.title || "Our Rich Heritage"}
           </h1>
           <p className="text-base md:text-xl font-abel font-semibold text-gray-700 lg:max-w-3xl sm:max-w-[550px] mx-auto">
-            A legacy of textile excellence rooted in innovation, craftsmanship, and a commitment to quality.
+            {timelineData?.subtitle ||
+              "A legacy of textile excellence rooted in innovation, craftsmanship, and a commitment to quality."}
           </p>
         </motion.div>
       </div>
@@ -141,7 +277,7 @@ export default function PremiumTimeline() {
         <div className="absolute left-0 md:left-[80px] top-0 bottom-0 w-[2px] bg-[#d3a456]/30" />
 
         <div className="relative pl-0 md:pl-[160px]">
-          {timelineEvents.map((event, index) => (
+          {timelineData?.events.map((event, index) => (
             <FabricTimelineEvent
               key={index}
               year={event.year}
@@ -149,7 +285,7 @@ export default function PremiumTimeline() {
               description={event.description}
               color={event.color}
               delay={index * 0.15}
-              isLast={index === timelineEvents.length - 1}
+              isLast={index === (timelineData?.events.length || 0) - 1}
             />
           ))}
         </div>
@@ -167,26 +303,31 @@ export default function PremiumTimeline() {
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="p-6 md:p-12 flex flex-col justify-center">
                 <h2 className="text-2xl md:text-4xl font-serif font-semibold text-[#2c5e3f] mb-4 md:mb-6">
-                  Our Vision
+                  {visionData?.title || "Our Vision"}
                 </h2>
 
                 <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-4 md:mb-6 font-roboto font-semibold">
-                  To be recognized as one of the leading textile producers in the country, committed to quality,
-                  sustainability, and innovation. We aim to establish a strong global presence in the textile industry
-                  while upholding the highest standards of craftsmanship.
+                  {visionData?.paragraph1 ||
+                    "To be recognized as one of the leading textile producers in the country, committed to quality, sustainability, and innovation. We aim to establish a strong global presence in the textile industry while upholding the highest standards of craftsmanship."}
                 </p>
                 <p className="text-sm md:text-base text-gray-700 leading-relaxed font-roboto font-semibold">
-                  Our goal is to exceed customer expectations by delivering premium, sustainable fabrics and to be among
-                  the most esteemed textile companies by maintaining integrity, transparency, and excellence in all our
-                  stakeholder relationships.
+                  {visionData?.paragraph2 ||
+                    "Our goal is to exceed customer expectations by delivering premium, sustainable fabrics and to be among the most esteemed textile companies by maintaining integrity, transparency, and excellence in all our stakeholder relationships."}
                 </p>
               </div>
 
               <div className="relative h-[250px] md:h-auto">
-                <Image src="/company/OurVision.jpg" alt="Our vision" fill className="object-cover" />
+                <Image
+                  src={visionData?.image || "/company/OurVision.jpg"}
+                  alt="Our vision"
+                  fill
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent md:bg-gradient-to-l" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:hidden">
-                  <h3 className="text-xl font-serif text-white mb-2">Crafting Tomorrow's Textiles</h3>
+                  <h3 className="text-xl font-serif text-white mb-2">
+                    {visionData?.mobileTitle || "Crafting Tomorrow's Textiles"}
+                  </h3>
                 </div>
               </div>
             </div>
@@ -204,20 +345,6 @@ interface FloatingElementProps {
     rotate: number[]
   }
   duration: number
-}
-
-function FloatingElement({ className, animationProps, duration }: FloatingElementProps) {
-  return (
-    <motion.div
-      className={className}
-      animate={animationProps}
-      transition={{
-        duration,
-        repeat: Number.POSITIVE_INFINITY,
-        repeatType: "reverse",
-      }}
-    />
-  )
 }
 
 interface FabricTimelineEventProps {
